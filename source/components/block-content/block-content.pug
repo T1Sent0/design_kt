@@ -1,0 +1,9 @@
+mixin content_block(count, blockContentTitle, blockContentText, pathImg, classNameContainer)
+    div.block-content(class=classNameContainer)
+        div.title
+            div.count
+                span=count
+            h1=blockContentTitle
+        div.content
+            span=blockContentText
+            img(src=pathImg)

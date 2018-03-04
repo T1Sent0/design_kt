@@ -1,0 +1,148 @@
+.container-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.48em;
+  .title {
+    display: flex;
+    align-items: baseline;
+    .count {
+      display: table;
+      background: #56c3e7;
+      border-radius: 50%;
+      margin-right: 1.5em;
+    }
+    span {
+      display: table-cell;
+      vertical-align: middle;
+      width: 2em;
+      height: 2em;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  h1 {
+    margin-top: 0;
+    font-family: ProximaNova-Black;
+    width: 85%;
+    font-size: 2.62em;
+  }
+  span {
+    font-family: ProximaNova_Regilar;
+  }
+  .block-content {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      margin-bottom: 4em;
+      font-size: 1.25em;
+      padding-left: 3.5em;
+    }
+    img {
+      width: 75%;
+    }
+  }
+}
+
+.first-block, .second-block {
+  display: flex;
+  padding: 6.25em;
+}
+
+.fhreed-block {
+  display: flex;
+  padding: 6.25em 6.25em 0 1.5em;
+}
+
+.fourt-block {
+  display: flex;
+  padding: 6.25em 1.5em 0 6.25em;
+  .first {
+    align-items: initial;
+  }
+  h1 {
+    width: 90%;
+  }
+  .first {
+    .content {
+      span {
+        padding-left: 2em;
+      }
+    }
+  }
+}
+
+.sixth-block, .seventh-block {
+  display: flex;
+  padding: 6.25em 4.25em 0 6.25em;
+  .first {
+    align-items: initial;
+  }
+  .first {
+    .content {
+      span {
+        padding-left: 1em;
+      }
+    }
+  }
+}
+
+.seventh-block, .eleventh.block {
+  background: #2a2d32;
+  color: #e8e8e8;
+  opacity: .9;
+}
+
+.second-block, .fourt-block, .ninth-block {
+  background: #eff0eb;
+}
+
+.first {
+  .content {
+    span {
+      width: 86%;
+      padding-left: 1.5em;
+    }
+  }
+}
+
+.second {
+  .content {
+    span {
+      width: 92%;
+    }
+  }
+}
+
+.eighth-block, .ninth-block {
+  display: flex;
+  padding: 6.25em 5.25em 0 4.25em;
+  .title {
+    h1 {
+      width: 100%;
+    }
+  }
+}
+
+.ninth-block {
+  .first {
+    margin-right: 3em;
+  };
+}
+
+.tenth-block {
+  display: flex;
+  padding: 6.25em 0 0;
+}
+
+.eleventh.block {
+  display: flex;
+  padding: 6.25em 6.25em 0;
+}

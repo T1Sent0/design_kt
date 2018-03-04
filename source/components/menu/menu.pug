@@ -1,0 +1,25 @@
+div.container-menu
+    div.menu
+        div.container-img-logo
+            img(src=require('./img/logo.png'))
+            img.img-text-kt(src=require('./img/text-kt.png'))
+        ul
+            each caltgory, index in ['fb-logo', 'vk-logo', 'insta-logo', 'youtube-logo', 'pensil', 'burger']
+                if index === 0
+                    li
+                        a(class=caltgory href="#")
+
+                if index === 1
+                    li
+                        a(class=caltgory href="#")
+                if index === 2
+                    li
+                        a(class=caltgory href="#")
+                if index === 3
+                    li
+                        a(class=caltgory href="#")
+                if index === 4
+                    li(class=caltgory)
+                        a(class=caltgory href="#")
+                if index === 5
+                    li(class=caltgory)

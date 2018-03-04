@@ -1,0 +1,30 @@
+mixin create_form(id_form)
+    div.content-form
+        div.close
+        h1 Контакты
+        div.flex-row.container
+            div.flex-row
+                span.title-phone T:
+                a(href='tel:89253775298' class='phone') 8 (925) 377-52-98
+            div.flex-row
+                span.title-mail E:
+                a(class=email href='mailto:info@kuznetcov.team') info@kuznetcov.team
+        form(id=id_form)
+            span Напишите сообщение или задайте нам вопрос. Мы скоро ответим вам.
+            div.field-form
+                div.field--wrapper
+                    label Как Вас зовут:
+                    input(type='text' name='name' placeholder='Как Вас зовут:' require)
+                div.field--wrapper
+                    label Моб. телефон:
+                    input(type='tel' name='phone' placeholder='Моб. телефон:' require)
+                div.field--wrapper
+                    label Сообщение:
+                    textarea(name='message' rows=10 placeholder='Сообщение:' require)
+                button(type=submit) Отправить
+div.success-container
+    div.success-content
+        img(src=require('./img/message_icone.svg'))
+        div
+            span Спасибо!
+            span В ближайшее время мы с вами свяжемся.

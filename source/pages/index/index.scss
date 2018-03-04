@@ -1,0 +1,58 @@
+@import "./settings-style/fonts";
+@import "./settings-style/color";
+@import "./settings-style/mixin";
+
+* {
+  font-size: 1vw;
+}
+
+.opacity {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: none;
+  z-index: 2;
+  opacity: .5;
+  background-color: black;
+}
+
+
+.container-slider {
+  width: 50%;
+  margin-right: 3em;
+  .slider-maket {
+    img {
+      width: 65%;
+    }
+  }
+  .nav-slide {
+    background: #2a2d32;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    height: 3em;
+    z-index: 2;
+    align-items: flex-end;
+    .swiper-button-next, .swiper-button-prev {
+      width: 11em;
+      position: relative;
+      top: initial;
+      background: url("./img/navarrow.png") no-repeat 40%;
+      transition: .5s;
+      &:hover {
+        background-position-x: 20%;
+      }
+    }
+    .swiper-button-next {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+
+
+@media (max-width: 900px) {
+
+}
