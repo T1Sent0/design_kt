@@ -40,25 +40,58 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     span {
       margin-bottom: 4em;
       font-size: 1.25em;
       padding-left: 3.5em;
     }
     img {
-      width: 75%;
+      width: 55%;
     }
   }
 }
 
+.first-block, .second-block, .fhreed-block, .fourt-block, .sixth-block,  .seventh-block,
+.eleventh.block, .ninth-block, .tenth-block, .eleventh.block {
+  img {
+    width: 60%;
+  }
+}
+
+
 .first-block, .second-block {
   display: flex;
   padding: 6.25em;
+  .content {
+    .linkShow {
+      bottom: -8.5em;
+    }
+  }
 }
 
 .fhreed-block {
   display: flex;
   padding: 6.25em 6.25em 0 1.5em;
+  .content {
+    .linkShow {
+      bottom: -10em;
+    }
+  }
+}
+
+.sixth-block {
+  display: flex;
+  padding: 6.25em 6.25em 0 0;
+  .first {
+    align-items: initial;
+    .linkShow {
+      bottom: -10em;
+    }
+  }
+  h1 {
+    width: 100%;
+  }
 }
 
 .fourt-block {
@@ -75,20 +108,27 @@
       span {
         padding-left: 2em;
       }
+      .linkShow {
+        bottom: -12em;
+      }
     }
   }
 }
 
-.sixth-block, .seventh-block {
+.seventh-block {
   display: flex;
-  padding: 6.25em 4.25em 0 6.25em;
+  padding: 6.25em 4.25em 6.25em 6.25em;
   .first {
+    h1 {
+      width: 100%;
+    }
     align-items: initial;
-  }
-  .first {
     .content {
       span {
         padding-left: 1em;
+      }
+      .linkShow {
+        bottom: -8em;
       }
     }
   }
@@ -123,11 +163,17 @@
 
 .eighth-block, .ninth-block {
   display: flex;
-  padding: 6.25em 5.25em 0 4.25em;
+  padding: 6.25em 5.25em 6.25em 4.25em;
   .title {
     h1 {
       width: 100%;
     }
+  }
+}
+.eighth-block {
+  padding-bottom: 3.5em;
+  .linkShow {
+    bottom: -9em;
   }
 }
 
@@ -139,10 +185,70 @@
 
 .tenth-block {
   display: flex;
-  padding: 6.25em 0 0;
+  padding: 6.25em 6.25em 0 0;
+  .content {
+    .linkShow {
+      bottom: -6em;
+    }
+  }
 }
 
 .eleventh.block {
   display: flex;
-  padding: 6.25em 6.25em 0;
+  padding: 6.25em 0 0 6.25em;
+  img {
+    margin-top: 2.5em;
+  }
+  .content {
+    img {
+      margin: 0;
+    }
+  }
+}
+
+.slider-form {
+  img {
+    width: 150%;
+  }
+}
+
+.linkShow {
+  position: absolute;
+  bottom: -7em;
+  left: 3.7em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: 1em;
+    font-family: ProximaNova-Black;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: inherit;
+  }
+  img {
+
+    width: 70%;
+  }
+  .arrowWhite {
+    width: 3em;
+    height: 1.5em;
+    background: url("../../pages/index/img/navarrow.png") no-repeat 100%;
+    transform: rotate(180deg);
+    transition: .5s;
+  }
+  &:hover .arrowWhite {
+    background-position-x: 0;
+  }
+  &:hover .blackArrow {
+    background-position-x: 100%;
+  }
+  .blackArrow {
+    width: 3em;
+    height: 1.5em;
+    background: url("../../pages/index/img/blackArrow.png") no-repeat 0;
+    transition: .5s;
+  }
 }
