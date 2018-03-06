@@ -52,13 +52,12 @@
   }
 }
 
-.first-block, .second-block, .fhreed-block, .fourt-block, .sixth-block,  .seventh-block,
-.eleventh.block, .ninth-block, .tenth-block, .eleventh.block {
+.first-block, .second-block, .fhreed-block, .fourt-block, .sixth-block, .eighth-block, .seventh-block,
+ .ninth-block, .tenth-block, .eleventh.block {
   img {
     width: 60%;
   }
 }
-
 
 .first-block, .second-block {
   display: flex;
@@ -250,5 +249,71 @@
     height: 1.5em;
     background: url("../../pages/index/img/blackArrow.png") no-repeat 0;
     transition: .5s;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .container-content {
+    margin: 0;
+  }
+  .first-block, .second-block, .fhreed-block, .fourt-block, .sixth-block, .eighth-block,  .seventh-block,
+  .ninth-block, .tenth-block, .eleventh.block {
+    flex-flow: column;
+    padding: 15em 6.25em;
+    word-wrap: break-word;
+    .block-content {
+      .title {
+        .count {
+          margin-right: 6em;
+        }
+      }
+      width: inherit;
+      span {
+        font-size: 5em;
+        margin-bottom: 2em;
+      }
+      .content {
+        span {
+          padding: 0;
+          width: 100%;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+    h1 {
+      font-size: 10em;
+      width: 100%;
+    }
+  }
+
+  .first-block {
+    .first {
+      margin-bottom: 15em;
+    }
+  }
+
+  .second-block, .fhreed-block, .fourt-block, .sixth-block, .eighth-block,  .seventh-block,
+  .ninth-block, .tenth-block, .eleventh.block {
+    .content {
+      img {
+        display: none;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  .fhreed-block, .sixth-block, .eighth-block, .tenth-block {
+    flex-flow: column-reverse;
+  }
+
+  .ninth-block {
+    .first {
+      align-items: initial;
+    }
   }
 }

@@ -100,19 +100,25 @@
 
 @media (max-width: 900px) {
   .header {
-    height: 100vh;
-    background: url("./img/header_modile.png") center / cover;
+    height: 72vh;
+    background: url("./img/header_modile.png") no-repeat;
     margin: 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-
+    background-size: cover;
     .title-header, .all-service {
       display: none;
     }
     h1 {
       left: initial;
       font-size: 10em;
+    }
+    .header-text {
+      span {
+        font-size: 5em;
+        margin-bottom: 2em;
+      }
     }
   }
 }
