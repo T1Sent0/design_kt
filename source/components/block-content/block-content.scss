@@ -254,6 +254,7 @@
 
 
 @media (max-width: 900px) {
+
   .container-content {
     margin: 0;
   }
@@ -262,6 +263,7 @@
     flex-flow: column;
     padding: 15em 6.25em;
     word-wrap: break-word;
+    overflow: hidden;
     .block-content {
       .title {
         .count {
@@ -286,6 +288,20 @@
     h1 {
       font-size: 10em;
       width: 100%;
+    }
+    .content {
+      .linkShow {
+        font-size: 5em;
+        left: 0;
+        bottom: -16em;
+        a {
+          margin-right: .5em;
+        }
+        div {
+          width: 15em;
+          height: 5em;
+        }
+      }
     }
   }
 
@@ -314,6 +330,48 @@
   .ninth-block {
     .first {
       align-items: initial;
+    }
+  }
+
+  .fhreed-block, .fourt-block, .ninth-block, .tenth-block {
+    img {
+      width: 122%;
+    }
+    padding-bottom: 0;
+    .linkShow {
+      display: none;
+    }
+  }
+
+  .container-slider {
+    width: 100% !important;
+    .slider-maket {
+      img {
+        width: 102% !important;
+      }
+    }
+    .nav-slide{
+      height: 11em !important;
+    }
+  }
+  .seventh-block {
+    .linkShow {
+      bottom: -15em !important;
+    }
+  }
+
+  .eighth-block {
+    .linkShow {
+      bottom: -17em !important;
+    }
+  }
+
+  .tenth-block {
+    .container-slider {
+      height: 80em;
+      img {
+        height: 70em;
+      }
     }
   }
 }

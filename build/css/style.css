@@ -1,0 +1,1615 @@
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+.menu {
+  padding: 0;
+  margin: 0;
+  background: #2a2d32;
+  position: fixed;
+  height: 100vh;
+  width: 3.48em;
+  text-align: center; }
+  .menu .container-img-logo {
+    height: 3.43em; }
+  .menu img {
+    padding: 1.25em 0;
+    height: inherit; }
+  .menu .img-text-kt {
+    display: none; }
+  .menu ul {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    width: inherit; }
+    .menu ul li {
+      list-style: none;
+      height: 3.48em; }
+      .menu ul li a {
+        display: block;
+        height: inherit; }
+        .menu ul li a.fb-logo {
+          background: url(../image/fb.png) center/cover no-repeat; }
+        .menu ul li a.vk-logo {
+          background: url(../image/vk.png) center/cover no-repeat; }
+        .menu ul li a.insta-logo {
+          background: url(../image/insta.png) center/cover no-repeat; }
+        .menu ul li a.youtube-logo {
+          background: url(../image/youtube.png) center/cover no-repeat; }
+        .menu ul li a.pensil {
+          background: url(../image/message.svg) center/cover no-repeat;
+          background-size: 70%; }
+        .menu ul li a.fb-logo, .menu ul li a.vk-logo, .menu ul li a.insta-logo, .menu ul li a.youtube-logo {
+          background-position-y: -2%; }
+          .menu ul li a.fb-logo:hover, .menu ul li a.vk-logo:hover, .menu ul li a.insta-logo:hover, .menu ul li a.youtube-logo:hover {
+            background-position-y: 100%; }
+      .menu ul li.burger {
+        display: none; }
+      .menu ul li.pensil {
+        background: #56c3e7; }
+    .menu ul li:not(:last-child) {
+      border-top: 0.1em solid #50545c; }
+
+@media (max-width: 900px) {
+  .menu {
+    padding: 0.625em 1.25em;
+    width: 100%;
+    position: relative;
+    height: 23em;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .menu .container-img-logo {
+      height: inherit;
+      padding: 2em 2em;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline; }
+    .menu img {
+      height: 80%;
+      display: inline; }
+    .menu img:nth-child(2) {
+      height: 50%;
+      margin-left: 2.5em; }
+    .menu .img-text-kt {
+      display: inline; }
+    .menu ul {
+      position: relative;
+      right: 5%;
+      top: 0;
+      bottom: 0;
+      width: initial;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      align-items: center; }
+      .menu ul li {
+        width: 10em;
+        height: 10em;
+        border: none !important;
+        cursor: pointer; }
+        .menu ul li a.pensil {
+          background-size: 100%; }
+        .menu ul li.pensil {
+          background: none; }
+        .menu ul li.burger {
+          display: block;
+          background: url(../image/all_services.svg) no-repeat;
+          width: 7em;
+          height: 7em;
+          margin-left: 10em; }
+        .menu ul li.close-mobile-menu {
+          display: block;
+          width: 7em;
+          height: 7em;
+          margin-left: 10em;
+          background: url(../image/close.svg) no-repeat; }
+      .menu ul li:nth-child(1), .menu ul li:nth-child(2), .menu ul li:nth-child(3), .menu ul li:nth-child(4) {
+        display: none; } }
+.header {
+  margin: 0 0 0 3.48em;
+  padding: 2.187em 2.06em 2.187em 2.25em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 32.5em;
+  background: url(../image/header.png) center/cover;
+  background-size: 102%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column; }
+  .header .title-header {
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline; }
+    .header .title-header a {
+      display: inline;
+      font-family: 'ProximaNova_Regilar', serif;
+      font-size: 1.16em;
+      color: white;
+      cursor: default;
+      text-decoration: none; }
+    .header .title-header a:nth-child(5) {
+      color: #d6d6d6; }
+    .header .title-header a:nth-child(odd) {
+      cursor: pointer; }
+    .header .title-header a:not(:last-child) {
+      margin-right: 1.25em; }
+  .header .header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 6em;
+    position: relative;
+    text-align: center; }
+    .header .header-text span {
+      width: 85%;
+      font-size: 2.16em;
+      font-family: ProximaNova_Regilar, serif;
+      font-weight: bold;
+      color: #56c3e7; }
+  .header h1 {
+    cursor: default;
+    text-align: right;
+    -ms-flex-item-align: center;
+    align-self: center;
+    position: relative;
+    font-size: 5.5em;
+    color: #56c3e7;
+    mix-blend-mode: overlay;
+    font-family: 'ProximaNova-Black', serif;
+    margin: 0; }
+  .header .all-service {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    left: 90%; }
+    .header .all-service img {
+      width: 15%;
+      margin-right: .62em;
+      cursor: pointer; }
+    .header .all-service a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: 'ProximaNova_Regilar', serif; }
+
+@media (max-width: 900px) {
+  .header {
+    height: 72vh;
+    background: url(../image/header_modile.png) no-repeat;
+    margin: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-size: cover; }
+    .header .title-header, .header .all-service {
+      display: none; }
+    .header h1 {
+      left: initial;
+      font-size: 10em; }
+    .header .header-text span {
+      font-size: 5em;
+      margin-bottom: 2em; } }
+.container-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.48em; }
+  .container-content .title {
+    display: flex;
+    align-items: baseline; }
+    .container-content .title .count {
+      display: table;
+      background: #56c3e7;
+      border-radius: 50%;
+      margin-right: 1.5em; }
+    .container-content .title span {
+      display: table-cell;
+      vertical-align: middle;
+      width: 2em;
+      height: 2em;
+      color: #fff;
+      font-weight: bold;
+      text-align: center; }
+  .container-content h1 {
+    margin-top: 0;
+    font-family: ProximaNova-Black;
+    width: 85%;
+    font-size: 2.62em; }
+  .container-content span {
+    font-family: ProximaNova_Regilar; }
+  .container-content .block-content {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: column; }
+  .container-content .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; }
+    .container-content .content span {
+      margin-bottom: 4em;
+      font-size: 1.25em;
+      padding-left: 3.5em; }
+    .container-content .content img {
+      width: 55%; }
+
+.first-block img, .second-block img, .fhreed-block img, .fourt-block img, .sixth-block img, .eighth-block img, .seventh-block img,
+.ninth-block img, .tenth-block img, .eleventh.block img {
+  width: 60%; }
+
+.first-block, .second-block {
+  display: flex;
+  padding: 6.25em; }
+  .first-block .content .linkShow, .second-block .content .linkShow {
+    bottom: -8.5em; }
+
+.fhreed-block {
+  display: flex;
+  padding: 6.25em 6.25em 0 1.5em; }
+  .fhreed-block .content .linkShow {
+    bottom: -10em; }
+
+.sixth-block {
+  display: flex;
+  padding: 6.25em 6.25em 0 0; }
+  .sixth-block .first {
+    align-items: initial; }
+    .sixth-block .first .linkShow {
+      bottom: -10em; }
+  .sixth-block h1 {
+    width: 100%; }
+
+.fourt-block {
+  display: flex;
+  padding: 6.25em 1.5em 0 6.25em; }
+  .fourt-block .first {
+    align-items: initial; }
+  .fourt-block h1 {
+    width: 90%; }
+  .fourt-block .first .content span {
+    padding-left: 2em; }
+  .fourt-block .first .content .linkShow {
+    bottom: -12em; }
+
+.seventh-block {
+  display: flex;
+  padding: 6.25em 4.25em 6.25em 6.25em; }
+  .seventh-block .first {
+    align-items: initial; }
+    .seventh-block .first h1 {
+      width: 100%; }
+    .seventh-block .first .content span {
+      padding-left: 1em; }
+    .seventh-block .first .content .linkShow {
+      bottom: -8em; }
+
+.seventh-block, .eleventh.block {
+  background: #2a2d32;
+  color: #e8e8e8;
+  opacity: .9; }
+
+.second-block, .fourt-block, .ninth-block {
+  background: #eff0eb; }
+
+.first .content span {
+  width: 86%;
+  padding-left: 1.5em; }
+
+.second .content span {
+  width: 92%; }
+
+.eighth-block, .ninth-block {
+  display: flex;
+  padding: 6.25em 5.25em 6.25em 4.25em; }
+  .eighth-block .title h1, .ninth-block .title h1 {
+    width: 100%; }
+
+.eighth-block {
+  padding-bottom: 3.5em; }
+  .eighth-block .linkShow {
+    bottom: -9em; }
+
+.ninth-block .first {
+  margin-right: 3em; }
+
+.tenth-block {
+  display: flex;
+  padding: 6.25em 6.25em 0 0; }
+  .tenth-block .content .linkShow {
+    bottom: -6em; }
+
+.eleventh.block {
+  display: flex;
+  padding: 6.25em 0 0 6.25em; }
+  .eleventh.block img {
+    margin-top: 2.5em; }
+  .eleventh.block .content img {
+    margin: 0; }
+
+.slider-form img {
+  width: 150%; }
+
+.linkShow {
+  position: absolute;
+  bottom: -7em;
+  left: 3.7em;
+  display: flex;
+  align-items: center;
+  cursor: pointer; }
+  .linkShow a {
+    text-decoration: none;
+    white-space: nowrap;
+    margin-right: 1em;
+    font-family: ProximaNova-Black;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: inherit; }
+  .linkShow img {
+    width: 70%; }
+  .linkShow .arrowWhite {
+    width: 3em;
+    height: 1.5em;
+    background: url(../image/navarrow.png) no-repeat 100%;
+    transform: rotate(180deg);
+    transition: .5s; }
+  .linkShow:hover .arrowWhite {
+    background-position-x: 0; }
+  .linkShow:hover .blackArrow {
+    background-position-x: 100%; }
+  .linkShow .blackArrow {
+    width: 3em;
+    height: 1.5em;
+    background: url(../image/blackArrow.png) no-repeat 0;
+    transition: .5s; }
+
+@media (max-width: 900px) {
+  .container-content {
+    margin: 0; }
+  .first-block, .second-block, .fhreed-block, .fourt-block, .sixth-block, .eighth-block, .seventh-block,
+  .ninth-block, .tenth-block, .eleventh.block {
+    flex-flow: column;
+    padding: 15em 6.25em;
+    word-wrap: break-word;
+    overflow: hidden; }
+    .first-block .block-content, .second-block .block-content, .fhreed-block .block-content, .fourt-block .block-content, .sixth-block .block-content, .eighth-block .block-content, .seventh-block .block-content,
+    .ninth-block .block-content, .tenth-block .block-content, .eleventh.block .block-content {
+      width: inherit; }
+      .first-block .block-content .title .count, .second-block .block-content .title .count, .fhreed-block .block-content .title .count, .fourt-block .block-content .title .count, .sixth-block .block-content .title .count, .eighth-block .block-content .title .count, .seventh-block .block-content .title .count,
+      .ninth-block .block-content .title .count, .tenth-block .block-content .title .count, .eleventh.block .block-content .title .count {
+        margin-right: 6em; }
+      .first-block .block-content span, .second-block .block-content span, .fhreed-block .block-content span, .fourt-block .block-content span, .sixth-block .block-content span, .eighth-block .block-content span, .seventh-block .block-content span,
+      .ninth-block .block-content span, .tenth-block .block-content span, .eleventh.block .block-content span {
+        font-size: 5em;
+        margin-bottom: 2em; }
+      .first-block .block-content .content span, .second-block .block-content .content span, .fhreed-block .block-content .content span, .fourt-block .block-content .content span, .sixth-block .block-content .content span, .eighth-block .block-content .content span, .seventh-block .block-content .content span,
+      .ninth-block .block-content .content span, .tenth-block .block-content .content span, .eleventh.block .block-content .content span {
+        padding: 0;
+        width: 100%; }
+      .first-block .block-content .content img, .second-block .block-content .content img, .fhreed-block .block-content .content img, .fourt-block .block-content .content img, .sixth-block .block-content .content img, .eighth-block .block-content .content img, .seventh-block .block-content .content img,
+      .ninth-block .block-content .content img, .tenth-block .block-content .content img, .eleventh.block .block-content .content img {
+        width: 100%; }
+    .first-block h1, .second-block h1, .fhreed-block h1, .fourt-block h1, .sixth-block h1, .eighth-block h1, .seventh-block h1,
+    .ninth-block h1, .tenth-block h1, .eleventh.block h1 {
+      font-size: 10em;
+      width: 100%; }
+    .first-block .content .linkShow, .second-block .content .linkShow, .fhreed-block .content .linkShow, .fourt-block .content .linkShow, .sixth-block .content .linkShow, .eighth-block .content .linkShow, .seventh-block .content .linkShow,
+    .ninth-block .content .linkShow, .tenth-block .content .linkShow, .eleventh.block .content .linkShow {
+      font-size: 5em;
+      left: 0;
+      bottom: -16em; }
+      .first-block .content .linkShow a, .second-block .content .linkShow a, .fhreed-block .content .linkShow a, .fourt-block .content .linkShow a, .sixth-block .content .linkShow a, .eighth-block .content .linkShow a, .seventh-block .content .linkShow a,
+      .ninth-block .content .linkShow a, .tenth-block .content .linkShow a, .eleventh.block .content .linkShow a {
+        margin-right: .5em; }
+      .first-block .content .linkShow div, .second-block .content .linkShow div, .fhreed-block .content .linkShow div, .fourt-block .content .linkShow div, .sixth-block .content .linkShow div, .eighth-block .content .linkShow div, .seventh-block .content .linkShow div,
+      .ninth-block .content .linkShow div, .tenth-block .content .linkShow div, .eleventh.block .content .linkShow div {
+        width: 15em;
+        height: 5em; }
+  .first-block .first {
+    margin-bottom: 15em; }
+  .second-block .content img, .fhreed-block .content img, .fourt-block .content img, .sixth-block .content img, .eighth-block .content img, .seventh-block .content img,
+  .ninth-block .content img, .tenth-block .content img, .eleventh.block .content img {
+    display: none; }
+  .second-block img, .fhreed-block img, .fourt-block img, .sixth-block img, .eighth-block img, .seventh-block img,
+  .ninth-block img, .tenth-block img, .eleventh.block img {
+    width: 100%; }
+  .fhreed-block, .sixth-block, .eighth-block, .tenth-block {
+    flex-flow: column-reverse; }
+  .ninth-block .first {
+    align-items: initial; }
+  .fhreed-block, .fourt-block, .ninth-block, .tenth-block {
+    padding-bottom: 0; }
+    .fhreed-block img, .fourt-block img, .ninth-block img, .tenth-block img {
+      width: 122%; }
+    .fhreed-block .linkShow, .fourt-block .linkShow, .ninth-block .linkShow, .tenth-block .linkShow {
+      display: none; }
+  .container-slider {
+    width: 100% !important; }
+    .container-slider .slider-maket img {
+      width: 102% !important; }
+    .container-slider .nav-slide {
+      height: 11em !important; }
+  .seventh-block .linkShow {
+    bottom: -15em !important; }
+  .eighth-block .linkShow {
+    bottom: -17em !important; }
+  .tenth-block .container-slider {
+    height: 80em; }
+    .tenth-block .container-slider img {
+      height: 70em; } }
+* {
+  font-size: 1vw; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Lt';
+  src: url(../fonts/ProximaNovaCond-LightIt.eot);
+  src: local("Proxima Nova Condensed Light Italic"), local("ProximaNovaCond-LightIt"), url(../fonts/ProximaNovaCond-LightIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-LightIt.woff) format("woff"), url(../fonts/ProximaNovaCond-LightIt.ttf) format("truetype");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Lt';
+  src: url(../fonts/ProximaNova-LightIt.eot);
+  src: local("Proxima Nova Light Italic"), local("ProximaNova-LightIt"), url(../fonts/ProximaNova-LightIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-LightIt.woff) format("woff"), url(../fonts/ProximaNova-LightIt.ttf) format("truetype");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Rg';
+  src: url(../fonts/ProximaNovaCond-Regular.eot);
+  src: local("Proxima Nova Condensed Regular"), local("ProximaNovaCond-Regular"), url(../fonts/ProximaNovaCond-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-Regular.woff) format("woff"), url(../fonts/ProximaNovaCond-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Th';
+  src: url(../fonts/ProximaNova-Extrabld.eot);
+  src: local("Proxima Nova Extrabold"), local("ProximaNova-Extrabld"), url(../fonts/ProximaNova-Extrabld.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-Extrabld.woff) format("woff"), url(../fonts/ProximaNova-Extrabld.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Bl';
+  src: url(../fonts/ProximaNovaCond-Black.eot);
+  src: local("Proxima Nova Condensed Black"), local("ProximaNovaCond-Black"), url(../fonts/ProximaNovaCond-Black.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-Black.woff) format("woff"), url(../fonts/ProximaNovaCond-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Th';
+  src: url(../fonts/ProximaNovaCond-ExtrabldIt.eot);
+  src: local("Proxima Nova Condensed Extrabold Italic"), local("ProximaNovaCond-ExtrabldIt"), url(../fonts/ProximaNovaCond-ExtrabldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-ExtrabldIt.woff) format("woff"), url(../fonts/ProximaNovaCond-ExtrabldIt.ttf) format("truetype");
+  font-weight: 800;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'ProximaNova_Regilar';
+  src: url(../fonts/ProximaNova-Regular.eot);
+  src: local("Proxima Nova Regular"), local("ProximaNova-Regular"), url(../fonts/ProximaNova-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-Regular.woff) format("woff"), url(../fonts/ProximaNova-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Lt';
+  src: url(../fonts/ProximaNova-Semibold.eot);
+  src: local("Proxima Nova Semibold"), local("ProximaNova-Semibold"), url(../fonts/ProximaNova-Semibold.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-Semibold.woff) format("woff"), url(../fonts/ProximaNova-Semibold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Th';
+  src: url(../fonts/ProximaNovaExCn-Thin.eot);
+  src: local("Proxima Nova Extra Condensed Thin"), local("ProximaNovaExCn-Thin"), url(../fonts/ProximaNovaExCn-Thin.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-Thin.woff) format("woff"), url(../fonts/ProximaNovaExCn-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Lt';
+  src: url(../fonts/ProximaNovaCond-Semibold.eot);
+  src: local("Proxima Nova Condensed Semibold"), local("ProximaNovaCond-Semibold"), url(../fonts/ProximaNovaCond-Semibold.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-Semibold.woff) format("woff"), url(../fonts/ProximaNovaCond-Semibold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Lt';
+  src: url(../fonts/ProximaNovaExCn-SemiboldIt.eot);
+  src: local("Proxima Nova Extra Condensed Semibold Italic"), local("ProximaNovaExCn-SemiboldIt"), url(../fonts/ProximaNovaExCn-SemiboldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-SemiboldIt.woff) format("woff"), url(../fonts/ProximaNovaExCn-SemiboldIt.ttf) format("truetype");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Lt';
+  src: url(../fonts/ProximaNovaExCn-Semibold.eot);
+  src: local("Proxima Nova Extra Condensed Semibold"), local("ProximaNovaExCn-Semibold"), url(../fonts/ProximaNovaExCn-Semibold.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-Semibold.woff) format("woff"), url(../fonts/ProximaNovaExCn-Semibold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Th';
+  src: url(../fonts/ProximaNova-ThinIt.eot);
+  src: local("Proxima Nova Thin Italic"), local("ProximaNova-ThinIt"), url(../fonts/ProximaNova-ThinIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-ThinIt.woff) format("woff"), url(../fonts/ProximaNova-ThinIt.ttf) format("truetype");
+  font-weight: 100;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Th';
+  src: url(../fonts/ProximaNovaCond-Thin.eot);
+  src: local("Proxima Nova Condensed Thin"), local("ProximaNovaCond-Thin"), url(../fonts/ProximaNovaCond-Thin.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-Thin.woff) format("woff"), url(../fonts/ProximaNovaCond-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Rg';
+  src: url(../fonts/ProximaNovaCond-RegularIt.eot);
+  src: local("Proxima Nova Condensed Regular Italic"), local("ProximaNovaCond-RegularIt"), url(../fonts/ProximaNovaCond-RegularIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-RegularIt.woff) format("woff"), url(../fonts/ProximaNovaCond-RegularIt.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Th';
+  src: url(../fonts/ProximaNovaExCn-ThinIt.eot);
+  src: local("Proxima Nova Extra Condensed Thin Italic"), local("ProximaNovaExCn-ThinIt"), url(../fonts/ProximaNovaExCn-ThinIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-ThinIt.woff) format("woff"), url(../fonts/ProximaNovaExCn-ThinIt.ttf) format("truetype");
+  font-weight: 100;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Lt';
+  src: url(../fonts/ProximaNova-SemiboldIt.eot);
+  src: local("Proxima Nova Semibold Italic"), local("ProximaNova-SemiboldIt"), url(../fonts/ProximaNova-SemiboldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-SemiboldIt.woff) format("woff"), url(../fonts/ProximaNova-SemiboldIt.ttf) format("truetype");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url(../fonts/ProximaNova-RegularIt.eot);
+  src: local("Proxima Nova Regular Italic"), local("ProximaNova-RegularIt"), url(../fonts/ProximaNova-RegularIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-RegularIt.woff) format("woff"), url(../fonts/ProximaNova-RegularIt.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Th';
+  src: url(../fonts/ProximaNovaCond-Extrabld.eot);
+  src: local("Proxima Nova Condensed Extrabold"), local("ProximaNovaCond-Extrabld"), url(../fonts/ProximaNovaCond-Extrabld.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-Extrabld.woff) format("woff"), url(../fonts/ProximaNovaCond-Extrabld.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Th';
+  src: url(../fonts/ProximaNovaExCn-ExtrabldIt.eot);
+  src: local("Proxima Nova Extra Condensed Extrabold Italic"), local("ProximaNovaExCn-ExtrabldIt"), url(../fonts/ProximaNovaExCn-ExtrabldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-ExtrabldIt.woff) format("woff"), url(../fonts/ProximaNovaExCn-ExtrabldIt.ttf) format("truetype");
+  font-weight: 800;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Bl';
+  src: url(../fonts/ProximaNovaExCn-BlackIt.eot);
+  src: local("Proxima Nova Extra Condensed Black Italic"), local("ProximaNovaExCn-BlackIt"), url(../fonts/ProximaNovaExCn-BlackIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-BlackIt.woff) format("woff"), url(../fonts/ProximaNovaExCn-BlackIt.ttf) format("truetype");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Lt';
+  src: url(../fonts/ProximaNovaExCn-LightIt.eot);
+  src: local("Proxima Nova Extra Condensed Light Italic"), local("ProximaNovaExCn-LightIt"), url(../fonts/ProximaNovaExCn-LightIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-LightIt.woff) format("woff"), url(../fonts/ProximaNovaExCn-LightIt.ttf) format("truetype");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Th';
+  src: url(../fonts/ProximaNovaCond-ThinIt.eot);
+  src: local("Proxima Nova Condensed Thin Italic"), local("ProximaNovaCond-ThinIt"), url(../fonts/ProximaNovaCond-ThinIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-ThinIt.woff) format("woff"), url(../fonts/ProximaNovaCond-ThinIt.ttf) format("truetype");
+  font-weight: 100;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Lt';
+  src: url(../fonts/ProximaNovaExCn-Light.eot);
+  src: local("Proxima Nova Extra Condensed Light"), local("ProximaNovaExCn-Light"), url(../fonts/ProximaNovaExCn-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-Light.woff) format("woff"), url(../fonts/ProximaNovaExCn-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Rg';
+  src: url(../fonts/ProximaNovaCond-BoldIt.eot);
+  src: local("Proxima Nova Condensed Bold Italic"), local("ProximaNovaCond-BoldIt"), url(../fonts/ProximaNovaCond-BoldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-BoldIt.woff) format("woff"), url(../fonts/ProximaNovaCond-BoldIt.ttf) format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Th';
+  src: url(../fonts/ProximaNovaExCn-Extrabld.eot);
+  src: local("Proxima Nova Extra Condensed Extrabold"), local("ProximaNovaExCn-Extrabld"), url(../fonts/ProximaNovaExCn-Extrabld.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-Extrabld.woff) format("woff"), url(../fonts/ProximaNovaExCn-Extrabld.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Rg';
+  src: url(../fonts/ProximaNovaExCn-BoldIt.eot);
+  src: local("Proxima Nova Extra Condensed Bold Italic"), local("ProximaNovaExCn-BoldIt"), url(../fonts/ProximaNovaExCn-BoldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-BoldIt.woff) format("woff"), url(../fonts/ProximaNovaExCn-BoldIt.ttf) format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'ProximaNova-Black';
+  src: url(../fonts/ProximaNova-Black.eot);
+  src: local("Proxima Nova Black"), local("ProximaNova-Black"), url(../fonts/ProximaNova-Black.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-Black.woff) format("woff"), url(../fonts/ProximaNova-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url(../fonts/ProximaNova-Bold.eot);
+  src: local("Proxima Nova Bold"), local("ProximaNova-Bold"), url(../fonts/ProximaNova-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-Bold.woff) format("woff"), url(../fonts/ProximaNova-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Rg';
+  src: url(../fonts/ProximaNovaExCn-Bold.eot);
+  src: local("Proxima Nova Extra Condensed Bold"), local("ProximaNovaExCn-Bold"), url(../fonts/ProximaNovaExCn-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-Bold.woff) format("woff"), url(../fonts/ProximaNovaExCn-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Th';
+  src: url(../fonts/ProximaNovaT-Thin.eot);
+  src: local("Proxima Nova Thin"), local("ProximaNovaT-Thin"), url(../fonts/ProximaNovaT-Thin.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaT-Thin.woff) format("woff"), url(../fonts/ProximaNovaT-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url(../fonts/ProximaNova-BoldIt.eot);
+  src: local("Proxima Nova Bold Italic"), local("ProximaNova-BoldIt"), url(../fonts/ProximaNova-BoldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-BoldIt.woff) format("woff"), url(../fonts/ProximaNova-BoldIt.ttf) format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Rg';
+  src: url(../fonts/ProximaNovaCond-Bold.eot);
+  src: local("Proxima Nova Condensed Bold"), local("ProximaNovaCond-Bold"), url(../fonts/ProximaNovaCond-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-Bold.woff) format("woff"), url(../fonts/ProximaNovaCond-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Bl';
+  src: url(../fonts/ProximaNovaExCn-Black.eot);
+  src: local("Proxima Nova Extra Condensed Black"), local("ProximaNovaExCn-Black"), url(../fonts/ProximaNovaExCn-Black.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-Black.woff) format("woff"), url(../fonts/ProximaNovaExCn-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Rg';
+  src: url(../fonts/ProximaNovaExCn-RegularIt.eot);
+  src: local("Proxima Nova Extra Condensed Regular Italic"), local("ProximaNovaExCn-RegularIt"), url(../fonts/ProximaNovaExCn-RegularIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-RegularIt.woff) format("woff"), url(../fonts/ProximaNovaExCn-RegularIt.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Lt';
+  src: url(../fonts/ProximaNovaCond-Light.eot);
+  src: local("Proxima Nova Condensed Light"), local("ProximaNovaCond-Light"), url(../fonts/ProximaNovaCond-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-Light.woff) format("woff"), url(../fonts/ProximaNovaCond-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Th';
+  src: url(../fonts/ProximaNova-ExtrabldIt.eot);
+  src: local("Proxima Nova Extrabold Italic"), local("ProximaNova-ExtrabldIt"), url(../fonts/ProximaNova-ExtrabldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-ExtrabldIt.woff) format("woff"), url(../fonts/ProximaNova-ExtrabldIt.ttf) format("truetype");
+  font-weight: 800;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Bl';
+  src: url(../fonts/ProximaNovaCond-BlackIt.eot);
+  src: local("Proxima Nova Condensed Black Italic"), local("ProximaNovaCond-BlackIt"), url(../fonts/ProximaNovaCond-BlackIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-BlackIt.woff) format("woff"), url(../fonts/ProximaNovaCond-BlackIt.ttf) format("truetype");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Rg';
+  src: url(../fonts/ProximaNovaExCn-Regular.eot);
+  src: local("Proxima Nova Extra Condensed Regular"), local("ProximaNovaExCn-Regular"), url(../fonts/ProximaNovaExCn-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaExCn-Regular.woff) format("woff"), url(../fonts/ProximaNovaExCn-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Lt';
+  src: url(../fonts/ProximaNova-Light.eot);
+  src: local("Proxima Nova Light"), local("ProximaNova-Light"), url(../fonts/ProximaNova-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-Light.woff) format("woff"), url(../fonts/ProximaNova-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Proxima Nova Cn Lt';
+  src: url(../fonts/ProximaNovaCond-SemiboldIt.eot);
+  src: local("Proxima Nova Condensed Semibold Italic"), local("ProximaNovaCond-SemiboldIt"), url(../fonts/ProximaNovaCond-SemiboldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaCond-SemiboldIt.woff) format("woff"), url(../fonts/ProximaNovaCond-SemiboldIt.ttf) format("truetype");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Proxima Nova Bl';
+  src: url(../fonts/ProximaNova-BlackIt.eot);
+  src: local("Proxima Nova Black Italic"), local("ProximaNova-BlackIt"), url(../fonts/ProximaNova-BlackIt.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNova-BlackIt.woff) format("woff"), url(../fonts/ProximaNova-BlackIt.ttf) format("truetype");
+  font-weight: 900;
+  font-style: italic; }
+.container-form {
+  padding: 0;
+  margin: 0 3.48em;
+  width: 45%;
+  height: 100%;
+  position: fixed;
+  display: none;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .container-form a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4em;
+    font-family: ProximaNova_Regilar;
+    font-weight: bold; }
+  .container-form .success-container {
+    padding: 6em 11em;
+    display: none; }
+    .container-form .success-container .success-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    .container-form .success-container * {
+      font-family: ProximaNova_Regilar;
+      font-weight: bold; }
+    .container-form .success-container img {
+      margin-bottom: 5em;
+      width: 30%; }
+
+.display-block {
+  display: block; }
+
+.close {
+  background: url(../image/close.svg) no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+  position: absolute;
+  top: 2em;
+  left: 103%; }
+
+form span {
+  font-size: 1.3em;
+  font-family: ProximaNova_Regilar;
+  width: 70%;
+  display: block; }
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1em; }
+  .flex-row span {
+    margin-right: 1em;
+    font-size: 1.5em;
+    font-family: ProximaNova_Regilar; }
+  .flex-row span:nth-child(1) {
+    margin-right: .5em;
+    color: #56c3e7; }
+  .flex-row span:nth-child(2) {
+    font-weight: bold; }
+
+.content-form {
+  width: 100%;
+  background: #fff;
+  padding: 4em 5em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .content-form h1 {
+    font-size: 3.31em;
+    margin: 0;
+    font-family: ProximaNova-Black; }
+
+.title-block-radio {
+  margin-right: 1em;
+  cursor: default; }
+
+.field-form {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 2.5%;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  /* do not group these rules */ }
+  .field-form * {
+    font-family: ProximaNova_Regilar; }
+  .field-form input, .field-form textarea {
+    background: none;
+    border: none;
+    border-bottom: .1em solid #eeeeee;
+    outline: none;
+    resize: none;
+    padding: 0 .5em;
+    margin-bottom: 1em;
+    z-index: 1;
+    width: 100%;
+    display: inline-block;
+    font-size: 1.2em;
+    border-bottom: 0.04em solid #b5b5b5;
+    position: relative;
+    top: 0.2em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .field-form input:hover, .field-form textarea:hover {
+      border-bottom: 0.04em solid #56c3e7; }
+    .field-form input:focus, .field-form textarea:focus {
+      border-bottom: 0.04em solid #000; }
+  .field-form input {
+    line-height: 2em; }
+  .field-form label:not(:last-child) {
+    margin-right: .7em; }
+  .field-form button {
+    padding: 0 1em;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent;
+    border: 0;
+    border-radius: 1.5em;
+    margin-top: .9em;
+    outline: none;
+    cursor: pointer;
+    width: 9em;
+    height: 3em;
+    color: white;
+    background: #56c3e7;
+    position: relative;
+    top: -1em;
+    left: 60%;
+    right: 0;
+    font-size: 1.1em; }
+    .field-form button:hover {
+      text-decoration: none;
+      -webkit-box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.4);
+      margin-top: .75em;
+      margin-bottom: .18em; }
+  .field-form .block-radio {
+    margin-bottom: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .field-form input[type=radio] {
+    display: none; }
+  .field-form span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .field-form label > span:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: .5em; }
+  .field-form label > span {
+    cursor: pointer; }
+  .field-form label > span:before {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin-right: .5em;
+    border: .1em solid #f0f0eb; }
+  .field-form input[type=radio]:not(:checked) + span:after {
+    display: none;
+    border: .1em solid #f0f0eb; }
+  .field-form input[type=radio]:checked + span:after {
+    display: block;
+    background: #56c3e7; }
+  .field-form .field--wrapper {
+    position: relative;
+    margin-top: 1em; }
+    .field-form .field--wrapper label {
+      position: absolute;
+      top: .3em;
+      left: .5em;
+      font-size: 1em;
+      color: #aaa;
+      -webkit-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+      opacity: 0;
+      font-weight: bold;
+      z-index: -1; }
+    .field-form .field--wrapper label.on {
+      color: #56c3e7;
+      z-index: 1; }
+    .field-form .field--wrapper label.show {
+      top: -15px;
+      opacity: 1;
+      z-index: 1; }
+  .field-form input.error, .field-form textarea.error {
+    border-color: #e72026; }
+  .field-form input.error::-webkit-input-placeholder, .field-form textarea.error::-webkit-input-placeholder {
+    color: #e72026; }
+  .field-form input.error:-moz-placeholder, .field-form textarea.error:-moz-placeholder {
+    /* FF 4-18 */
+    color: #e72026; }
+  .field-form input.error::-moz-placeholder, .field-form textarea.error::-moz-placeholder {
+    /* FF 19+ */
+    color: #e72026; }
+  .field-form input.error:-ms-input-placeholder, .field-form textarea.error:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #e72026; }
+
+@media (max-width: 900px) {
+  .opacity {
+    display: none !important; }
+  .mobile-form {
+    width: 100%;
+    margin: 0;
+    position: relative; }
+    .mobile-form .success-container {
+      display: none; }
+      .mobile-form .success-container .success-content {
+        -webkit-box-orient: horizontal !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+        flex-direction: row !important; }
+        .mobile-form .success-container .success-content img {
+          width: 20%;
+          margin-right: 5em; }
+        .mobile-form .success-container .success-content span {
+          font-size: 4em; }
+    .mobile-form h1 {
+      font-size: 10em;
+      margin: .5em 0; }
+    .mobile-form span {
+      font-size: 5em;
+      width: inherit;
+      display: block;
+      margin-bottom: 1em; }
+    .mobile-form .container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .mobile-form .container span {
+        margin: 0; }
+      .mobile-form .container .flex-row:nth-child(2) {
+        margin-bottom: 5em; }
+      .mobile-form .container a {
+        text-decoration: none;
+        color: black;
+        font-size: 5em;
+        font-family: ProximaNova_Regilar;
+        font-weight: bold; }
+    .mobile-form .close {
+      left: 94%;
+      width: 5em;
+      height: 5em;
+      cursor: pointer;
+      background: url(../image/close.png) center/cover no-repeat; }
+    .mobile-form input, .mobile-form textarea {
+      font-size: 5em; }
+    .mobile-form .field-form {
+      padding-left: 0;
+      padding-right: 0;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .mobile-form .field-form button {
+        font-size: 4em;
+        left: calc(50% - 4.25em); }
+    .mobile-form .field--wrapper label {
+      font-size: 5em; } }
+.content-mobile-menu {
+  display: none; }
+
+@media (max-width: 900px) {
+  .content-mobile-menu {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 4em; }
+    .content-mobile-menu ul {
+      padding: 0;
+      margin-bottom: 5em; }
+      .content-mobile-menu ul li {
+        list-style: none;
+        text-align: center;
+        margin-bottom: 2em; }
+        .content-mobile-menu ul li a {
+          text-decoration: none;
+          color: black;
+          font-size: 5em;
+          font-family: ProximaNova-Black; }
+    .content-mobile-menu .container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .content-mobile-menu .container span {
+        font-size: 5em;
+        font-family: ProximaNova_Regilar; }
+        .content-mobile-menu .container span:nth-child(2) {
+          color: black; }
+      .content-mobile-menu .container a {
+        text-decoration: none;
+        color: black;
+        font-size: 5em;
+        font-family: ProximaNova_Regilar;
+        font-weight: bold; }
+    .content-mobile-menu .social-menu {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-top: 5em; }
+      .content-mobile-menu .social-menu li {
+        margin: 0;
+        padding: 0; }
+        .content-mobile-menu .social-menu li.facebook {
+          width: 18em;
+          height: 18em;
+          background: url(../image/fb.png) 50% 100% no-repeat; }
+        .content-mobile-menu .social-menu li.vkontakte {
+          width: 18em;
+          height: 18em;
+          background: url(../image/vk.png) 50% 100% no-repeat; }
+        .content-mobile-menu .social-menu li.instagramm {
+          width: 18em;
+          height: 18em;
+          background: url(../image/insta.png) 50% 100% no-repeat; }
+        .content-mobile-menu .social-menu li.you-tube {
+          width: 18em;
+          height: 18em;
+          background: url(../image/youtube.png) 50% 100% no-repeat; } }
+
+* {
+  font-size: 1vw; }
+
+.opacity {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: none;
+  z-index: 2;
+  opacity: .5;
+  background-color: black; }
+
+.container-slider {
+  width: 50%;
+  margin-right: 3em; }
+  .container-slider .slider-maket img {
+    width: 65%; }
+  .container-slider .nav-slide {
+    background: #2a2d32;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    height: 3em;
+    z-index: 2;
+    align-items: flex-end; }
+    .container-slider .nav-slide .swiper-button-next, .container-slider .nav-slide .swiper-button-prev {
+      width: 11em;
+      position: relative;
+      top: initial;
+      background: url(../image/navarrow.png) no-repeat 40%;
+      transition: .5s; }
+      .container-slider .nav-slide .swiper-button-next:hover, .container-slider .nav-slide .swiper-button-prev:hover {
+        background-position-x: 20%; }
+    .container-slider .nav-slide .swiper-button-next {
+      transform: rotate(180deg); }
