@@ -1,4 +1,4 @@
-mixin content_block(count, blockContentTitle, blockContentText, pathImg, classNameContainer, linkShow, arrowVariant)
+mixin content_block(count, blockContentTitle, blockContentText, pathImg, classNameContainer)
     div.block-content(class=classNameContainer)
         div.title
             div.count
@@ -7,7 +7,3 @@ mixin content_block(count, blockContentTitle, blockContentText, pathImg, classNa
         div.content
             span=blockContentText
             img(src=pathImg)
-            if linkShow !== ''
-                div.linkShow
-                    a(href=linkShow) Посмотреть работы
-                    div(class=arrowVariant)

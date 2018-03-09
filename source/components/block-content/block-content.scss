@@ -47,15 +47,62 @@
       padding-left: 3.5em;
     }
     img {
-      width: 55%;
+      width: 35%;
     }
   }
 }
 
 .first-block, .second-block, .fhreed-block, .fourt-block, .sixth-block, .eighth-block, .seventh-block,
  .ninth-block, .tenth-block, .eleventh.block {
+  position: relative;
   img {
     width: 60%;
+  }
+  .linkShow {
+    position: absolute;
+    bottom: 3em;
+    left: 9.8em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      white-space: nowrap;
+      margin-right: 1em;
+      font-family: ProximaNova-Black;
+      font-weight: bold;
+      font-size: 1.5em;
+      color: inherit;
+    }
+    img {
+
+      width: 70%;
+    }
+    .arrowWhite {
+      width: 3em;
+      height: 1.5em;
+      background: url("../../pages/index/img/navarrow.png") no-repeat 100%;
+      transform: rotate(180deg);
+      transition: .5s;
+    }
+    &:hover .arrowWhite {
+      background-position-x: 0;
+    }
+    &:hover .blackArrow {
+      background-position-x: 100%;
+    }
+    .blackArrow {
+      width: 3em;
+      height: 1.5em;
+      background: url("../../pages/index/img/blackArrow.png") no-repeat 0;
+      transition: .5s;
+    }
+  }
+}
+
+.fhreed-block, .sixth-block, .eighth-block, .tenth-block {
+  .linkShow {
+    left: 52.5%;
   }
 }
 
@@ -72,10 +119,8 @@
 .fhreed-block {
   display: flex;
   padding: 6.25em 6.25em 0 1.5em;
-  .content {
-    .linkShow {
-      bottom: -10em;
-    }
+  .linkShow {
+    left: 56.3%;
   }
 }
 
@@ -84,9 +129,6 @@
   padding: 6.25em 6.25em 0 0;
   .first {
     align-items: initial;
-    .linkShow {
-      bottom: -10em;
-    }
   }
   h1 {
     width: 100%;
@@ -96,21 +138,13 @@
 .fourt-block {
   display: flex;
   padding: 6.25em 1.5em 0 6.25em;
+  overflow: hidden;
+  z-index: 1;
   .first {
-    align-items: initial;
+    align-items: initial
   }
   h1 {
     width: 90%;
-  }
-  .first {
-    .content {
-      span {
-        padding-left: 2em;
-      }
-      .linkShow {
-        bottom: -12em;
-      }
-    }
   }
 }
 
@@ -126,9 +160,6 @@
       span {
         padding-left: 1em;
       }
-      .linkShow {
-        bottom: -8em;
-      }
     }
   }
 }
@@ -141,6 +172,10 @@
 
 .second-block, .fourt-block, .ninth-block {
   background: #eff0eb;
+}
+
+.second-block {
+  padding-bottom: 10em;
 }
 
 .first {
@@ -170,9 +205,9 @@
   }
 }
 .eighth-block {
-  padding-bottom: 3.5em;
+  padding-bottom: 13em;
   .linkShow {
-    bottom: -9em;
+    left: 57.4%;
   }
 }
 
@@ -185,22 +220,15 @@
 .tenth-block {
   display: flex;
   padding: 6.25em 6.25em 0 0;
-  .content {
-    .linkShow {
-      bottom: -6em;
-    }
-  }
 }
 
 .eleventh.block {
   display: flex;
   padding: 6.25em 0 0 6.25em;
-  img {
-    margin-top: 2.5em;
-  }
   .content {
     img {
       margin: 0;
+      width: 35%;
     }
   }
 }
@@ -208,47 +236,6 @@
 .slider-form {
   img {
     width: 150%;
-  }
-}
-
-.linkShow {
-  position: absolute;
-  bottom: -7em;
-  left: 3.7em;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  a {
-    text-decoration: none;
-    white-space: nowrap;
-    margin-right: 1em;
-    font-family: ProximaNova-Black;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: inherit;
-  }
-  img {
-
-    width: 70%;
-  }
-  .arrowWhite {
-    width: 3em;
-    height: 1.5em;
-    background: url("../../pages/index/img/navarrow.png") no-repeat 100%;
-    transform: rotate(180deg);
-    transition: .5s;
-  }
-  &:hover .arrowWhite {
-    background-position-x: 0;
-  }
-  &:hover .blackArrow {
-    background-position-x: 100%;
-  }
-  .blackArrow {
-    width: 3em;
-    height: 1.5em;
-    background: url("../../pages/index/img/blackArrow.png") no-repeat 0;
-    transition: .5s;
   }
 }
 

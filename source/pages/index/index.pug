@@ -15,20 +15,38 @@ block main
             div.first-block
                 include ../../components/block-content/block-content
                 +content_block('1', 'Заполнение клиентом брифа', 'Клиент заполняет бриф, отвечая на основные вопросы.' +
-                ' Бриф помогает сформировать представление о будущем сайте, его стиле, цветовом решении и функционале.', require('./img/one_image.png'), 'first', '')
+                ' Бриф помогает сформировать представление о будущем сайте, его стиле, цветовом решении и функционале.', require('./img/one_image.png'), 'first')
                 +content_block('2', 'Проведение конкурентного анализа', 'Анализируя сайты конкурентов, мы предлагаем' +
-                ' вам лучший опыт в вашей сфере и учитываем ошибки и недочеты в дизайне уже созданных ресурсов.', require('./img/two_image.png'), 'second', '')
+                ' вам лучший опыт в вашей сфере и учитываем ошибки и недочеты в дизайне уже созданных ресурсов.', require('./img/two_image.png'), 'second')
             div.second-block
                 +content_block('3', 'Разработка фирменного стиля и логотипа', 'Клиент получает несколько вариантов логотипа в различной цветовой гамме.'
-                +' После согласования цветы и формы, логотип дорабатывается и может использоваться как для сайта, так и полиграфии.', require('./img/three_image.png'), 'first', '#', 'blackArrow')
-                img(src=require('./img/img_design.png'))
+                +' После согласования цветы и формы, логотип дорабатывается и может использоваться как для сайта, так и полиграфии.', require('./img/three_image.png'), 'first')
+                div.create-company-style
+                    img(src=require('./img/create_company_style_part_one.png'))
+                    img(src=require('./img/create_company_style_part_two.png'))
+                    img(src=require('./img/create_company_style_part_three.png'))
+                    img(src=require('./img/create_company_style_part_four.png'))
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.blackArrow
             div.fhreed-block
-                img(src=require('./img/proto_image.png'))
+                div.create-proto
+                    img(src=require('./img/proto_image_part_one.png'))
+                    img(src=require('./img/proto_image_part_two.png'))
                 +content_block('4', 'Создание прототипов страниц', 'Мы создаём детальные прототипы для каждой страницы сайта в нескольких вариантах.' +
-                ' Благодаря этому клиент  еще до начала этапа разработки имеет четкое представление как будет выглядеть сайт.', require('./img/four_image.png'), 'first', '#', 'blackArrow')
+                ' Благодаря этому клиент  еще до начала этапа разработки имеет четкое представление как будет выглядеть сайт.', require('./img/four_image.png'), 'first')
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.blackArrow
             div.fourt-block
-                +content_block('5', 'Создание концепции', 'Согласовываем стилистику, основные функциональные и визуальные элементы сайта', require('./img/fifth_image.png'), 'first', '#', 'blackArrow')
-                img(src=require('./img/create_conception.png'))
+                +content_block('5', 'Создание концепции', 'Согласовываем стилистику, основные функциональные и визуальные элементы сайта', require('./img/fifth_image.png'), 'first')
+                div.create-conception
+                    img.part-one(src=require('./img/create_conception_part_one.png'))
+                    img.part-two(src=require('./img/create_conception_part_two.png'))
+                    img.part-three(src=require('./img/create_conception_part_three.png'))
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.blackArrow
             div.sixth-block
                 div.container-slider
                     div.swiper-container.slider-maket
@@ -40,20 +58,38 @@ block main
                              div.swiper-button-prev
                              div.swiper-button-next
                 +content_block('6', 'Разработка макета', 'Макет главной страницы отрисовывается дизайнером с ' +
-                'учетом корпоративных цветов компании и ее логотипа. Визуально макет является полным отображением внешнего вида главной страницы сайта.\n', require('./img/sixth_image.png'), 'first', '#', 'blackArrow')
+                'учетом корпоративных цветов компании и ее логотипа. Визуально макет является полным отображением внешнего вида главной страницы сайта.\n', require('./img/sixth_image.png'), 'first')
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.blackArrow
             div.seventh-block
                 +content_block('7', 'Разработка мобильной версии главной страницы', 'Мы создаем сайты, адаптированные под все виды мобильных устройств. ' +
-                'Именно поэтому уже на этапе дизайна нами создается отдельная версия страниц в формате mobile.', require('./img/seventh_image.png'), 'first', '#', 'arrowWhite')
-                img(src=require('./img/mobile_wersion_image.png'))
+                'Именно поэтому уже на этапе дизайна нами создается отдельная версия страниц в формате mobile.', require('./img/seventh_image.png'), 'first')
+                div.image-iphone
+                    img(src=require('./img/iPhone_X_Mockup.png'))
+                    img(src=require('./img/iphone_part_two.png'))
+                    img(src=require('./img/iphone_part_three.png'))
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.arrowWhite
             div.eighth-block
-                img(src=require('./img/create_maket_page.png'))
+                div.create_maket_page
+                    img(src=require('./img/create_maket_page_part_one.png'))
+                    img(src=require('./img/create_maket_page_part_two.png'))
+                    img(src=require('./img/create_maket_page_part_three.png'))
                 +content_block('8', 'Разработка макетов типовых страниц  мобильная версия', 'Для каждого вида внутренних страниц мы создаем макет ' +
-                'и мобильную версию дизайна.', require('./img/eighth_image.png'), 'first', '#', 'blackArrow')
+                'и мобильную версию дизайна.', require('./img/eighth_image.png'), 'first')
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.blackArrow
             div.ninth-block
                 +content_block('9', 'Разработка сложноструктурированных страниц', 'Отдельного внимания заслуживают страницы со сложной структурой. Это дизайн онлайн калькуляторов' +
                 ',' + 'каталогов и их вложенности ' + ',' + 'корзины для заказа товаров ' + ',' +
-                'карточки товара. Для них мы готовим не только макеты ' + ',' + 'но и дополнительные заменяющиеся материалы.', require('./img/ninth_image.png'), 'first', '#', 'blackArrow')
+                'карточки товара. Для них мы готовим не только макеты ' + ',' + 'но и дополнительные заменяющиеся материалы.', require('./img/ninth_image.png'), 'first')
                 img(src=require('./img/dewelopment_hard_structure_site.png'))
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.blackArrow
             div.tenth-block
                 div.container-slider
                     div.swiper-container.slider-form
@@ -65,8 +101,11 @@ block main
                             div.swiper-button-prev.button-prev-form
                             div.swiper-button-next.button-next-form
                 +content_block('10', 'Разработка дизайна pop-up форм', 'Для сайта дизайнер отрисовывает каждую форму обратной связи в ее ' +
-                'вертикальном и горизонтальном размещении и мобильной версии.', require('./img/tenth_image.png'), 'first', '#', 'blackArrow')
+                'вертикальном и горизонтальном размещении и мобильной версии.', require('./img/tenth_image.png'), 'first')
+                div.linkShow
+                    a(href='#') Посмотреть работы
+                    div.blackArrow
             div.eleventh.block
                 +content_block('11', 'Подбор и обработка изображений для сайта', 'В рамках работы над дизайном сайта мы подбираем необходимый для размещения фотоконтент, если он не предоставлен клиентом. ' +
-                'В случае заполнения каталогов для товаров без фото мы обязательно отрисовываем «заглушку».', require('./img/eleventh_image.png'), 'first', '')
+                'В случае заполнения каталогов для товаров без фото мы обязательно отрисовываем «заглушку».', require('./img/eleventh_image.png'), 'first')
                 img(src=require('./img/image-treatment.png'))
