@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10439,2683 +10439,9 @@ return jQuery;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return win; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return doc; });
-/**
- * SSR Window 1.0.0
- * Better handling for window object in SSR environment
- * https://github.com/nolimits4web/ssr-window
- *
- * Copyright 2018, Vladimir Kharlampidi
- *
- * Licensed under MIT
- *
- * Released on: February 10, 2018
- */
-var d;
-if (typeof document === 'undefined') {
-  d = {
-    body: {},
-    addEventListener: function addEventListener() {},
-    removeEventListener: function removeEventListener() {},
-    activeElement: {
-      blur: function blur() {},
-      nodeName: '',
-    },
-    querySelector: function querySelector() {
-      return null;
-    },
-    querySelectorAll: function querySelectorAll() {
-      return [];
-    },
-    getElementById: function getElementById() {
-      return null;
-    },
-    createEvent: function createEvent() {
-      return {
-        initEvent: function initEvent() {},
-      };
-    },
-    createElement: function createElement() {
-      return {
-        children: [],
-        childNodes: [],
-        style: {},
-        setAttribute: function setAttribute() {},
-        getElementsByTagName: function getElementsByTagName() {
-          return [];
-        },
-      };
-    },
-    location: { hash: '' },
-  };
-} else {
-  // eslint-disable-next-line
-  d = document;
-}
-
-var doc = d;
-
-var w;
-if (typeof window === 'undefined') {
-  w = {
-    document: doc,
-    navigator: {
-      userAgent: '',
-    },
-    location: {},
-    history: {},
-    CustomEvent: function CustomEvent() {
-      return this;
-    },
-    addEventListener: function addEventListener() {},
-    removeEventListener: function removeEventListener() {},
-    getComputedStyle: function getComputedStyle() {
-      return {
-        getPropertyValue: function getPropertyValue() {
-          return '';
-        },
-      };
-    },
-    Image: function Image() {},
-    Date: function Date() {},
-    screen: {},
-    setTimeout: function setTimeout() {},
-    clearTimeout: function clearTimeout() {},
-  };
-} else {
-  // eslint-disable-next-line
-  w = window;
-}
-
-var win = w;
-
-
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(3);
-
-__webpack_require__(4);
-
-__webpack_require__(6);
-
-__webpack_require__(9);
-
-__webpack_require__(11);
-
-__webpack_require__(12);
-
-__webpack_require__(14);
-
-__webpack_require__(16);
-
-__webpack_require__(17);
-
-__webpack_require__(21);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
-
-__webpack_require__(5);
-
-$(document).ready(function () {
-
-    var menuContainer = $('.menu');
-    var bodySelector = $('body');
-    var showClass = "show";
-
-    bodySelector.on('click', '.burger, .close-mobile-menu', mobileMenuOpen);
-
-    bodySelector.on('click', '.pensil', openForm);
-
-    function openForm() {
-        $('.container-form, .content-form, .opacity').show();
-        $('.close-mobile-menu').removeClass('close-mobile-menu').addClass('burger');
-        $('.content-mobile-menu').hide();
-    }
-    bodySelector.on('click', '.pensil', openMenu);
-
-    function openMenu() {
-        $('.container-form, .opacity').show();
-        $('li:last').removeClass('close-mobile-menu').addClass('burger');
-    }
-
-    function mobileMenuOpen() {
-        if ($('body').find('.close-mobile-menu').length) {
-
-            $(this).toggleClass('close-mobile-menu').addClass('burger');
-            $('.content-mobile-menu').hide();
-
-            $('li:last').toggleClass('close-mobile-menu').addClass('burger');
-
-            // messageBlock.css({display: 'none'});
-            // mobileMenuBNlock.css({display: 'none'});
-            // $('.send-form').find('input[type=tel], input[type=text], textarea').val('');
-            // $('.send-form').find('label').removeClass(showClass);
-            // $('.send-form').find('input').removeClass('error');
-        } else {
-
-            $(this).toggleClass('burger').addClass('close-mobile-menu');
-            $('.container-form').hide();
-            $('.content-mobile-menu').show().css({ display: 'flex' });
-
-            $('li:last').toggleClass('burger').addClass('close-mobile-menu');
-            $('.container-form').hide();
-
-            // $(this).css('background', 'url(../img/mobile/close.svg) no-repeat').addClass('close-burger');
-            // messageIcon.css({display: 'block'});
-            // mobileMenuBNlock.css({display: 'flex', display: '-webkit-flex', display: '-ms-flexbox', display: '-moz-box', display: '-webkit-box'});
-            // messageBlock.css('display', 'none');
-        }
-    }
-
-    $(window).resize(function () {
-        if (document.documentElement.clientWidth <= 900) {}
-    });
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
-
-__webpack_require__(7);
-
-var _typed = __webpack_require__(8);
-
-var _typed2 = _interopRequireDefault(_typed);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-$(document).ready(function () {
-    if (document.documentElement.clientWidth <= 900) {
-        $('.header-text > span').text('Создание современных и функциональных сайтов');
-    }
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*!
- * 
- *   typed.js - A JavaScript Typing Animation Library
- *   Author: Matt Boldt <me@mattboldt.com>
- *   Version: v2.0.6
- *   Url: https://github.com/mattboldt/typed.js
- *   License(s): MIT
- * 
- */
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["Typed"] = factory();
-	else
-		root["Typed"] = factory();
-})(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-/******/
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	var _initializerJs = __webpack_require__(1);
-	
-	var _htmlParserJs = __webpack_require__(3);
-	
-	/**
-	 * Welcome to Typed.js!
-	 * @param {string} elementId HTML element ID _OR_ HTML element
-	 * @param {object} options options object
-	 * @returns {object} a new Typed object
-	 */
-	
-	var Typed = (function () {
-	  function Typed(elementId, options) {
-	    _classCallCheck(this, Typed);
-	
-	    // Initialize it up
-	    _initializerJs.initializer.load(this, options, elementId);
-	    // All systems go!
-	    this.begin();
-	  }
-	
-	  /**
-	   * Toggle start() and stop() of the Typed instance
-	   * @public
-	   */
-	
-	  _createClass(Typed, [{
-	    key: 'toggle',
-	    value: function toggle() {
-	      this.pause.status ? this.start() : this.stop();
-	    }
-	
-	    /**
-	     * Stop typing / backspacing and enable cursor blinking
-	     * @public
-	     */
-	  }, {
-	    key: 'stop',
-	    value: function stop() {
-	      if (this.typingComplete) return;
-	      if (this.pause.status) return;
-	      this.toggleBlinking(true);
-	      this.pause.status = true;
-	      this.options.onStop(this.arrayPos, this);
-	    }
-	
-	    /**
-	     * Start typing / backspacing after being stopped
-	     * @public
-	     */
-	  }, {
-	    key: 'start',
-	    value: function start() {
-	      if (this.typingComplete) return;
-	      if (!this.pause.status) return;
-	      this.pause.status = false;
-	      if (this.pause.typewrite) {
-	        this.typewrite(this.pause.curString, this.pause.curStrPos);
-	      } else {
-	        this.backspace(this.pause.curString, this.pause.curStrPos);
-	      }
-	      this.options.onStart(this.arrayPos, this);
-	    }
-	
-	    /**
-	     * Destroy this instance of Typed
-	     * @public
-	     */
-	  }, {
-	    key: 'destroy',
-	    value: function destroy() {
-	      this.reset(false);
-	      this.options.onDestroy(this);
-	    }
-	
-	    /**
-	     * Reset Typed and optionally restarts
-	     * @param {boolean} restart
-	     * @public
-	     */
-	  }, {
-	    key: 'reset',
-	    value: function reset() {
-	      var restart = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
-	
-	      clearInterval(this.timeout);
-	      this.replaceText('');
-	      if (this.cursor && this.cursor.parentNode) {
-	        this.cursor.parentNode.removeChild(this.cursor);
-	        this.cursor = null;
-	      }
-	      this.strPos = 0;
-	      this.arrayPos = 0;
-	      this.curLoop = 0;
-	      if (restart) {
-	        this.insertCursor();
-	        this.options.onReset(this);
-	        this.begin();
-	      }
-	    }
-	
-	    /**
-	     * Begins the typing animation
-	     * @private
-	     */
-	  }, {
-	    key: 'begin',
-	    value: function begin() {
-	      var _this = this;
-	
-	      this.typingComplete = false;
-	      this.shuffleStringsIfNeeded(this);
-	      this.insertCursor();
-	      if (this.bindInputFocusEvents) this.bindFocusEvents();
-	      this.timeout = setTimeout(function () {
-	        // Check if there is some text in the element, if yes start by backspacing the default message
-	        if (!_this.currentElContent || _this.currentElContent.length === 0) {
-	          _this.typewrite(_this.strings[_this.sequence[_this.arrayPos]], _this.strPos);
-	        } else {
-	          // Start typing
-	          _this.backspace(_this.currentElContent, _this.currentElContent.length);
-	        }
-	      }, this.startDelay);
-	    }
-	
-	    /**
-	     * Called for each character typed
-	     * @param {string} curString the current string in the strings array
-	     * @param {number} curStrPos the current position in the curString
-	     * @private
-	     */
-	  }, {
-	    key: 'typewrite',
-	    value: function typewrite(curString, curStrPos) {
-	      var _this2 = this;
-	
-	      if (this.fadeOut && this.el.classList.contains(this.fadeOutClass)) {
-	        this.el.classList.remove(this.fadeOutClass);
-	        if (this.cursor) this.cursor.classList.remove(this.fadeOutClass);
-	      }
-	
-	      var humanize = this.humanizer(this.typeSpeed);
-	      var numChars = 1;
-	
-	      if (this.pause.status === true) {
-	        this.setPauseStatus(curString, curStrPos, true);
-	        return;
-	      }
-	
-	      // contain typing function in a timeout humanize'd delay
-	      this.timeout = setTimeout(function () {
-	        // skip over any HTML chars
-	        curStrPos = _htmlParserJs.htmlParser.typeHtmlChars(curString, curStrPos, _this2);
-	
-	        var pauseTime = 0;
-	        var substr = curString.substr(curStrPos);
-	        // check for an escape character before a pause value
-	        // format: \^\d+ .. eg: ^1000 .. should be able to print the ^ too using ^^
-	        // single ^ are removed from string
-	        if (substr.charAt(0) === '^') {
-	          if (/^\^\d+/.test(substr)) {
-	            var skip = 1; // skip at least 1
-	            substr = /\d+/.exec(substr)[0];
-	            skip += substr.length;
-	            pauseTime = parseInt(substr);
-	            _this2.temporaryPause = true;
-	            _this2.options.onTypingPaused(_this2.arrayPos, _this2);
-	            // strip out the escape character and pause value so they're not printed
-	            curString = curString.substring(0, curStrPos) + curString.substring(curStrPos + skip);
-	            _this2.toggleBlinking(true);
-	          }
-	        }
-	
-	        // check for skip characters formatted as
-	        // "this is a `string to print NOW` ..."
-	        if (substr.charAt(0) === '`') {
-	          while (curString.substr(curStrPos + numChars).charAt(0) !== '`') {
-	            numChars++;
-	            if (curStrPos + numChars > curString.length) break;
-	          }
-	          // strip out the escape characters and append all the string in between
-	          var stringBeforeSkip = curString.substring(0, curStrPos);
-	          var stringSkipped = curString.substring(stringBeforeSkip.length + 1, curStrPos + numChars);
-	          var stringAfterSkip = curString.substring(curStrPos + numChars + 1);
-	          curString = stringBeforeSkip + stringSkipped + stringAfterSkip;
-	          numChars--;
-	        }
-	
-	        // timeout for any pause after a character
-	        _this2.timeout = setTimeout(function () {
-	          // Accounts for blinking while paused
-	          _this2.toggleBlinking(false);
-	
-	          // We're done with this sentence!
-	          if (curStrPos === curString.length) {
-	            _this2.doneTyping(curString, curStrPos);
-	          } else {
-	            _this2.keepTyping(curString, curStrPos, numChars);
-	          }
-	          // end of character pause
-	          if (_this2.temporaryPause) {
-	            _this2.temporaryPause = false;
-	            _this2.options.onTypingResumed(_this2.arrayPos, _this2);
-	          }
-	        }, pauseTime);
-	
-	        // humanized value for typing
-	      }, humanize);
-	    }
-	
-	    /**
-	     * Continue to the next string & begin typing
-	     * @param {string} curString the current string in the strings array
-	     * @param {number} curStrPos the current position in the curString
-	     * @private
-	     */
-	  }, {
-	    key: 'keepTyping',
-	    value: function keepTyping(curString, curStrPos, numChars) {
-	      // call before functions if applicable
-	      if (curStrPos === 0) {
-	        this.toggleBlinking(false);
-	        this.options.preStringTyped(this.arrayPos, this);
-	      }
-	      // start typing each new char into existing string
-	      // curString: arg, this.el.html: original text inside element
-	      curStrPos += numChars;
-	      var nextString = curString.substr(0, curStrPos);
-	      this.replaceText(nextString);
-	      // loop the function
-	      this.typewrite(curString, curStrPos);
-	    }
-	
-	    /**
-	     * We're done typing all strings
-	     * @param {string} curString the current string in the strings array
-	     * @param {number} curStrPos the current position in the curString
-	     * @private
-	     */
-	  }, {
-	    key: 'doneTyping',
-	    value: function doneTyping(curString, curStrPos) {
-	      var _this3 = this;
-	
-	      // fires callback function
-	      this.options.onStringTyped(this.arrayPos, this);
-	      this.toggleBlinking(true);
-	      // is this the final string
-	      if (this.arrayPos === this.strings.length - 1) {
-	        // callback that occurs on the last typed string
-	        this.complete();
-	        // quit if we wont loop back
-	        if (this.loop === false || this.curLoop === this.loopCount) {
-	          return;
-	        }
-	      }
-	      this.timeout = setTimeout(function () {
-	        _this3.backspace(curString, curStrPos);
-	      }, this.backDelay);
-	    }
-	
-	    /**
-	     * Backspaces 1 character at a time
-	     * @param {string} curString the current string in the strings array
-	     * @param {number} curStrPos the current position in the curString
-	     * @private
-	     */
-	  }, {
-	    key: 'backspace',
-	    value: function backspace(curString, curStrPos) {
-	      var _this4 = this;
-	
-	      if (this.pause.status === true) {
-	        this.setPauseStatus(curString, curStrPos, true);
-	        return;
-	      }
-	      if (this.fadeOut) return this.initFadeOut();
-	
-	      this.toggleBlinking(false);
-	      var humanize = this.humanizer(this.backSpeed);
-	
-	      this.timeout = setTimeout(function () {
-	        curStrPos = _htmlParserJs.htmlParser.backSpaceHtmlChars(curString, curStrPos, _this4);
-	        // replace text with base text + typed characters
-	        var curStringAtPosition = curString.substr(0, curStrPos);
-	        _this4.replaceText(curStringAtPosition);
-	
-	        // if smartBack is enabled
-	        if (_this4.smartBackspace) {
-	          // the remaining part of the current string is equal of the same part of the new string
-	          var nextString = _this4.strings[_this4.arrayPos + 1];
-	          if (nextString && curStringAtPosition === nextString.substr(0, curStrPos)) {
-	            _this4.stopNum = curStrPos;
-	          } else {
-	            _this4.stopNum = 0;
-	          }
-	        }
-	
-	        // if the number (id of character in current string) is
-	        // less than the stop number, keep going
-	        if (curStrPos > _this4.stopNum) {
-	          // subtract characters one by one
-	          curStrPos--;
-	          // loop the function
-	          _this4.backspace(curString, curStrPos);
-	        } else if (curStrPos <= _this4.stopNum) {
-	          // if the stop number has been reached, increase
-	          // array position to next string
-	          _this4.arrayPos++;
-	          // When looping, begin at the beginning after backspace complete
-	          if (_this4.arrayPos === _this4.strings.length) {
-	            _this4.arrayPos = 0;
-	            _this4.options.onLastStringBackspaced();
-	            _this4.shuffleStringsIfNeeded();
-	            _this4.begin();
-	          } else {
-	            _this4.typewrite(_this4.strings[_this4.sequence[_this4.arrayPos]], curStrPos);
-	          }
-	        }
-	        // humanized value for typing
-	      }, humanize);
-	    }
-	
-	    /**
-	     * Full animation is complete
-	     * @private
-	     */
-	  }, {
-	    key: 'complete',
-	    value: function complete() {
-	      this.options.onComplete(this);
-	      if (this.loop) {
-	        this.curLoop++;
-	      } else {
-	        this.typingComplete = true;
-	      }
-	    }
-	
-	    /**
-	     * Has the typing been stopped
-	     * @param {string} curString the current string in the strings array
-	     * @param {number} curStrPos the current position in the curString
-	     * @param {boolean} isTyping
-	     * @private
-	     */
-	  }, {
-	    key: 'setPauseStatus',
-	    value: function setPauseStatus(curString, curStrPos, isTyping) {
-	      this.pause.typewrite = isTyping;
-	      this.pause.curString = curString;
-	      this.pause.curStrPos = curStrPos;
-	    }
-	
-	    /**
-	     * Toggle the blinking cursor
-	     * @param {boolean} isBlinking
-	     * @private
-	     */
-	  }, {
-	    key: 'toggleBlinking',
-	    value: function toggleBlinking(isBlinking) {
-	      if (!this.cursor) return;
-	      // if in paused state, don't toggle blinking a 2nd time
-	      if (this.pause.status) return;
-	      if (this.cursorBlinking === isBlinking) return;
-	      this.cursorBlinking = isBlinking;
-	      var status = isBlinking ? 'infinite' : 0;
-	      this.cursor.style.animationIterationCount = status;
-	    }
-	
-	    /**
-	     * Speed in MS to type
-	     * @param {number} speed
-	     * @private
-	     */
-	  }, {
-	    key: 'humanizer',
-	    value: function humanizer(speed) {
-	      return Math.round(Math.random() * speed / 2) + speed;
-	    }
-	
-	    /**
-	     * Shuffle the sequence of the strings array
-	     * @private
-	     */
-	  }, {
-	    key: 'shuffleStringsIfNeeded',
-	    value: function shuffleStringsIfNeeded() {
-	      if (!this.shuffle) return;
-	      this.sequence = this.sequence.sort(function () {
-	        return Math.random() - 0.5;
-	      });
-	    }
-	
-	    /**
-	     * Adds a CSS class to fade out current string
-	     * @private
-	     */
-	  }, {
-	    key: 'initFadeOut',
-	    value: function initFadeOut() {
-	      var _this5 = this;
-	
-	      this.el.className += ' ' + this.fadeOutClass;
-	      if (this.cursor) this.cursor.className += ' ' + this.fadeOutClass;
-	      return setTimeout(function () {
-	        _this5.arrayPos++;
-	        _this5.replaceText('');
-	
-	        // Resets current string if end of loop reached
-	        if (_this5.strings.length > _this5.arrayPos) {
-	          _this5.typewrite(_this5.strings[_this5.sequence[_this5.arrayPos]], 0);
-	        } else {
-	          _this5.typewrite(_this5.strings[0], 0);
-	          _this5.arrayPos = 0;
-	        }
-	      }, this.fadeOutDelay);
-	    }
-	
-	    /**
-	     * Replaces current text in the HTML element
-	     * depending on element type
-	     * @param {string} str
-	     * @private
-	     */
-	  }, {
-	    key: 'replaceText',
-	    value: function replaceText(str) {
-	      if (this.attr) {
-	        this.el.setAttribute(this.attr, str);
-	      } else {
-	        if (this.isInput) {
-	          this.el.value = str;
-	        } else if (this.contentType === 'html') {
-	          this.el.innerHTML = str;
-	        } else {
-	          this.el.textContent = str;
-	        }
-	      }
-	    }
-	
-	    /**
-	     * If using input elements, bind focus in order to
-	     * start and stop the animation
-	     * @private
-	     */
-	  }, {
-	    key: 'bindFocusEvents',
-	    value: function bindFocusEvents() {
-	      var _this6 = this;
-	
-	      if (!this.isInput) return;
-	      this.el.addEventListener('focus', function (e) {
-	        _this6.stop();
-	      });
-	      this.el.addEventListener('blur', function (e) {
-	        if (_this6.el.value && _this6.el.value.length !== 0) {
-	          return;
-	        }
-	        _this6.start();
-	      });
-	    }
-	
-	    /**
-	     * On init, insert the cursor element
-	     * @private
-	     */
-	  }, {
-	    key: 'insertCursor',
-	    value: function insertCursor() {
-	      if (!this.showCursor) return;
-	      if (this.cursor) return;
-	      this.cursor = document.createElement('span');
-	      this.cursor.className = 'typed-cursor';
-	      this.cursor.innerHTML = this.cursorChar;
-	      this.el.parentNode && this.el.parentNode.insertBefore(this.cursor, this.el.nextSibling);
-	    }
-	  }]);
-	
-	  return Typed;
-	})();
-	
-	exports['default'] = Typed;
-	module.exports = exports['default'];
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	var _defaultsJs = __webpack_require__(2);
-	
-	var _defaultsJs2 = _interopRequireDefault(_defaultsJs);
-	
-	/**
-	 * Initialize the Typed object
-	 */
-	
-	var Initializer = (function () {
-	  function Initializer() {
-	    _classCallCheck(this, Initializer);
-	  }
-	
-	  _createClass(Initializer, [{
-	    key: 'load',
-	
-	    /**
-	     * Load up defaults & options on the Typed instance
-	     * @param {Typed} self instance of Typed
-	     * @param {object} options options object
-	     * @param {string} elementId HTML element ID _OR_ instance of HTML element
-	     * @private
-	     */
-	
-	    value: function load(self, options, elementId) {
-	      // chosen element to manipulate text
-	      if (typeof elementId === 'string') {
-	        self.el = document.querySelector(elementId);
-	      } else {
-	        self.el = elementId;
-	      }
-	
-	      self.options = _extends({}, _defaultsJs2['default'], options);
-	
-	      // attribute to type into
-	      self.isInput = self.el.tagName.toLowerCase() === 'input';
-	      self.attr = self.options.attr;
-	      self.bindInputFocusEvents = self.options.bindInputFocusEvents;
-	
-	      // show cursor
-	      self.showCursor = self.isInput ? false : self.options.showCursor;
-	
-	      // custom cursor
-	      self.cursorChar = self.options.cursorChar;
-	
-	      // Is the cursor blinking
-	      self.cursorBlinking = true;
-	
-	      // text content of element
-	      self.elContent = self.attr ? self.el.getAttribute(self.attr) : self.el.textContent;
-	
-	      // html or plain text
-	      self.contentType = self.options.contentType;
-	
-	      // typing speed
-	      self.typeSpeed = self.options.typeSpeed;
-	
-	      // add a delay before typing starts
-	      self.startDelay = self.options.startDelay;
-	
-	      // backspacing speed
-	      self.backSpeed = self.options.backSpeed;
-	
-	      // only backspace what doesn't match the previous string
-	      self.smartBackspace = self.options.smartBackspace;
-	
-	      // amount of time to wait before backspacing
-	      self.backDelay = self.options.backDelay;
-	
-	      // Fade out instead of backspace
-	      self.fadeOut = self.options.fadeOut;
-	      self.fadeOutClass = self.options.fadeOutClass;
-	      self.fadeOutDelay = self.options.fadeOutDelay;
-	
-	      // variable to check whether typing is currently paused
-	      self.isPaused = false;
-	
-	      // input strings of text
-	      self.strings = self.options.strings.map(function (s) {
-	        return s.trim();
-	      });
-	
-	      // div containing strings
-	      if (typeof self.options.stringsElement === 'string') {
-	        self.stringsElement = document.querySelector(self.options.stringsElement);
-	      } else {
-	        self.stringsElement = self.options.stringsElement;
-	      }
-	
-	      if (self.stringsElement) {
-	        self.strings = [];
-	        self.stringsElement.style.display = 'none';
-	        var strings = Array.prototype.slice.apply(self.stringsElement.children);
-	        var stringsLength = strings.length;
-	
-	        if (stringsLength) {
-	          for (var i = 0; i < stringsLength; i += 1) {
-	            var stringEl = strings[i];
-	            self.strings.push(stringEl.innerHTML.trim());
-	          }
-	        }
-	      }
-	
-	      // character number position of current string
-	      self.strPos = 0;
-	
-	      // current array position
-	      self.arrayPos = 0;
-	
-	      // index of string to stop backspacing on
-	      self.stopNum = 0;
-	
-	      // Looping logic
-	      self.loop = self.options.loop;
-	      self.loopCount = self.options.loopCount;
-	      self.curLoop = 0;
-	
-	      // shuffle the strings
-	      self.shuffle = self.options.shuffle;
-	      // the order of strings
-	      self.sequence = [];
-	
-	      self.pause = {
-	        status: false,
-	        typewrite: true,
-	        curString: '',
-	        curStrPos: 0
-	      };
-	
-	      // When the typing is complete (when not looped)
-	      self.typingComplete = false;
-	
-	      // Set the order in which the strings are typed
-	      for (var i in self.strings) {
-	        self.sequence[i] = i;
-	      }
-	
-	      // If there is some text in the element
-	      self.currentElContent = this.getCurrentElContent(self);
-	
-	      self.autoInsertCss = self.options.autoInsertCss;
-	
-	      this.appendAnimationCss(self);
-	    }
-	  }, {
-	    key: 'getCurrentElContent',
-	    value: function getCurrentElContent(self) {
-	      var elContent = '';
-	      if (self.attr) {
-	        elContent = self.el.getAttribute(self.attr);
-	      } else if (self.isInput) {
-	        elContent = self.el.value;
-	      } else if (self.contentType === 'html') {
-	        elContent = self.el.innerHTML;
-	      } else {
-	        elContent = self.el.textContent;
-	      }
-	      return elContent;
-	    }
-	  }, {
-	    key: 'appendAnimationCss',
-	    value: function appendAnimationCss(self) {
-	      if (!self.autoInsertCss) {
-	        return;
-	      }
-	      if (!self.showCursor || !self.fadeOut) {
-	        return;
-	      }
-	
-	      var css = document.createElement('style');
-	      css.type = 'text/css';
-	      var innerCss = '';
-	      if (self.showCursor) {
-	        innerCss += '\n        .typed-cursor{\n          opacity: 1;\n          animation: typedjsBlink 0.7s infinite;\n          -webkit-animation: typedjsBlink 0.7s infinite;\n                  animation: typedjsBlink 0.7s infinite;\n        }\n        @keyframes typedjsBlink{\n          50% { opacity: 0.0; }\n        }\n        @-webkit-keyframes typedjsBlink{\n          0% { opacity: 1; }\n          50% { opacity: 0.0; }\n          100% { opacity: 1; }\n        }\n      ';
-	      }
-	      if (self.fadeOut) {
-	        innerCss += '\n        .typed-fade-out{\n          opacity: 0;\n          transition: opacity .25s;\n          -webkit-animation: 0;\n                  animation: 0;\n        }\n      ';
-	      }
-	      if (css.length === 0) {
-	        return;
-	      }
-	      css.innerHTML = innerCss;
-	      document.head.appendChild(css);
-	    }
-	  }]);
-	
-	  return Initializer;
-	})();
-	
-	exports['default'] = Initializer;
-	var initializer = new Initializer();
-	exports.initializer = initializer;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-	/**
-	 * Defaults & options
-	 * @returns {object} Typed defaults & options
-	 * @public
-	 */
-	
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	var defaults = {
-	  /**
-	   * @property {array} strings strings to be typed
-	   * @property {string} stringsElement ID of element containing string children
-	   */
-	  strings: ['These are the default values...', 'You know what you should do?', 'Use your own!', 'Have a great day!'],
-	  stringsElement: null,
-	
-	  /**
-	   * @property {number} typeSpeed type speed in milliseconds
-	   */
-	  typeSpeed: 0,
-	
-	  /**
-	   * @property {number} startDelay time before typing starts in milliseconds
-	   */
-	  startDelay: 0,
-	
-	  /**
-	   * @property {number} backSpeed backspacing speed in milliseconds
-	   */
-	  backSpeed: 0,
-	
-	  /**
-	   * @property {boolean} smartBackspace only backspace what doesn't match the previous string
-	   */
-	  smartBackspace: true,
-	
-	  /**
-	   * @property {boolean} shuffle shuffle the strings
-	   */
-	  shuffle: false,
-	
-	  /**
-	   * @property {number} backDelay time before backspacing in milliseconds
-	   */
-	  backDelay: 700,
-	
-	  /**
-	   * @property {boolean} fadeOut Fade out instead of backspace
-	   * @property {string} fadeOutClass css class for fade animation
-	   * @property {boolean} fadeOutDelay Fade out delay in milliseconds
-	   */
-	  fadeOut: false,
-	  fadeOutClass: 'typed-fade-out',
-	  fadeOutDelay: 500,
-	
-	  /**
-	   * @property {boolean} loop loop strings
-	   * @property {number} loopCount amount of loops
-	   */
-	  loop: false,
-	  loopCount: Infinity,
-	
-	  /**
-	   * @property {boolean} showCursor show cursor
-	   * @property {string} cursorChar character for cursor
-	   * @property {boolean} autoInsertCss insert CSS for cursor and fadeOut into HTML <head>
-	   */
-	  showCursor: true,
-	  cursorChar: '|',
-	  autoInsertCss: true,
-	
-	  /**
-	   * @property {string} attr attribute for typing
-	   * Ex: input placeholder, value, or just HTML text
-	   */
-	  attr: null,
-	
-	  /**
-	   * @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
-	   */
-	  bindInputFocusEvents: false,
-	
-	  /**
-	   * @property {string} contentType 'html' or 'null' for plaintext
-	   */
-	  contentType: 'html',
-	
-	  /**
-	   * All typing is complete
-	   * @param {Typed} self
-	   */
-	  onComplete: function onComplete(self) {},
-	
-	  /**
-	   * Before each string is typed
-	   * @param {number} arrayPos
-	   * @param {Typed} self
-	   */
-	  preStringTyped: function preStringTyped(arrayPos, self) {},
-	
-	  /**
-	   * After each string is typed
-	   * @param {number} arrayPos
-	   * @param {Typed} self
-	   */
-	  onStringTyped: function onStringTyped(arrayPos, self) {},
-	
-	  /**
-	   * During looping, after last string is typed
-	   * @param {Typed} self
-	   */
-	  onLastStringBackspaced: function onLastStringBackspaced(self) {},
-	
-	  /**
-	   * Typing has been stopped
-	   * @param {number} arrayPos
-	   * @param {Typed} self
-	   */
-	  onTypingPaused: function onTypingPaused(arrayPos, self) {},
-	
-	  /**
-	   * Typing has been started after being stopped
-	   * @param {number} arrayPos
-	   * @param {Typed} self
-	   */
-	  onTypingResumed: function onTypingResumed(arrayPos, self) {},
-	
-	  /**
-	   * After reset
-	   * @param {Typed} self
-	   */
-	  onReset: function onReset(self) {},
-	
-	  /**
-	   * After stop
-	   * @param {number} arrayPos
-	   * @param {Typed} self
-	   */
-	  onStop: function onStop(arrayPos, self) {},
-	
-	  /**
-	   * After start
-	   * @param {number} arrayPos
-	   * @param {Typed} self
-	   */
-	  onStart: function onStart(arrayPos, self) {},
-	
-	  /**
-	   * After destroy
-	   * @param {Typed} self
-	   */
-	  onDestroy: function onDestroy(self) {}
-	};
-	
-	exports['default'] = defaults;
-	module.exports = exports['default'];
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-	
-	/**
-	 * TODO: These methods can probably be combined somehow
-	 * Parse HTML tags & HTML Characters
-	 */
-	
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	var HTMLParser = (function () {
-	  function HTMLParser() {
-	    _classCallCheck(this, HTMLParser);
-	  }
-	
-	  _createClass(HTMLParser, [{
-	    key: 'typeHtmlChars',
-	
-	    /**
-	     * Type HTML tags & HTML Characters
-	     * @param {string} curString Current string
-	     * @param {number} curStrPos Position in current string
-	     * @param {Typed} self instance of Typed
-	     * @returns {number} a new string position
-	     * @private
-	     */
-	
-	    value: function typeHtmlChars(curString, curStrPos, self) {
-	      if (self.contentType !== 'html') return curStrPos;
-	      var curChar = curString.substr(curStrPos).charAt(0);
-	      if (curChar === '<' || curChar === '&') {
-	        var endTag = '';
-	        if (curChar === '<') {
-	          endTag = '>';
-	        } else {
-	          endTag = ';';
-	        }
-	        while (curString.substr(curStrPos + 1).charAt(0) !== endTag) {
-	          curStrPos++;
-	          if (curStrPos + 1 > curString.length) {
-	            break;
-	          }
-	        }
-	        curStrPos++;
-	      }
-	      return curStrPos;
-	    }
-	
-	    /**
-	     * Backspace HTML tags and HTML Characters
-	     * @param {string} curString Current string
-	     * @param {number} curStrPos Position in current string
-	     * @param {Typed} self instance of Typed
-	     * @returns {number} a new string position
-	     * @private
-	     */
-	  }, {
-	    key: 'backSpaceHtmlChars',
-	    value: function backSpaceHtmlChars(curString, curStrPos, self) {
-	      if (self.contentType !== 'html') return curStrPos;
-	      var curChar = curString.substr(curStrPos).charAt(0);
-	      if (curChar === '>' || curChar === ';') {
-	        var endTag = '';
-	        if (curChar === '>') {
-	          endTag = '<';
-	        } else {
-	          endTag = '&';
-	        }
-	        while (curString.substr(curStrPos - 1).charAt(0) !== endTag) {
-	          curStrPos--;
-	          if (curStrPos < 0) {
-	            break;
-	          }
-	        }
-	        curStrPos--;
-	      }
-	      return curStrPos;
-	    }
-	  }]);
-	
-	  return HTMLParser;
-	})();
-	
-	exports['default'] = HTMLParser;
-	var htmlParser = new HTMLParser();
-	exports.htmlParser = htmlParser;
-
-/***/ })
-/******/ ])
-});
-;
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(10);
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
-
-__webpack_require__(13);
-
-var onClass = "on";
-var showClass = "show";
-
-var mobileForm = 'mobile-form';
-
-if (document.documentElement.clientWidth <= 900) {
-    $('.container-form').toggleClass(mobileForm);
-}
-
-$('#form').submit(function () {
-    var th = $(this);
-    var data = $(this).serialize();
-    var err = false;
-    $('button').prop('disabled', true);
-    th.find('input[type=text], input[type=tel], textarea').each(function () {
-        if ($(this).val() === '') {
-            $(this).addClass('error');
-            err = true;
-        }
-    });
-
-    if (!err) {
-        $.ajax({
-            type: "POST",
-            url: "./php/send_message.php",
-            data: data
-        }).done(function () {
-            $('#form').find('label').removeClass(showClass);
-            $('.container-form').css({ display: 'flex', flexDirection: 'column', alignItems: 'center' });
-            $('.content-form').hide();
-            $('.success-container').show();
-            setTimeout(showMenuAfterSendMessage, 5000);
-
-            $('#form').trigger("reset");
-            $('body, html', parent.document).animate({ scrollTop: 0 }, 500);
-        });
-    }
-    return false;
-});
-
-function showMenuAfterSendMessage() {
-    $('button').prop('disabled', false);
-    $('.content-form').hide();
-    $('.success-container').hide();
-    $('.container-form, .opacity').hide();
-    $('body').scrollTop({ scrollTop: 0 });
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(15);
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
-
-__webpack_require__(18);
-
-var _swiper = __webpack_require__(19);
-
-var _swiper2 = _interopRequireDefault(_swiper);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-$(document).ready(function () {
-
-    var sliderMaket = new _swiper2.default('.slider-maket', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        initialSlide: '1',
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 250,
-            modifier: 1,
-            slideShadows: true
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        }
-    });
-
-    sliderMaket.init();
-
-    var sliderForm = new _swiper2.default('.slider-form', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        initialSlide: '1',
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 250,
-            modifier: 1,
-            slideShadows: true
-        },
-        navigation: {
-            nextEl: '.button-next-form',
-            prevEl: '.button-prev-form'
-        }
-    });
-
-    sliderForm.init();
-
-    var bodySelector = $('body');
-
-    var onClass = "on";
-    var showClass = "show";
-
-    $("input, textarea").on("checkval", function () {
-        var label = $(this).prev("label");
-        if (this.value !== "") {
-            label.addClass(showClass);
-        } else {
-            label.removeClass(showClass);
-        }
-    }).on("keyup", function () {
-        $(this).trigger("checkval");
-    }).on("focus", function () {
-        console.log($(this));
-        $(this).prev("label").addClass(onClass);
-    }).on("blur", function () {
-        $(this).prev("label").removeClass(onClass);
-    }).trigger("checkval");
-
-    bodySelector.on('click', '.close', desktopCloseContact);
-
-    bodySelector.on('focus', 'input, textarea', focusFunc);
-    bodySelector.on('focusout', 'input[type=tel]', focusOutTelFunc);
-
-    var messageIcon = $('.message-icon');
-    var mobileMenuBNlock = $('.mobile-menu');
-
-    $(window).resize(function () {
-        if (document.documentElement.clientWidth > 1000) {
-            messageBlock.css('display', 'none');
-            mobileMenuBNlock.css({ display: 'none' });
-            $('.burger').css('background', 'url(../img/mobile/all_services.svg) no-repeat').removeClass('close-burger');
-        }
-    });
-
-    var messageBlock = $('.mes');
-
-    function desktopCloseContact() {
-        $('.container-form, .opacity').hide();
-    }
-
-    function focusFunc() {
-        $(this).removeClass('error');
-    }
-
-    $('#send-form').submit(function () {
-        var th = $(this);
-        var data = $(this).serialize();
-        var err = false;
-
-        th.find('input[name=name], input[name=phone]').each(function () {
-            if ($(this).val() === '') {
-                $(this).addClass('error');
-                err = true;
-            }
-        });
-
-        if (!err) {
-            $.ajax({
-                type: "POST",
-                url: "../php/send_message.php",
-                data: data
-            }).done(function () {
-                $('#send-form').find('label').removeClass(showClass);
-                $('#send-form, .hiden').hide();
-                $('.success-two').show();
-                setTimeout(showMenuAfterSendMessageTwo, 5000);
-                $("#send-form").trigger("reset");
-            });
-        }
-        return false;
-    });
-
-    $('#send-form-pensil-action').submit(function () {
-        var th = $(this);
-        var data = $(this).serialize();
-        var err = false;
-
-        th.find('input[type=tel], input[type=text]').each(function () {
-            if ($(this).val() === '') {
-                $(this).addClass('error');
-                err = true;
-            }
-        });
-
-        if (!err) {
-            $.ajax({
-                type: "POST",
-                url: "../php/send_message.php",
-                data: data
-            }).done(function () {
-                $('#send-form-pensil-action').find('label').removeClass(showClass);
-                $('#send-form-pensil-action, .hiden').hide();
-                $('.success-three').show();
-                setTimeout(showMenuAfterSendMessageThree, 5000);
-                $("#send-form-pensil-action").trigger("reset");
-            });
-        }
-        return false;
-    });
-
-    function showMenuAfterSendMessageTwo() {
-        $(".success-two").hide();
-        $('#send-form, .hiden').show();
-        $('#send-form').css({ display: 'table' });
-    }
-
-    function showMenuAfterSendMessageThree() {
-        $(".success-three").hide();
-        $('#send-form-pensil-action, .hiden').show();
-        $('#send-form-pensil-action').css({ display: 'table' });
-    }
-
-    bodySelector.on('focus', 'input[name=phone]', mask);
-    bodySelector.on('keydown', 'input[name=name]', blockEditSymbolLite);
-
-    function mask() {
-        $('input[name=phone]').inputmask({ mask: "+7 (999) 999-99-99" });
-    }
-
-    function blockEditSymbolLite() {
-
-        var valueRgx = $(this).val();
-
-        var rgxp = /[\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\_\\;\\:\\?\\*\\=\\+\\~\\``]/g;
-
-        if (rgxp.test(valueRgx)) {
-
-            $(this).val("");
-        }
-    }
-
-    function focusOutTelFunc() {
-        if ($(this).val()) {
-
-            var valueRgx = $(this).val();
-
-            var rgxp = /[\\_\\]/g;
-
-            if (rgxp.test(valueRgx)) {
-
-                $(this).val("");
-                $(this).addClass('error');
-                err = true;
-                return err;
-            }
-        }
-    }
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(jQuery) {
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-/**
-* @license Input Mask plugin for jquery
-* http://github.com/RobinHerbots/jquery.inputmask
-* Copyright (c) 2010 - 2012 Robin Herbots
-* Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
-* Version: 1.2.4
-*/
-
-(function ($) {
-    if ($.fn.inputmask == undefined) {
-        $.inputmask = {
-            //options default
-            defaults: {
-                placeholder: "_",
-                optionalmarker: {
-                    start: "[",
-                    end: "]"
-                },
-                escapeChar: "\\",
-                mask: null,
-                oncomplete: $.noop, //executes when the mask is complete
-                onincomplete: $.noop, //executes when the mask is incomplete and focus is lost
-                oncleared: $.noop, //executes when the mask is cleared
-                repeat: 0, //repetitions of the mask
-                greedy: true, //true: allocated buffer for the mask and repetitions - false: allocate only if needed
-                autoUnmask: false, //automatically unmask when retrieving the value with $.fn.val or value if the browser supports __lookupGetter__ or getOwnPropertyDescriptor
-                clearMaskOnLostFocus: true,
-                insertMode: true, //insert the input or overwrite the input
-                clearIncomplete: false, //clear the incomplete input on blur
-                aliases: {}, //aliases definitions => see jquery.inputmask.extensions.js
-                onKeyUp: $.noop, //override to implement autocomplete on certain keys for example
-                onKeyDown: $.noop, //override to implement autocomplete on certain keys for example
-                showMaskOnHover: true, //show the mask-placeholder when hovering the empty input
-                onKeyValidation: $.noop, //executes on every key-press with the result of isValid
-                //numeric basic properties
-                numericInput: false, //numericInput input direction style (input shifts to the left while holding the caret position)
-                radixPoint: ".", // | ","
-                //numeric basic properties
-                definitions: {
-                    '9': {
-                        validator: "[0-9]",
-                        cardinality: 1
-                    },
-                    'a': {
-                        validator: "[A-Za-z\u0410-\u044F\u0401\u0451]",
-                        cardinality: 1
-                    },
-                    '*': {
-                        validator: "[A-Za-z\u0410-\u044F\u0401\u04510-9]",
-                        cardinality: 1
-                    }
-                },
-                keyCode: { ALT: 18, BACKSPACE: 8, CAPS_LOCK: 20, COMMA: 188, COMMAND: 91, COMMAND_LEFT: 91, COMMAND_RIGHT: 93, CONTROL: 17, DELETE: 46, DOWN: 40, END: 35, ENTER: 13, ESCAPE: 27, HOME: 36, INSERT: 45, LEFT: 37, MENU: 93, NUMPAD_ADD: 107, NUMPAD_DECIMAL: 110, NUMPAD_DIVIDE: 111, NUMPAD_ENTER: 108,
-                    NUMPAD_MULTIPLY: 106, NUMPAD_SUBTRACT: 109, PAGE_DOWN: 34, PAGE_UP: 33, PERIOD: 190, RIGHT: 39, SHIFT: 16, SPACE: 32, TAB: 9, UP: 38, WINDOWS: 91
-                },
-                ignorables: [8, 9, 13, 16, 17, 18, 20, 27, 33, 34, 35, 36, 37, 38, 39, 40, 46, 91, 93, 108]
-            },
-            val: $.fn.val //store the original jquery val function
-        };
-
-        $.fn.inputmask = function (fn, options) {
-            var opts = $.extend(true, {}, $.inputmask.defaults, options);
-            var pasteEvent = isInputEventSupported('paste') ? 'paste' : 'input';
-
-            var iphone = navigator.userAgent.match(/iphone/i) != null;
-            var android = navigator.userAgent.match(/android.*mobile safari.*/i) != null;
-            if (android) {
-                var browser = navigator.userAgent.match(/mobile safari.*/i);
-                var version = parseInt(new RegExp(/[0-9]+/).exec(browser));
-                android = version <= 533;
-            }
-            var caretposCorrection = null;
-
-            if (typeof fn == "string") {
-                switch (fn) {
-                    case "mask":
-                        //init buffer
-                        var _buffer = getMaskTemplate();
-                        var tests = getTestingChain();
-
-                        return this.each(function () {
-                            mask(this);
-                        });
-                        break;
-                    case "unmaskedvalue":
-                        var tests = this.data('inputmask')['tests'];
-                        var _buffer = this.data('inputmask')['_buffer'];
-                        opts.greedy = this.data('inputmask')['greedy'];
-                        opts.repeat = this.data('inputmask')['repeat'];
-                        opts.definitions = this.data('inputmask')['definitions'];
-                        return unmaskedvalue(this);
-                        break;
-                    case "remove":
-                        var tests, _buffer;
-                        return this.each(function () {
-                            var $input = $(this),
-                                input = this;
-                            setTimeout(function () {
-                                if ($input.data('inputmask')) {
-                                    tests = $input.data('inputmask')['tests'];
-                                    _buffer = $input.data('inputmask')['_buffer'];
-                                    opts.greedy = $input.data('inputmask')['greedy'];
-                                    opts.repeat = $input.data('inputmask')['repeat'];
-                                    opts.definitions = $input.data('inputmask')['definitions'];
-                                    //writeout the unmaskedvalue
-                                    input._valueSet(unmaskedvalue($input, true));
-                                    //clear data
-                                    $input.removeData('inputmask');
-                                    //unbind all events
-                                    $input.unbind(".inputmask");
-                                    $input.removeClass('focus.inputmask');
-                                    //restore the value property
-                                    var valueProperty;
-                                    if (Object.getOwnPropertyDescriptor) valueProperty = Object.getOwnPropertyDescriptor(input, "value");
-                                    if (valueProperty && valueProperty.get) {
-                                        if (input._valueGet) {
-                                            Object.defineProperty(input, "value", {
-                                                get: input._valueGet,
-                                                set: input._valueSet
-                                            });
-                                        }
-                                    } else if (document.__lookupGetter__ && input.__lookupGetter__("value")) {
-                                        if (input._valueGet) {
-                                            input.__defineGetter__("value", input._valueGet);
-                                            input.__defineSetter__("value", input._valueSet);
-                                        }
-                                    }
-                                    delete input._valueGet;
-                                    delete input._valueSet;
-                                }
-                            }, 0);
-                        });
-                        break;
-                    case "getemptymask":
-                        //return the default (empty) mask value, usefull for setting the default value in validation
-                        if (this.data('inputmask')) return this.data('inputmask')['_buffer'].join('');else return "";
-                    case "hasMaskedValue":
-                        //check wheter the returned value is masked or not; currently only works reliable when using jquery.val fn to retrieve the value 
-                        return this.data('inputmask') ? !this.data('inputmask')['autoUnmask'] : false;
-                    default:
-                        //check if the fn is an alias
-                        if (!resolveAlias(fn)) {
-                            //maybe fn is a mask so we try
-                            //set mask
-                            opts.mask = fn;
-                        }
-                        //init buffer
-                        var _buffer = getMaskTemplate();
-                        var tests = getTestingChain();
-
-                        return this.each(function () {
-                            mask(this);
-                        });
-
-                        break;
-                }
-            }if ((typeof fn === "undefined" ? "undefined" : _typeof(fn)) == "object") {
-                opts = $.extend(true, {}, $.inputmask.defaults, fn);
-                resolveAlias(opts.alias); //resolve aliases
-                //init buffer
-                var _buffer = getMaskTemplate();
-                var tests = getTestingChain();
-
-                return this.each(function () {
-                    mask(this);
-                });
-            }
-
-            //helper     functions
-            function isInputEventSupported(eventName) {
-                var el = document.createElement('input'),
-                    eventName = 'on' + eventName,
-                    isSupported = eventName in el;
-                if (!isSupported) {
-                    el.setAttribute(eventName, 'return;');
-                    isSupported = typeof el[eventName] == 'function';
-                }
-                el = null;
-                return isSupported;
-            }
-
-            function resolveAlias(aliasStr) {
-                var aliasDefinition = opts.aliases[aliasStr];
-                if (aliasDefinition) {
-                    if (aliasDefinition.alias) resolveAlias(aliasDefinition.alias); //alias is another alias
-                    $.extend(true, opts, aliasDefinition); //merge alias definition in the options
-                    $.extend(true, opts, options); //reapply extra given options
-                    return true;
-                }
-                return false;
-            }
-
-            function getMaskTemplate() {
-                var escaped = false,
-                    outCount = 0;
-                if (opts.mask.length == 1 && opts.greedy == false) {
-                    opts.placeholder = "";
-                } //hide placeholder with single non-greedy mask
-                var singleMask = $.map(opts.mask.split(""), function (element, index) {
-                    var outElem = [];
-                    if (element == opts.escapeChar) {
-                        escaped = true;
-                    } else if (element != opts.optionalmarker.start && element != opts.optionalmarker.end || escaped) {
-                        var maskdef = opts.definitions[element];
-                        if (maskdef && !escaped) {
-                            for (var i = 0; i < maskdef.cardinality; i++) {
-                                outElem.push(getPlaceHolder(outCount + i));
-                            }
-                        } else {
-                            outElem.push(element);
-                            escaped = false;
-                        }
-                        outCount += outElem.length;
-                        return outElem;
-                    }
-                });
-
-                //allocate repetitions
-                var repeatedMask = singleMask.slice();
-                for (var i = 1; i < opts.repeat && opts.greedy; i++) {
-                    repeatedMask = repeatedMask.concat(singleMask.slice());
-                }
-
-                return repeatedMask;
-            }
-
-            //test definition => {fn: RegExp/function, cardinality: int, optionality: bool, newBlockMarker: bool, offset: int, casing: null/upper/lower, def: definitionSymbol}
-            function getTestingChain() {
-                var isOptional = false,
-                    escaped = false;
-                var newBlockMarker = false; //indicates wheter the begin/ending of a block should be indicated
-
-                return $.map(opts.mask.split(""), function (element, index) {
-                    var outElem = [];
-
-                    if (element == opts.escapeChar) {
-                        escaped = true;
-                    } else if (element == opts.optionalmarker.start && !escaped) {
-                        isOptional = true;
-                        newBlockMarker = true;
-                    } else if (element == opts.optionalmarker.end && !escaped) {
-                        isOptional = false;
-                        newBlockMarker = true;
-                    } else {
-                        var maskdef = opts.definitions[element];
-                        if (maskdef && !escaped) {
-                            var prevalidators = maskdef["prevalidator"],
-                                prevalidatorsL = prevalidators ? prevalidators.length : 0;
-                            for (var i = 1; i < maskdef.cardinality; i++) {
-                                var prevalidator = prevalidatorsL >= i ? prevalidators[i - 1] : [],
-                                    validator = prevalidator["validator"],
-                                    cardinality = prevalidator["cardinality"];
-                                outElem.push({ fn: validator ? typeof validator == 'string' ? new RegExp(validator) : new function () {
-                                        this.test = validator;
-                                    }() : new RegExp("."), cardinality: cardinality ? cardinality : 1, optionality: isOptional, newBlockMarker: isOptional == true ? newBlockMarker : false, offset: 0, casing: maskdef["casing"], def: element });
-                                if (isOptional == true) //reset newBlockMarker
-                                    newBlockMarker = false;
-                            }
-                            outElem.push({ fn: maskdef.validator ? typeof maskdef.validator == 'string' ? new RegExp(maskdef.validator) : new function () {
-                                    this.test = maskdef.validator;
-                                }() : new RegExp("."), cardinality: maskdef.cardinality, optionality: isOptional, newBlockMarker: newBlockMarker, offset: 0, casing: maskdef["casing"], def: element });
-                        } else {
-                            outElem.push({ fn: null, cardinality: 0, optionality: isOptional, newBlockMarker: newBlockMarker, offset: 0, casing: null, def: element });
-                            escaped = false;
-                        }
-                        //reset newBlockMarker
-                        newBlockMarker = false;
-                        return outElem;
-                    }
-                });
-            }
-
-            function isValid(pos, c, buffer, strict) {
-                //strict true ~ no correction or autofill
-                var result = false;
-                if (pos >= 0 && pos < getMaskLength()) {
-                    var testPos = determineTestPosition(pos),
-                        loopend = c ? 1 : 0,
-                        chrs = '';
-                    for (var i = tests[testPos].cardinality; i > loopend; i--) {
-                        chrs += getBufferElement(buffer, testPos - (i - 1));
-                    }
-
-                    if (c) {
-                        chrs += c;
-                    }
-                    //return is false or a json object => { pos: ??, c: ??}
-                    result = tests[testPos].fn != null ? tests[testPos].fn.test(chrs, buffer, pos, strict, opts) : false;
-                }
-                setTimeout(opts.onKeyValidation.call(this, result, opts), 0); //extra stuff to execute on keydown
-                return result;
-            }
-
-            function isMask(pos) {
-                var testPos = determineTestPosition(pos);
-                var test = tests[testPos];
-
-                return test != undefined ? test.fn : false;
-            }
-
-            function determineTestPosition(pos) {
-                return pos % tests.length;
-            }
-
-            function getPlaceHolder(pos) {
-                return opts.placeholder.charAt(pos % opts.placeholder.length);
-            }
-
-            function getMaskLength() {
-                var calculatedLength = _buffer.length;
-                if (!opts.greedy && opts.repeat > 1) {
-                    calculatedLength += _buffer.length * (opts.repeat - 1);
-                }
-                return calculatedLength;
-            }
-
-            //pos: from position
-            function seekNext(buffer, pos) {
-                var maskL = getMaskLength();
-                if (pos >= maskL) return maskL;
-                var position = pos;
-                while (++position < maskL && !isMask(position)) {};
-                return position;
-            }
-            //pos: from position
-            function seekPrevious(buffer, pos) {
-                var position = pos;
-                if (position <= 0) return 0;
-
-                while (--position > 0 && !isMask(position)) {};
-                return position;
-            }
-
-            function setBufferElement(buffer, position, element) {
-                //position = prepareBuffer(buffer, position);
-
-                var test = tests[determineTestPosition(position)];
-                var elem = element;
-                if (elem != undefined) {
-                    switch (test.casing) {
-                        case "upper":
-                            elem = element.toUpperCase();
-                            break;
-                        case "lower":
-                            elem = element.toLowerCase();
-                            break;
-                    }
-                }
-
-                buffer[position] = elem;
-            }
-            function getBufferElement(buffer, position, autoPrepare) {
-                if (autoPrepare) position = prepareBuffer(buffer, position);
-                return buffer[position];
-            }
-
-            //needed to handle the non-greedy mask repetitions
-            function prepareBuffer(buffer, position, isRTL) {
-                var j;
-                if (isRTL) {
-                    while (position < 0 && buffer.length < getMaskLength()) {
-                        j = _buffer.length - 1;
-                        position = _buffer.length;
-                        while (_buffer[j] !== undefined) {
-                            buffer.unshift(_buffer[j--]);
-                        }
-                    }
-                } else {
-                    while (buffer[position] == undefined && buffer.length < getMaskLength()) {
-                        j = 0;
-                        while (_buffer[j] !== undefined) {
-                            //add a new buffer
-                            buffer.push(_buffer[j++]);
-                        }
-                    }
-                }
-
-                return position;
-            }
-
-            function writeBuffer(input, buffer, caretPos) {
-                input._valueSet(buffer.join(''));
-                if (caretPos != undefined) {
-                    if (android) {
-                        setTimeout(function () {
-                            caret(input, caretPos);
-                        }, 100);
-                    } else caret(input, caretPos);
-                }
-            };
-            function clearBuffer(buffer, start, end) {
-                for (var i = start, maskL = getMaskLength(); i < end && i < maskL; i++) {
-                    setBufferElement(buffer, i, getBufferElement(_buffer.slice(), i));
-                }
-            };
-
-            function setReTargetPlaceHolder(buffer, pos) {
-                var testPos = determineTestPosition(pos);
-                setBufferElement(buffer, pos, getBufferElement(_buffer, testPos));
-            }
-
-            function checkVal(input, buffer, clearInvalid, skipRadixHandling) {
-                var isRTL = $(input).data('inputmask')['isRTL'],
-                    inputValue = truncateInput(input._valueGet(), isRTL).split('');
-
-                if (isRTL) {
-                    //align inputValue for RTL/numeric input
-                    var maskL = getMaskLength();
-                    var inputValueRev = inputValue.reverse();inputValueRev.length = maskL;
-
-                    for (var i = 0; i < maskL; i++) {
-                        var targetPosition = determineTestPosition(maskL - (i + 1));
-                        if (tests[targetPosition].fn == null && inputValueRev[i] != getBufferElement(_buffer, targetPosition)) {
-                            inputValueRev.splice(i, 0, getBufferElement(_buffer, targetPosition));
-                            inputValueRev.length = maskL;
-                        } else {
-                            inputValueRev[i] = inputValueRev[i] || getBufferElement(_buffer, targetPosition);
-                        }
-                    }
-                    inputValue = inputValueRev.reverse();
-                }
-                clearBuffer(buffer, 0, buffer.length);
-                buffer.length = _buffer.length;
-                var lastMatch = -1,
-                    checkPosition = -1,
-                    np,
-                    maskL = getMaskLength(),
-                    ivl = inputValue.length,
-                    rtlMatch = ivl == 0 ? maskL : -1;
-                for (var i = 0; i < ivl; i++) {
-                    for (var pos = checkPosition + 1; pos < maskL; pos++) {
-                        if (isMask(pos)) {
-                            var c = inputValue[i];
-                            if ((np = isValid(pos, c, buffer, !clearInvalid)) !== false) {
-                                if (np !== true) {
-                                    pos = np.pos || pos; //set new position from isValid
-                                    c = np.c || c; //set new char from isValid
-                                }
-                                setBufferElement(buffer, pos, c);
-                                lastMatch = checkPosition = pos;
-                            } else {
-                                setReTargetPlaceHolder(buffer, pos);
-                                if (c == getPlaceHolder(pos)) {
-                                    checkPosition = pos;
-                                    rtlMatch = pos;
-                                }
-                            }
-                            break;
-                        } else {
-                            //nonmask
-                            setReTargetPlaceHolder(buffer, pos);
-                            if (lastMatch == checkPosition) //once outsync the nonmask cannot be the lastmatch
-                                lastMatch = pos;
-                            checkPosition = pos;
-                            if (inputValue[i] == getBufferElement(buffer, pos)) break;
-                        }
-                    }
-                }
-                //Truncate buffer when using non-greedy masks
-                if (opts.greedy == false) {
-                    var newBuffer = truncateInput(buffer.join(''), isRTL).split('');
-                    while (buffer.length != newBuffer.length) {
-                        //map changes into the original buffer
-                        isRTL ? buffer.shift() : buffer.pop();
-                    }
-                }
-
-                if (clearInvalid) {
-                    writeBuffer(input, buffer);
-                }
-                return isRTL ? opts.numericInput ? $.inArray(opts.radixPoint, buffer) != -1 && skipRadixHandling !== true ? $.inArray(opts.radixPoint, buffer) : seekNext(buffer, maskL) : seekNext(buffer, rtlMatch) : seekNext(buffer, lastMatch);
-            }
-
-            function escapeRegex(str) {
-                var specials = ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'];
-                return str.replace(new RegExp('(\\' + specials.join('|\\') + ')', 'gim'), '\\$1');
-            }
-            function truncateInput(inputValue, rtl) {
-                return rtl ? inputValue.replace(new RegExp("^(" + escapeRegex(_buffer.join('')) + ")*"), "") : inputValue.replace(new RegExp("(" + escapeRegex(_buffer.join('')) + ")*$"), "");
-            }
-
-            function clearOptionalTail(input, buffer) {
-                checkVal(input, buffer, false);
-                var tmpBuffer = buffer.slice();
-                if ($(input).data('inputmask')['isRTL']) {
-                    for (var pos = 0; pos <= tmpBuffer.length - 1; pos++) {
-                        var testPos = determineTestPosition(pos);
-                        if (tests[testPos].optionality) {
-                            if (getPlaceHolder(pos) == buffer[pos] || !isMask(pos)) tmpBuffer.splice(0, 1);else break;
-                        } else break;
-                    }
-                } else {
-                    for (var pos = tmpBuffer.length - 1; pos >= 0; pos--) {
-                        var testPos = determineTestPosition(pos);
-                        if (tests[testPos].optionality) {
-                            if (getPlaceHolder(pos) == buffer[pos] || !isMask(pos)) tmpBuffer.pop();else break;
-                        } else break;
-                    }
-                }
-                writeBuffer(input, tmpBuffer);
-            }
-
-            //functionality fn
-            function unmaskedvalue($input, skipDatepickerCheck) {
-                var input = $input[0];
-                if (tests && (skipDatepickerCheck === true || !$input.hasClass('hasDatepicker'))) {
-                    var buffer = _buffer.slice();
-                    checkVal(input, buffer);
-                    return $.map(buffer, function (element, index) {
-                        return isMask(index) && element != getBufferElement(_buffer.slice(), index) ? element : null;
-                    }).join('');
-                } else {
-                    return input._valueGet();
-                }
-            }
-
-            function caret(input, begin, end) {
-                var npt = input.jquery && input.length > 0 ? input[0] : input;
-                if (typeof begin == 'number') {
-                    end = typeof end == 'number' ? end : begin;
-                    if (opts.insertMode == false && begin == end) end++; //set visualization for insert/overwrite mode
-                    if (npt.setSelectionRange) {
-                        npt.setSelectionRange(begin, end);
-                    } else if (npt.createTextRange) {
-                        var range = npt.createTextRange();
-                        range.collapse(true);
-                        range.moveEnd('character', end);
-                        range.moveStart('character', begin);
-                        range.select();
-                    }
-                    npt.focus();
-                    if (android && end != npt.selectionEnd) caretposCorrection = { begin: begin, end: end };
-                } else {
-                    var caretpos = android ? caretposCorrection : null,
-                        caretposCorrection = null;
-                    if (caretpos == null) {
-                        if (npt.setSelectionRange) {
-                            begin = npt.selectionStart;
-                            end = npt.selectionEnd;
-                        } else if (document.selection && document.selection.createRange) {
-                            var range = document.selection.createRange();
-                            begin = 0 - range.duplicate().moveStart('character', -100000);
-                            end = begin + range.text.length;
-                        }
-                        caretpos = { begin: begin, end: end };
-                    }
-                    return caretpos;
-                }
-            };
-
-            function mask(el) {
-                var $input = $(el);
-                if (!$input.is(":input")) return;
-
-                //correct greedy setting if needed
-                opts.greedy = opts.greedy ? opts.greedy : opts.repeat == 0;
-
-                //handle maxlength attribute
-                var maxLength = $input.prop('maxLength');
-                if (getMaskLength() > maxLength && maxLength > -1) {
-                    //FF sets no defined max length to -1 
-                    if (maxLength < _buffer.length) _buffer.length = maxLength;
-                    if (opts.greedy == false) {
-                        opts.repeat = Math.round(maxLength / _buffer.length);
-                    }
-                    $input.prop('maxLength', getMaskLength() * 2);
-                }
-
-                //store tests & original buffer in the input element - used to get the unmasked value
-                $input.data('inputmask', {
-                    'tests': tests,
-                    '_buffer': _buffer,
-                    'greedy': opts.greedy,
-                    'repeat': opts.repeat,
-                    'autoUnmask': opts.autoUnmask,
-                    'definitions': opts.definitions,
-                    'isRTL': false
-                });
-
-                patchValueProperty(el);
-
-                //init vars
-                var buffer = _buffer.slice(),
-                    undoBuffer = el._valueGet(),
-                    skipKeyPressEvent = false,
-                    //Safari 5.1.x - modal dialog fires keypress twice workaround
-                ignorable = false,
-                    lastPosition = -1,
-                    firstMaskPos = seekNext(buffer, -1),
-                    lastMaskPos = seekPrevious(buffer, getMaskLength()),
-                    isRTL = false;
-                if (el.dir == "rtl" || opts.numericInput) {
-                    el.dir = "ltr";
-                    $input.css("text-align", "right");
-                    $input.removeAttr("dir");
-                    var inputData = $input.data('inputmask');
-                    inputData['isRTL'] = true;
-                    $input.data('inputmask', inputData);
-                    isRTL = true;
-                }
-
-                //unbind all events - to make sure that no other mask will interfere when re-masking
-                $input.unbind(".inputmask");
-                $input.removeClass('focus.inputmask');
-                //bind events
-                $input.bind("mouseenter.inputmask", function () {
-                    var $input = $(this),
-                        input = this;
-                    if (!$input.hasClass('focus.inputmask') && opts.showMaskOnHover) {
-                        var nptL = input._valueGet().length;
-                        if (nptL < buffer.length) {
-                            if (nptL == 0) buffer = _buffer.slice();
-                            writeBuffer(input, buffer);
-                        }
-                    }
-                }).bind("blur.inputmask", function () {
-                    var $input = $(this),
-                        input = this,
-                        nptValue = input._valueGet();
-                    $input.removeClass('focus.inputmask');
-                    if (nptValue != undoBuffer) {
-                        $input.change();
-                    }
-                    if (opts.clearMaskOnLostFocus) {
-                        if (nptValue == _buffer.join('')) input._valueSet('');else {
-                            //clearout optional tail of the mask
-                            clearOptionalTail(input, buffer);
-                        }
-                    }
-                    if (!isComplete(input)) {
-                        $input.trigger("incomplete");
-                        if (opts.clearIncomplete) {
-                            if (opts.clearMaskOnLostFocus) input._valueSet('');else {
-                                buffer = _buffer.slice();
-                                writeBuffer(input, buffer);
-                            }
-                        }
-                    }
-                }).bind("focus.inputmask", function () {
-                    var $input = $(this),
-                        input = this;
-                    if (!$input.hasClass('focus.inputmask') && !opts.showMaskOnHover) {
-                        var nptL = input._valueGet().length;
-                        if (nptL < buffer.length) {
-                            if (nptL == 0) buffer = _buffer.slice();
-                            caret(input, checkVal(input, buffer, true));
-                        }
-                    }
-                    $input.addClass('focus.inputmask');
-                    undoBuffer = input._valueGet();
-                }).bind("mouseleave.inputmask", function () {
-                    var $input = $(this),
-                        input = this;
-                    if (opts.clearMaskOnLostFocus) {
-                        if (!$input.hasClass('focus.inputmask')) {
-                            if (input._valueGet() == _buffer.join('') || input._valueGet() == '') input._valueSet('');else {
-                                //clearout optional tail of the mask
-                                clearOptionalTail(input, buffer);
-                            }
-                        }
-                    }
-                }).bind("click.inputmask", function () {
-                    var input = this;
-                    setTimeout(function () {
-                        var selectedCaret = caret(input);
-                        if (selectedCaret.begin == selectedCaret.end) {
-                            var clickPosition = selectedCaret.begin;
-                            lastPosition = checkVal(input, buffer, false);
-                            if (isRTL) caret(input, clickPosition > lastPosition && (isValid(clickPosition, buffer[clickPosition], buffer, true) !== false || !isMask(clickPosition)) ? clickPosition : lastPosition);else caret(input, clickPosition < lastPosition && (isValid(clickPosition, buffer[clickPosition], buffer, true) !== false || !isMask(clickPosition)) ? clickPosition : lastPosition);
-                        }
-                    }, 0);
-                }).bind('dblclick.inputmask', function () {
-                    var input = this;
-                    setTimeout(function () {
-                        caret(input, 0, lastPosition);
-                    }, 0);
-                }).bind("keydown.inputmask", keydownEvent).bind("keypress.inputmask", keypressEvent).bind("keyup.inputmask", keyupEvent).bind(pasteEvent + ".inputmask, dragdrop.inputmask, drop.inputmask", function () {
-                    var input = this;
-                    setTimeout(function () {
-                        caret(input, checkVal(input, buffer, true));
-                    }, 0);
-                }).bind('setvalue.inputmask', function () {
-                    var input = this;
-                    undoBuffer = input._valueGet();
-                    checkVal(input, buffer, true);
-                    if (input._valueGet() == _buffer.join('')) input._valueSet('');
-                }).bind('complete.inputmask', opts.oncomplete).bind('incomplete.inputmask', opts.onincomplete).bind('cleared.inputmask', opts.oncleared);
-
-                //apply mask
-                lastPosition = checkVal(el, buffer, true);
-
-                // Wrap document.activeElement in a try/catch block since IE9 throw "Unspecified error" if document.activeElement is undefined when we are in an IFrame.
-                var activeElement;
-                try {
-                    activeElement = document.activeElement;
-                } catch (e) {}
-                if (activeElement === el) {
-                    //position the caret when in focus
-                    $input.addClass('focus.inputmask');
-                    caret(el, lastPosition);
-                } else if (opts.clearMaskOnLostFocus) {
-                    if (el._valueGet() == _buffer.join('')) {
-                        el._valueSet('');
-                    } else {
-                        clearOptionalTail(el, buffer);
-                    }
-                }
-
-                installEventRuler(el);
-
-                //private functions
-                function isComplete(npt) {
-                    var complete = true,
-                        nptValue = npt._valueGet(),
-                        ml = nptValue.length;
-                    for (var i = 0; i < ml; i++) {
-                        if (isMask(i) && nptValue.charAt(i) == getPlaceHolder(i)) {
-                            complete = false;
-                            break;
-                        }
-                    }
-                    return complete;
-                }
-
-                function installEventRuler(npt) {
-                    var events = $._data(npt).events;
-
-                    $.each(events, function (eventType, eventHandlers) {
-                        $(npt).bind(eventType + ".inputmask", function (event) {
-                            if (this.readOnly || this.disabled) {
-                                event.stopPropagation();
-                                event.stopImmediatePropagation();
-                                event.preventDefault();
-                                return false;
-                            }
-                        });
-                        //!! the bound handlers are executed in the order they where bound
-                        //reorder the events
-                        var ourHandler = eventHandlers[eventHandlers.length - 1];
-                        for (var i = eventHandlers.length - 1; i > 0; i--) {
-                            eventHandlers[i] = eventHandlers[i - 1];
-                        }
-                        eventHandlers[0] = ourHandler;
-                    });
-                }
-
-                function patchValueProperty(npt) {
-                    var valueProperty;
-                    if (Object.getOwnPropertyDescriptor) valueProperty = Object.getOwnPropertyDescriptor(npt, "value");
-                    if (valueProperty && valueProperty.get) {
-                        if (!npt._valueGet) {
-
-                            npt._valueGet = valueProperty.get;
-                            npt._valueSet = valueProperty.set;
-
-                            Object.defineProperty(npt, "value", {
-                                get: function get() {
-                                    var $self = $(this),
-                                        inputData = $(this).data('inputmask');
-                                    return inputData && inputData['autoUnmask'] ? $self.inputmask('unmaskedvalue') : this._valueGet() != inputData['_buffer'].join('') ? this._valueGet() : '';
-                                },
-                                set: function set(value) {
-                                    this._valueSet(value);$(this).triggerHandler('setvalue.inputmask');
-                                }
-                            });
-                        }
-                    } else if (document.__lookupGetter__ && npt.__lookupGetter__("value")) {
-                        if (!npt._valueGet) {
-                            npt._valueGet = npt.__lookupGetter__("value");
-                            npt._valueSet = npt.__lookupSetter__("value");
-
-                            npt.__defineGetter__("value", function () {
-                                var $self = $(this),
-                                    inputData = $(this).data('inputmask');
-                                return inputData && inputData['autoUnmask'] ? $self.inputmask('unmaskedvalue') : this._valueGet() != inputData['_buffer'].join('') ? this._valueGet() : '';
-                            });
-                            npt.__defineSetter__("value", function (value) {
-                                this._valueSet(value);$(this).triggerHandler('setvalue.inputmask');
-                            });
-                        }
-                    } else {
-                        if (!npt._valueGet) {
-                            npt._valueGet = function () {
-                                return this.value;
-                            };
-                            npt._valueSet = function (value) {
-                                this.value = value;
-                            };
-                        }
-                        if ($.fn.val.inputmaskpatch != true) {
-                            $.fn.val = function () {
-                                if (arguments.length == 0) {
-                                    var $self = $(this);
-                                    if ($self.data('inputmask')) {
-                                        if ($self.data('inputmask')['autoUnmask']) return $self.inputmask('unmaskedvalue');else {
-                                            var result = $.inputmask.val.apply($self);
-                                            return result != $self.data('inputmask')['_buffer'].join('') ? result : '';
-                                        }
-                                    } else return $.inputmask.val.apply($self);
-                                } else {
-                                    var args = arguments;
-                                    return this.each(function () {
-                                        var $self = $(this);
-                                        var result = $.inputmask.val.apply($self, args);
-                                        if ($self.data('inputmask')) $self.triggerHandler('setvalue.inputmask');
-                                        return result;
-                                    });
-                                }
-                            };
-                            $.extend($.fn.val, {
-                                inputmaskpatch: true
-                            });
-                        }
-                    }
-                }
-                //shift chars to left from start to end and put c at end position if defined
-                function shiftL(start, end, c) {
-                    while (!isMask(start) && start - 1 >= 0) {
-                        start--;
-                    }for (var i = start; i < end && i < getMaskLength(); i++) {
-                        if (isMask(i)) {
-                            setReTargetPlaceHolder(buffer, i);
-                            var j = seekNext(buffer, i);
-                            var p = getBufferElement(buffer, j);
-                            if (p != getPlaceHolder(j)) {
-                                if (j < getMaskLength() && isValid(i, p, buffer, true) !== false && tests[determineTestPosition(i)].def == tests[determineTestPosition(j)].def) {
-                                    setBufferElement(buffer, i, getBufferElement(buffer, j));
-                                    setReTargetPlaceHolder(buffer, j); //cleanup next position
-                                } else {
-                                    if (isMask(i)) break;
-                                }
-                            } else if (c == undefined) break;
-                        } else {
-                            setReTargetPlaceHolder(buffer, i);
-                        }
-                    }
-                    if (c != undefined) setBufferElement(buffer, isRTL ? end : seekPrevious(buffer, end), c);
-
-                    buffer = truncateInput(buffer.join(''), isRTL).split('');
-                    if (buffer.length == 0) buffer = _buffer.slice();
-
-                    return start; //return the used start position
-                }
-                function shiftR(start, end, c, full) {
-                    //full => behave like a push right ~ do not stop on placeholders
-                    for (var i = start; i <= end && i < getMaskLength(); i++) {
-                        if (isMask(i)) {
-                            var t = getBufferElement(buffer, i);
-                            setBufferElement(buffer, i, c);
-                            if (t != getPlaceHolder(i)) {
-                                var j = seekNext(buffer, i);
-                                if (j < getMaskLength()) {
-                                    if (isValid(j, t, buffer, true) !== false && tests[determineTestPosition(i)].def == tests[determineTestPosition(j)].def) c = t;else {
-                                        if (isMask(j)) break;else c = t;
-                                    }
-                                } else break;
-                            } else if (full !== true) break;
-                        } else setReTargetPlaceHolder(buffer, i);
-                    }
-                    var lengthBefore = buffer.length;
-                    buffer = truncateInput(buffer.join(''), isRTL).split('');
-                    if (buffer.length == 0) buffer = _buffer.slice();
-
-                    return end - (lengthBefore - buffer.length); //return new start position
-                };
-
-                function keydownEvent(e) {
-                    //Safari 5.1.x - modal dialog fires keypress twice workaround
-                    skipKeyPressEvent = false;
-
-                    var input = this,
-                        k = e.keyCode,
-                        pos = caret(input);
-
-                    //set input direction according the position to the radixPoint
-                    if (opts.numericInput) {
-                        var nptStr = input._valueGet();
-                        var radixPosition = nptStr.indexOf(opts.radixPoint);
-                        if (radixPosition != -1) {
-                            isRTL = pos.begin <= radixPosition || pos.end <= radixPosition;
-                        }
-                    }
-
-                    //backspace, delete, and escape get special treatment
-                    if (k == opts.keyCode.BACKSPACE || k == opts.keyCode.DELETE || iphone && k == 127) {
-                        //backspace/delete
-                        var maskL = getMaskLength();
-                        if (pos.begin == 0 && pos.end == maskL) {
-                            buffer = _buffer.slice();
-                            writeBuffer(input, buffer);
-                            caret(input, checkVal(input, buffer, false));
-                        } else if (pos.end - pos.begin > 1 || pos.end - pos.begin == 1 && opts.insertMode) {
-                            clearBuffer(buffer, pos.begin, pos.end);
-                            writeBuffer(input, buffer, isRTL ? checkVal(input, buffer, false) : pos.begin);
-                        } else {
-                            var beginPos = pos.begin - (k == opts.keyCode.DELETE ? 0 : 1);
-                            if (beginPos < firstMaskPos && k == opts.keyCode.DELETE) {
-                                beginPos = firstMaskPos;
-                            }
-                            if (beginPos >= firstMaskPos) {
-                                if (opts.numericInput && opts.greedy && k == opts.keyCode.DELETE && buffer[beginPos] == opts.radixPoint) {
-                                    beginPos = seekNext(buffer, beginPos);
-                                    isRTL = false;
-                                }
-                                if (isRTL) {
-                                    beginPos = shiftR(firstMaskPos, beginPos, getPlaceHolder(beginPos), true);
-                                    beginPos = opts.numericInput && opts.greedy && k == opts.keyCode.BACKSPACE && buffer[beginPos + 1] == opts.radixPoint ? beginPos + 1 : seekNext(buffer, beginPos);
-                                } else beginPos = shiftL(beginPos, maskL);
-                                writeBuffer(input, buffer, beginPos);
-                            }
-                        }
-                        if (input._valueGet() == _buffer.join('')) $(input).trigger('cleared');
-
-                        return false;
-                    } else if (k == opts.keyCode.END || k == opts.keyCode.PAGE_DOWN) {
-                        //when END or PAGE_DOWN pressed set position at lastmatch
-                        setTimeout(function () {
-                            var caretPos = checkVal(input, buffer, false, true);
-                            if (!opts.insertMode && caretPos == getMaskLength() && !e.shiftKey) caretPos--;
-                            caret(input, e.shiftKey ? pos.begin : caretPos, caretPos);
-                        }, 0);
-                        return false;
-                    } else if (k == opts.keyCode.HOME || k == opts.keyCode.PAGE_UP) {
-                        //Home or page_up
-                        caret(input, 0, e.shiftKey ? pos.begin : 0);
-                        return false;
-                    } else if (k == opts.keyCode.ESCAPE) {
-                        //escape
-                        input._valueSet(undoBuffer);
-                        caret(input, 0, checkVal(input, buffer));
-                        return false;
-                    } else if (k == opts.keyCode.INSERT) {
-                        //insert
-                        opts.insertMode = !opts.insertMode;
-                        caret(input, !opts.insertMode && pos.begin == getMaskLength() ? pos.begin - 1 : pos.begin);
-                        return false;
-                    } else if (e.ctrlKey && k == 88) {
-                        setTimeout(function () {
-                            caret(input, checkVal(input, buffer, true));
-                        }, 0);
-                    } else if (!opts.insertMode) {
-                        //overwritemode
-                        if (k == opts.keyCode.RIGHT) {
-                            //right
-                            var caretPos = pos.begin == pos.end ? pos.end + 1 : pos.end;
-                            caretPos = caretPos < getMaskLength() ? caretPos : pos.end;
-                            caret(input, e.shiftKey ? pos.begin : caretPos, e.shiftKey ? caretPos + 1 : caretPos);
-                            return false;
-                        } else if (k == opts.keyCode.LEFT) {
-                            //left
-                            var caretPos = pos.begin - 1;
-                            caretPos = caretPos > 0 ? caretPos : 0;
-                            caret(input, caretPos, e.shiftKey ? pos.end : caretPos);
-                            return false;
-                        }
-                    }
-
-                    opts.onKeyDown.call(this, e, opts); //extra stuff to execute on keydown
-                    ignorable = $.inArray(k, opts.ignorables) != -1;
-                }
-
-                function keypressEvent(e) {
-                    //Safari 5.1.x - modal dialog fires keypress twice workaround
-                    if (skipKeyPressEvent) return false;
-                    skipKeyPressEvent = true;
-
-                    var input = this,
-                        $input = $(input);
-
-                    e = e || window.event;
-                    var k = e.which || e.charCode || e.keyCode;
-
-                    if (opts.numericInput && k == opts.radixPoint.charCodeAt(opts.radixPoint.length - 1)) {
-                        var nptStr = input._valueGet();
-                        var radixPosition = nptStr.indexOf(opts.radixPoint);
-                        caret(input, seekNext(buffer, radixPosition != -1 ? radixPosition : getMaskLength()));
-                    }
-
-                    if (e.ctrlKey || e.altKey || e.metaKey || ignorable) {
-                        //Ignore
-                        return true;
-                    } else {
-                        if (k) {
-                            $input.trigger('input');
-
-                            var pos = caret(input),
-                                c = String.fromCharCode(k),
-                                maskL = getMaskLength();
-                            clearBuffer(buffer, pos.begin, pos.end);
-
-                            if (isRTL) {
-                                var p = opts.numericInput ? pos.end : seekPrevious(buffer, pos.end),
-                                    np;
-                                if ((np = isValid(p == maskL || getBufferElement(buffer, p) == opts.radixPoint ? seekPrevious(buffer, p) : p, c, buffer, false)) !== false) {
-                                    if (np !== true) {
-                                        p = np.pos || pos; //set new position from isValid
-                                        c = np.c || c; //set new char from isValid
-                                    }
-
-                                    var firstUnmaskedPosition = firstMaskPos;
-                                    if (opts.insertMode == true) {
-                                        if (opts.greedy == true) {
-                                            var bfrClone = buffer.slice();
-                                            while (getBufferElement(bfrClone, firstUnmaskedPosition, true) != getPlaceHolder(firstUnmaskedPosition) && firstUnmaskedPosition <= p) {
-                                                firstUnmaskedPosition = firstUnmaskedPosition == maskL ? maskL + 1 : seekNext(buffer, firstUnmaskedPosition);
-                                            }
-                                        }
-
-                                        if (firstUnmaskedPosition <= p && (opts.greedy || buffer.length < maskL)) {
-                                            if (buffer[firstMaskPos] != getPlaceHolder(firstMaskPos) && buffer.length < maskL) {
-                                                var offset = prepareBuffer(buffer, -1, isRTL);
-                                                if (pos.end != 0) p = p + offset;
-                                                maskL = buffer.length;
-                                            }
-                                            shiftL(firstUnmaskedPosition, opts.numericInput ? seekPrevious(buffer, p) : p, c);
-                                        } else return false;
-                                    } else setBufferElement(buffer, opts.numericInput ? seekPrevious(buffer, p) : p, c);
-                                    writeBuffer(input, buffer, opts.numericInput && p == 0 ? seekNext(buffer, p) : p);
-                                    setTimeout(function () {
-                                        //timeout needed for IE
-                                        if (isComplete(input)) $input.trigger("complete");
-                                    }, 0);
-                                } else if (android) writeBuffer(input, buffer, pos.begin);
-                            } else {
-                                var p = seekNext(buffer, pos.begin - 1),
-                                    np;
-                                prepareBuffer(buffer, p, isRTL);
-                                if ((np = isValid(p, c, buffer, false)) !== false) {
-                                    if (np !== true) {
-                                        p = np.pos || p; //set new position from isValid
-                                        c = np.c || c; //set new char from isValid
-                                    }
-                                    if (opts.insertMode == true) {
-                                        var lastUnmaskedPosition = getMaskLength();
-                                        var bfrClone = buffer.slice();
-                                        while (getBufferElement(bfrClone, lastUnmaskedPosition, true) != getPlaceHolder(lastUnmaskedPosition) && lastUnmaskedPosition >= p) {
-                                            lastUnmaskedPosition = lastUnmaskedPosition == 0 ? -1 : seekPrevious(buffer, lastUnmaskedPosition);
-                                        }
-                                        if (lastUnmaskedPosition >= p) shiftR(p, buffer.length, c);else return false;
-                                    } else setBufferElement(buffer, p, c);
-                                    var next = seekNext(buffer, p);
-                                    writeBuffer(input, buffer, next);
-
-                                    setTimeout(function () {
-                                        //timeout needed for IE
-                                        if (isComplete(input)) $input.trigger("complete");
-                                    }, 0);
-                                } else if (android) writeBuffer(input, buffer, pos.begin);
-                            }
-                            return false;
-                        }
-                    }
-                }
-
-                function keyupEvent(e) {
-                    var $input = $(this),
-                        input = this;
-                    var k = e.keyCode;
-                    opts.onKeyUp.call(this, e, opts); //extra stuff to execute on keyup
-                    if (k == opts.keyCode.TAB && $input.hasClass('focus.inputmask') && input._valueGet().length == 0) {
-                        buffer = _buffer.slice();
-                        writeBuffer(input, buffer);
-                        if (!isRTL) caret(input, 0);
-                        undoBuffer = input._valueGet();
-                    }
-                }
-            }
-
-            return this; //return this to expose publics
-        };
-    }
-})(jQuery);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 19 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dom7_dist_dom7_modular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ssr_window__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dom7_dist_dom7_modular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ssr_window__ = __webpack_require__(2);
 /**
  * Swiper 4.1.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -19597,7 +16923,1339 @@ Swiper$1.use(components);
 
 
 /***/ }),
-/* 20 */
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return win; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return doc; });
+/**
+ * SSR Window 1.0.0
+ * Better handling for window object in SSR environment
+ * https://github.com/nolimits4web/ssr-window
+ *
+ * Copyright 2018, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: February 10, 2018
+ */
+var d;
+if (typeof document === 'undefined') {
+  d = {
+    body: {},
+    addEventListener: function addEventListener() {},
+    removeEventListener: function removeEventListener() {},
+    activeElement: {
+      blur: function blur() {},
+      nodeName: '',
+    },
+    querySelector: function querySelector() {
+      return null;
+    },
+    querySelectorAll: function querySelectorAll() {
+      return [];
+    },
+    getElementById: function getElementById() {
+      return null;
+    },
+    createEvent: function createEvent() {
+      return {
+        initEvent: function initEvent() {},
+      };
+    },
+    createElement: function createElement() {
+      return {
+        children: [],
+        childNodes: [],
+        style: {},
+        setAttribute: function setAttribute() {},
+        getElementsByTagName: function getElementsByTagName() {
+          return [];
+        },
+      };
+    },
+    location: { hash: '' },
+  };
+} else {
+  // eslint-disable-next-line
+  d = document;
+}
+
+var doc = d;
+
+var w;
+if (typeof window === 'undefined') {
+  w = {
+    document: doc,
+    navigator: {
+      userAgent: '',
+    },
+    location: {},
+    history: {},
+    CustomEvent: function CustomEvent() {
+      return this;
+    },
+    addEventListener: function addEventListener() {},
+    removeEventListener: function removeEventListener() {},
+    getComputedStyle: function getComputedStyle() {
+      return {
+        getPropertyValue: function getPropertyValue() {
+          return '';
+        },
+      };
+    },
+    Image: function Image() {},
+    Date: function Date() {},
+    screen: {},
+    setTimeout: function setTimeout() {},
+    clearTimeout: function clearTimeout() {},
+  };
+} else {
+  // eslint-disable-next-line
+  w = window;
+}
+
+var win = w;
+
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "image/dewelopment_hard_structure_site_part_one.png";
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(5);
+
+__webpack_require__(6);
+
+__webpack_require__(8);
+
+__webpack_require__(11);
+
+__webpack_require__(18);
+
+__webpack_require__(19);
+
+__webpack_require__(21);
+
+__webpack_require__(23);
+
+__webpack_require__(24);
+
+__webpack_require__(26);
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(7);
+
+$(document).ready(function () {
+
+    var menuContainer = $('.menu');
+    var bodySelector = $('body');
+    var showClass = "show";
+
+    bodySelector.on('click', '.burger, .close-mobile-menu', mobileMenuOpen);
+
+    bodySelector.on('click', '.pensil', openForm);
+
+    function openForm() {
+        $('.container-form, .content-form, .opacity').show();
+        $('.close-mobile-menu').removeClass('close-mobile-menu').addClass('burger');
+        $('.content-mobile-menu').hide();
+    }
+    bodySelector.on('click', '.pensil', openMenu);
+
+    function openMenu() {
+        $('.container-form, .opacity').show();
+        $('li:last').removeClass('close-mobile-menu').addClass('burger');
+    }
+
+    function mobileMenuOpen() {
+        if ($('body').find('.close-mobile-menu').length) {
+
+            $(this).toggleClass('close-mobile-menu').addClass('burger');
+            $('.content-mobile-menu').hide();
+
+            $('li:last').toggleClass('close-mobile-menu').addClass('burger');
+
+            // messageBlock.css({display: 'none'});
+            // mobileMenuBNlock.css({display: 'none'});
+            // $('.send-form').find('input[type=tel], input[type=text], textarea').val('');
+            // $('.send-form').find('label').removeClass(showClass);
+            // $('.send-form').find('input').removeClass('error');
+        } else {
+
+            $(this).toggleClass('burger').addClass('close-mobile-menu');
+            $('.container-form').hide();
+            $('.content-mobile-menu').show().css({ display: 'flex' });
+
+            $('li:last').toggleClass('burger').addClass('close-mobile-menu');
+            $('.container-form').hide();
+
+            // $(this).css('background', 'url(../img/mobile/close.svg) no-repeat').addClass('close-burger');
+            // messageIcon.css({display: 'block'});
+            // mobileMenuBNlock.css({display: 'flex', display: '-webkit-flex', display: '-ms-flexbox', display: '-moz-box', display: '-webkit-box'});
+            // messageBlock.css('display', 'none');
+        }
+    }
+
+    $(window).resize(function () {
+        if (document.documentElement.clientWidth <= 900) {}
+    });
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(9);
+
+var _typed = __webpack_require__(10);
+
+var _typed2 = _interopRequireDefault(_typed);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+$(document).ready(function () {
+    if (document.documentElement.clientWidth <= 900) {
+        $('.header-text > span').text('Создание современных и функциональных сайтов');
+    }
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * 
+ *   typed.js - A JavaScript Typing Animation Library
+ *   Author: Matt Boldt <me@mattboldt.com>
+ *   Version: v2.0.6
+ *   Url: https://github.com/mattboldt/typed.js
+ *   License(s): MIT
+ * 
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Typed"] = factory();
+	else
+		root["Typed"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	var _initializerJs = __webpack_require__(1);
+	
+	var _htmlParserJs = __webpack_require__(3);
+	
+	/**
+	 * Welcome to Typed.js!
+	 * @param {string} elementId HTML element ID _OR_ HTML element
+	 * @param {object} options options object
+	 * @returns {object} a new Typed object
+	 */
+	
+	var Typed = (function () {
+	  function Typed(elementId, options) {
+	    _classCallCheck(this, Typed);
+	
+	    // Initialize it up
+	    _initializerJs.initializer.load(this, options, elementId);
+	    // All systems go!
+	    this.begin();
+	  }
+	
+	  /**
+	   * Toggle start() and stop() of the Typed instance
+	   * @public
+	   */
+	
+	  _createClass(Typed, [{
+	    key: 'toggle',
+	    value: function toggle() {
+	      this.pause.status ? this.start() : this.stop();
+	    }
+	
+	    /**
+	     * Stop typing / backspacing and enable cursor blinking
+	     * @public
+	     */
+	  }, {
+	    key: 'stop',
+	    value: function stop() {
+	      if (this.typingComplete) return;
+	      if (this.pause.status) return;
+	      this.toggleBlinking(true);
+	      this.pause.status = true;
+	      this.options.onStop(this.arrayPos, this);
+	    }
+	
+	    /**
+	     * Start typing / backspacing after being stopped
+	     * @public
+	     */
+	  }, {
+	    key: 'start',
+	    value: function start() {
+	      if (this.typingComplete) return;
+	      if (!this.pause.status) return;
+	      this.pause.status = false;
+	      if (this.pause.typewrite) {
+	        this.typewrite(this.pause.curString, this.pause.curStrPos);
+	      } else {
+	        this.backspace(this.pause.curString, this.pause.curStrPos);
+	      }
+	      this.options.onStart(this.arrayPos, this);
+	    }
+	
+	    /**
+	     * Destroy this instance of Typed
+	     * @public
+	     */
+	  }, {
+	    key: 'destroy',
+	    value: function destroy() {
+	      this.reset(false);
+	      this.options.onDestroy(this);
+	    }
+	
+	    /**
+	     * Reset Typed and optionally restarts
+	     * @param {boolean} restart
+	     * @public
+	     */
+	  }, {
+	    key: 'reset',
+	    value: function reset() {
+	      var restart = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+	
+	      clearInterval(this.timeout);
+	      this.replaceText('');
+	      if (this.cursor && this.cursor.parentNode) {
+	        this.cursor.parentNode.removeChild(this.cursor);
+	        this.cursor = null;
+	      }
+	      this.strPos = 0;
+	      this.arrayPos = 0;
+	      this.curLoop = 0;
+	      if (restart) {
+	        this.insertCursor();
+	        this.options.onReset(this);
+	        this.begin();
+	      }
+	    }
+	
+	    /**
+	     * Begins the typing animation
+	     * @private
+	     */
+	  }, {
+	    key: 'begin',
+	    value: function begin() {
+	      var _this = this;
+	
+	      this.typingComplete = false;
+	      this.shuffleStringsIfNeeded(this);
+	      this.insertCursor();
+	      if (this.bindInputFocusEvents) this.bindFocusEvents();
+	      this.timeout = setTimeout(function () {
+	        // Check if there is some text in the element, if yes start by backspacing the default message
+	        if (!_this.currentElContent || _this.currentElContent.length === 0) {
+	          _this.typewrite(_this.strings[_this.sequence[_this.arrayPos]], _this.strPos);
+	        } else {
+	          // Start typing
+	          _this.backspace(_this.currentElContent, _this.currentElContent.length);
+	        }
+	      }, this.startDelay);
+	    }
+	
+	    /**
+	     * Called for each character typed
+	     * @param {string} curString the current string in the strings array
+	     * @param {number} curStrPos the current position in the curString
+	     * @private
+	     */
+	  }, {
+	    key: 'typewrite',
+	    value: function typewrite(curString, curStrPos) {
+	      var _this2 = this;
+	
+	      if (this.fadeOut && this.el.classList.contains(this.fadeOutClass)) {
+	        this.el.classList.remove(this.fadeOutClass);
+	        if (this.cursor) this.cursor.classList.remove(this.fadeOutClass);
+	      }
+	
+	      var humanize = this.humanizer(this.typeSpeed);
+	      var numChars = 1;
+	
+	      if (this.pause.status === true) {
+	        this.setPauseStatus(curString, curStrPos, true);
+	        return;
+	      }
+	
+	      // contain typing function in a timeout humanize'd delay
+	      this.timeout = setTimeout(function () {
+	        // skip over any HTML chars
+	        curStrPos = _htmlParserJs.htmlParser.typeHtmlChars(curString, curStrPos, _this2);
+	
+	        var pauseTime = 0;
+	        var substr = curString.substr(curStrPos);
+	        // check for an escape character before a pause value
+	        // format: \^\d+ .. eg: ^1000 .. should be able to print the ^ too using ^^
+	        // single ^ are removed from string
+	        if (substr.charAt(0) === '^') {
+	          if (/^\^\d+/.test(substr)) {
+	            var skip = 1; // skip at least 1
+	            substr = /\d+/.exec(substr)[0];
+	            skip += substr.length;
+	            pauseTime = parseInt(substr);
+	            _this2.temporaryPause = true;
+	            _this2.options.onTypingPaused(_this2.arrayPos, _this2);
+	            // strip out the escape character and pause value so they're not printed
+	            curString = curString.substring(0, curStrPos) + curString.substring(curStrPos + skip);
+	            _this2.toggleBlinking(true);
+	          }
+	        }
+	
+	        // check for skip characters formatted as
+	        // "this is a `string to print NOW` ..."
+	        if (substr.charAt(0) === '`') {
+	          while (curString.substr(curStrPos + numChars).charAt(0) !== '`') {
+	            numChars++;
+	            if (curStrPos + numChars > curString.length) break;
+	          }
+	          // strip out the escape characters and append all the string in between
+	          var stringBeforeSkip = curString.substring(0, curStrPos);
+	          var stringSkipped = curString.substring(stringBeforeSkip.length + 1, curStrPos + numChars);
+	          var stringAfterSkip = curString.substring(curStrPos + numChars + 1);
+	          curString = stringBeforeSkip + stringSkipped + stringAfterSkip;
+	          numChars--;
+	        }
+	
+	        // timeout for any pause after a character
+	        _this2.timeout = setTimeout(function () {
+	          // Accounts for blinking while paused
+	          _this2.toggleBlinking(false);
+	
+	          // We're done with this sentence!
+	          if (curStrPos === curString.length) {
+	            _this2.doneTyping(curString, curStrPos);
+	          } else {
+	            _this2.keepTyping(curString, curStrPos, numChars);
+	          }
+	          // end of character pause
+	          if (_this2.temporaryPause) {
+	            _this2.temporaryPause = false;
+	            _this2.options.onTypingResumed(_this2.arrayPos, _this2);
+	          }
+	        }, pauseTime);
+	
+	        // humanized value for typing
+	      }, humanize);
+	    }
+	
+	    /**
+	     * Continue to the next string & begin typing
+	     * @param {string} curString the current string in the strings array
+	     * @param {number} curStrPos the current position in the curString
+	     * @private
+	     */
+	  }, {
+	    key: 'keepTyping',
+	    value: function keepTyping(curString, curStrPos, numChars) {
+	      // call before functions if applicable
+	      if (curStrPos === 0) {
+	        this.toggleBlinking(false);
+	        this.options.preStringTyped(this.arrayPos, this);
+	      }
+	      // start typing each new char into existing string
+	      // curString: arg, this.el.html: original text inside element
+	      curStrPos += numChars;
+	      var nextString = curString.substr(0, curStrPos);
+	      this.replaceText(nextString);
+	      // loop the function
+	      this.typewrite(curString, curStrPos);
+	    }
+	
+	    /**
+	     * We're done typing all strings
+	     * @param {string} curString the current string in the strings array
+	     * @param {number} curStrPos the current position in the curString
+	     * @private
+	     */
+	  }, {
+	    key: 'doneTyping',
+	    value: function doneTyping(curString, curStrPos) {
+	      var _this3 = this;
+	
+	      // fires callback function
+	      this.options.onStringTyped(this.arrayPos, this);
+	      this.toggleBlinking(true);
+	      // is this the final string
+	      if (this.arrayPos === this.strings.length - 1) {
+	        // callback that occurs on the last typed string
+	        this.complete();
+	        // quit if we wont loop back
+	        if (this.loop === false || this.curLoop === this.loopCount) {
+	          return;
+	        }
+	      }
+	      this.timeout = setTimeout(function () {
+	        _this3.backspace(curString, curStrPos);
+	      }, this.backDelay);
+	    }
+	
+	    /**
+	     * Backspaces 1 character at a time
+	     * @param {string} curString the current string in the strings array
+	     * @param {number} curStrPos the current position in the curString
+	     * @private
+	     */
+	  }, {
+	    key: 'backspace',
+	    value: function backspace(curString, curStrPos) {
+	      var _this4 = this;
+	
+	      if (this.pause.status === true) {
+	        this.setPauseStatus(curString, curStrPos, true);
+	        return;
+	      }
+	      if (this.fadeOut) return this.initFadeOut();
+	
+	      this.toggleBlinking(false);
+	      var humanize = this.humanizer(this.backSpeed);
+	
+	      this.timeout = setTimeout(function () {
+	        curStrPos = _htmlParserJs.htmlParser.backSpaceHtmlChars(curString, curStrPos, _this4);
+	        // replace text with base text + typed characters
+	        var curStringAtPosition = curString.substr(0, curStrPos);
+	        _this4.replaceText(curStringAtPosition);
+	
+	        // if smartBack is enabled
+	        if (_this4.smartBackspace) {
+	          // the remaining part of the current string is equal of the same part of the new string
+	          var nextString = _this4.strings[_this4.arrayPos + 1];
+	          if (nextString && curStringAtPosition === nextString.substr(0, curStrPos)) {
+	            _this4.stopNum = curStrPos;
+	          } else {
+	            _this4.stopNum = 0;
+	          }
+	        }
+	
+	        // if the number (id of character in current string) is
+	        // less than the stop number, keep going
+	        if (curStrPos > _this4.stopNum) {
+	          // subtract characters one by one
+	          curStrPos--;
+	          // loop the function
+	          _this4.backspace(curString, curStrPos);
+	        } else if (curStrPos <= _this4.stopNum) {
+	          // if the stop number has been reached, increase
+	          // array position to next string
+	          _this4.arrayPos++;
+	          // When looping, begin at the beginning after backspace complete
+	          if (_this4.arrayPos === _this4.strings.length) {
+	            _this4.arrayPos = 0;
+	            _this4.options.onLastStringBackspaced();
+	            _this4.shuffleStringsIfNeeded();
+	            _this4.begin();
+	          } else {
+	            _this4.typewrite(_this4.strings[_this4.sequence[_this4.arrayPos]], curStrPos);
+	          }
+	        }
+	        // humanized value for typing
+	      }, humanize);
+	    }
+	
+	    /**
+	     * Full animation is complete
+	     * @private
+	     */
+	  }, {
+	    key: 'complete',
+	    value: function complete() {
+	      this.options.onComplete(this);
+	      if (this.loop) {
+	        this.curLoop++;
+	      } else {
+	        this.typingComplete = true;
+	      }
+	    }
+	
+	    /**
+	     * Has the typing been stopped
+	     * @param {string} curString the current string in the strings array
+	     * @param {number} curStrPos the current position in the curString
+	     * @param {boolean} isTyping
+	     * @private
+	     */
+	  }, {
+	    key: 'setPauseStatus',
+	    value: function setPauseStatus(curString, curStrPos, isTyping) {
+	      this.pause.typewrite = isTyping;
+	      this.pause.curString = curString;
+	      this.pause.curStrPos = curStrPos;
+	    }
+	
+	    /**
+	     * Toggle the blinking cursor
+	     * @param {boolean} isBlinking
+	     * @private
+	     */
+	  }, {
+	    key: 'toggleBlinking',
+	    value: function toggleBlinking(isBlinking) {
+	      if (!this.cursor) return;
+	      // if in paused state, don't toggle blinking a 2nd time
+	      if (this.pause.status) return;
+	      if (this.cursorBlinking === isBlinking) return;
+	      this.cursorBlinking = isBlinking;
+	      var status = isBlinking ? 'infinite' : 0;
+	      this.cursor.style.animationIterationCount = status;
+	    }
+	
+	    /**
+	     * Speed in MS to type
+	     * @param {number} speed
+	     * @private
+	     */
+	  }, {
+	    key: 'humanizer',
+	    value: function humanizer(speed) {
+	      return Math.round(Math.random() * speed / 2) + speed;
+	    }
+	
+	    /**
+	     * Shuffle the sequence of the strings array
+	     * @private
+	     */
+	  }, {
+	    key: 'shuffleStringsIfNeeded',
+	    value: function shuffleStringsIfNeeded() {
+	      if (!this.shuffle) return;
+	      this.sequence = this.sequence.sort(function () {
+	        return Math.random() - 0.5;
+	      });
+	    }
+	
+	    /**
+	     * Adds a CSS class to fade out current string
+	     * @private
+	     */
+	  }, {
+	    key: 'initFadeOut',
+	    value: function initFadeOut() {
+	      var _this5 = this;
+	
+	      this.el.className += ' ' + this.fadeOutClass;
+	      if (this.cursor) this.cursor.className += ' ' + this.fadeOutClass;
+	      return setTimeout(function () {
+	        _this5.arrayPos++;
+	        _this5.replaceText('');
+	
+	        // Resets current string if end of loop reached
+	        if (_this5.strings.length > _this5.arrayPos) {
+	          _this5.typewrite(_this5.strings[_this5.sequence[_this5.arrayPos]], 0);
+	        } else {
+	          _this5.typewrite(_this5.strings[0], 0);
+	          _this5.arrayPos = 0;
+	        }
+	      }, this.fadeOutDelay);
+	    }
+	
+	    /**
+	     * Replaces current text in the HTML element
+	     * depending on element type
+	     * @param {string} str
+	     * @private
+	     */
+	  }, {
+	    key: 'replaceText',
+	    value: function replaceText(str) {
+	      if (this.attr) {
+	        this.el.setAttribute(this.attr, str);
+	      } else {
+	        if (this.isInput) {
+	          this.el.value = str;
+	        } else if (this.contentType === 'html') {
+	          this.el.innerHTML = str;
+	        } else {
+	          this.el.textContent = str;
+	        }
+	      }
+	    }
+	
+	    /**
+	     * If using input elements, bind focus in order to
+	     * start and stop the animation
+	     * @private
+	     */
+	  }, {
+	    key: 'bindFocusEvents',
+	    value: function bindFocusEvents() {
+	      var _this6 = this;
+	
+	      if (!this.isInput) return;
+	      this.el.addEventListener('focus', function (e) {
+	        _this6.stop();
+	      });
+	      this.el.addEventListener('blur', function (e) {
+	        if (_this6.el.value && _this6.el.value.length !== 0) {
+	          return;
+	        }
+	        _this6.start();
+	      });
+	    }
+	
+	    /**
+	     * On init, insert the cursor element
+	     * @private
+	     */
+	  }, {
+	    key: 'insertCursor',
+	    value: function insertCursor() {
+	      if (!this.showCursor) return;
+	      if (this.cursor) return;
+	      this.cursor = document.createElement('span');
+	      this.cursor.className = 'typed-cursor';
+	      this.cursor.innerHTML = this.cursorChar;
+	      this.el.parentNode && this.el.parentNode.insertBefore(this.cursor, this.el.nextSibling);
+	    }
+	  }]);
+	
+	  return Typed;
+	})();
+	
+	exports['default'] = Typed;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	var _defaultsJs = __webpack_require__(2);
+	
+	var _defaultsJs2 = _interopRequireDefault(_defaultsJs);
+	
+	/**
+	 * Initialize the Typed object
+	 */
+	
+	var Initializer = (function () {
+	  function Initializer() {
+	    _classCallCheck(this, Initializer);
+	  }
+	
+	  _createClass(Initializer, [{
+	    key: 'load',
+	
+	    /**
+	     * Load up defaults & options on the Typed instance
+	     * @param {Typed} self instance of Typed
+	     * @param {object} options options object
+	     * @param {string} elementId HTML element ID _OR_ instance of HTML element
+	     * @private
+	     */
+	
+	    value: function load(self, options, elementId) {
+	      // chosen element to manipulate text
+	      if (typeof elementId === 'string') {
+	        self.el = document.querySelector(elementId);
+	      } else {
+	        self.el = elementId;
+	      }
+	
+	      self.options = _extends({}, _defaultsJs2['default'], options);
+	
+	      // attribute to type into
+	      self.isInput = self.el.tagName.toLowerCase() === 'input';
+	      self.attr = self.options.attr;
+	      self.bindInputFocusEvents = self.options.bindInputFocusEvents;
+	
+	      // show cursor
+	      self.showCursor = self.isInput ? false : self.options.showCursor;
+	
+	      // custom cursor
+	      self.cursorChar = self.options.cursorChar;
+	
+	      // Is the cursor blinking
+	      self.cursorBlinking = true;
+	
+	      // text content of element
+	      self.elContent = self.attr ? self.el.getAttribute(self.attr) : self.el.textContent;
+	
+	      // html or plain text
+	      self.contentType = self.options.contentType;
+	
+	      // typing speed
+	      self.typeSpeed = self.options.typeSpeed;
+	
+	      // add a delay before typing starts
+	      self.startDelay = self.options.startDelay;
+	
+	      // backspacing speed
+	      self.backSpeed = self.options.backSpeed;
+	
+	      // only backspace what doesn't match the previous string
+	      self.smartBackspace = self.options.smartBackspace;
+	
+	      // amount of time to wait before backspacing
+	      self.backDelay = self.options.backDelay;
+	
+	      // Fade out instead of backspace
+	      self.fadeOut = self.options.fadeOut;
+	      self.fadeOutClass = self.options.fadeOutClass;
+	      self.fadeOutDelay = self.options.fadeOutDelay;
+	
+	      // variable to check whether typing is currently paused
+	      self.isPaused = false;
+	
+	      // input strings of text
+	      self.strings = self.options.strings.map(function (s) {
+	        return s.trim();
+	      });
+	
+	      // div containing strings
+	      if (typeof self.options.stringsElement === 'string') {
+	        self.stringsElement = document.querySelector(self.options.stringsElement);
+	      } else {
+	        self.stringsElement = self.options.stringsElement;
+	      }
+	
+	      if (self.stringsElement) {
+	        self.strings = [];
+	        self.stringsElement.style.display = 'none';
+	        var strings = Array.prototype.slice.apply(self.stringsElement.children);
+	        var stringsLength = strings.length;
+	
+	        if (stringsLength) {
+	          for (var i = 0; i < stringsLength; i += 1) {
+	            var stringEl = strings[i];
+	            self.strings.push(stringEl.innerHTML.trim());
+	          }
+	        }
+	      }
+	
+	      // character number position of current string
+	      self.strPos = 0;
+	
+	      // current array position
+	      self.arrayPos = 0;
+	
+	      // index of string to stop backspacing on
+	      self.stopNum = 0;
+	
+	      // Looping logic
+	      self.loop = self.options.loop;
+	      self.loopCount = self.options.loopCount;
+	      self.curLoop = 0;
+	
+	      // shuffle the strings
+	      self.shuffle = self.options.shuffle;
+	      // the order of strings
+	      self.sequence = [];
+	
+	      self.pause = {
+	        status: false,
+	        typewrite: true,
+	        curString: '',
+	        curStrPos: 0
+	      };
+	
+	      // When the typing is complete (when not looped)
+	      self.typingComplete = false;
+	
+	      // Set the order in which the strings are typed
+	      for (var i in self.strings) {
+	        self.sequence[i] = i;
+	      }
+	
+	      // If there is some text in the element
+	      self.currentElContent = this.getCurrentElContent(self);
+	
+	      self.autoInsertCss = self.options.autoInsertCss;
+	
+	      this.appendAnimationCss(self);
+	    }
+	  }, {
+	    key: 'getCurrentElContent',
+	    value: function getCurrentElContent(self) {
+	      var elContent = '';
+	      if (self.attr) {
+	        elContent = self.el.getAttribute(self.attr);
+	      } else if (self.isInput) {
+	        elContent = self.el.value;
+	      } else if (self.contentType === 'html') {
+	        elContent = self.el.innerHTML;
+	      } else {
+	        elContent = self.el.textContent;
+	      }
+	      return elContent;
+	    }
+	  }, {
+	    key: 'appendAnimationCss',
+	    value: function appendAnimationCss(self) {
+	      if (!self.autoInsertCss) {
+	        return;
+	      }
+	      if (!self.showCursor || !self.fadeOut) {
+	        return;
+	      }
+	
+	      var css = document.createElement('style');
+	      css.type = 'text/css';
+	      var innerCss = '';
+	      if (self.showCursor) {
+	        innerCss += '\n        .typed-cursor{\n          opacity: 1;\n          animation: typedjsBlink 0.7s infinite;\n          -webkit-animation: typedjsBlink 0.7s infinite;\n                  animation: typedjsBlink 0.7s infinite;\n        }\n        @keyframes typedjsBlink{\n          50% { opacity: 0.0; }\n        }\n        @-webkit-keyframes typedjsBlink{\n          0% { opacity: 1; }\n          50% { opacity: 0.0; }\n          100% { opacity: 1; }\n        }\n      ';
+	      }
+	      if (self.fadeOut) {
+	        innerCss += '\n        .typed-fade-out{\n          opacity: 0;\n          transition: opacity .25s;\n          -webkit-animation: 0;\n                  animation: 0;\n        }\n      ';
+	      }
+	      if (css.length === 0) {
+	        return;
+	      }
+	      css.innerHTML = innerCss;
+	      document.head.appendChild(css);
+	    }
+	  }]);
+	
+	  return Initializer;
+	})();
+	
+	exports['default'] = Initializer;
+	var initializer = new Initializer();
+	exports.initializer = initializer;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+	/**
+	 * Defaults & options
+	 * @returns {object} Typed defaults & options
+	 * @public
+	 */
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var defaults = {
+	  /**
+	   * @property {array} strings strings to be typed
+	   * @property {string} stringsElement ID of element containing string children
+	   */
+	  strings: ['These are the default values...', 'You know what you should do?', 'Use your own!', 'Have a great day!'],
+	  stringsElement: null,
+	
+	  /**
+	   * @property {number} typeSpeed type speed in milliseconds
+	   */
+	  typeSpeed: 0,
+	
+	  /**
+	   * @property {number} startDelay time before typing starts in milliseconds
+	   */
+	  startDelay: 0,
+	
+	  /**
+	   * @property {number} backSpeed backspacing speed in milliseconds
+	   */
+	  backSpeed: 0,
+	
+	  /**
+	   * @property {boolean} smartBackspace only backspace what doesn't match the previous string
+	   */
+	  smartBackspace: true,
+	
+	  /**
+	   * @property {boolean} shuffle shuffle the strings
+	   */
+	  shuffle: false,
+	
+	  /**
+	   * @property {number} backDelay time before backspacing in milliseconds
+	   */
+	  backDelay: 700,
+	
+	  /**
+	   * @property {boolean} fadeOut Fade out instead of backspace
+	   * @property {string} fadeOutClass css class for fade animation
+	   * @property {boolean} fadeOutDelay Fade out delay in milliseconds
+	   */
+	  fadeOut: false,
+	  fadeOutClass: 'typed-fade-out',
+	  fadeOutDelay: 500,
+	
+	  /**
+	   * @property {boolean} loop loop strings
+	   * @property {number} loopCount amount of loops
+	   */
+	  loop: false,
+	  loopCount: Infinity,
+	
+	  /**
+	   * @property {boolean} showCursor show cursor
+	   * @property {string} cursorChar character for cursor
+	   * @property {boolean} autoInsertCss insert CSS for cursor and fadeOut into HTML <head>
+	   */
+	  showCursor: true,
+	  cursorChar: '|',
+	  autoInsertCss: true,
+	
+	  /**
+	   * @property {string} attr attribute for typing
+	   * Ex: input placeholder, value, or just HTML text
+	   */
+	  attr: null,
+	
+	  /**
+	   * @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
+	   */
+	  bindInputFocusEvents: false,
+	
+	  /**
+	   * @property {string} contentType 'html' or 'null' for plaintext
+	   */
+	  contentType: 'html',
+	
+	  /**
+	   * All typing is complete
+	   * @param {Typed} self
+	   */
+	  onComplete: function onComplete(self) {},
+	
+	  /**
+	   * Before each string is typed
+	   * @param {number} arrayPos
+	   * @param {Typed} self
+	   */
+	  preStringTyped: function preStringTyped(arrayPos, self) {},
+	
+	  /**
+	   * After each string is typed
+	   * @param {number} arrayPos
+	   * @param {Typed} self
+	   */
+	  onStringTyped: function onStringTyped(arrayPos, self) {},
+	
+	  /**
+	   * During looping, after last string is typed
+	   * @param {Typed} self
+	   */
+	  onLastStringBackspaced: function onLastStringBackspaced(self) {},
+	
+	  /**
+	   * Typing has been stopped
+	   * @param {number} arrayPos
+	   * @param {Typed} self
+	   */
+	  onTypingPaused: function onTypingPaused(arrayPos, self) {},
+	
+	  /**
+	   * Typing has been started after being stopped
+	   * @param {number} arrayPos
+	   * @param {Typed} self
+	   */
+	  onTypingResumed: function onTypingResumed(arrayPos, self) {},
+	
+	  /**
+	   * After reset
+	   * @param {Typed} self
+	   */
+	  onReset: function onReset(self) {},
+	
+	  /**
+	   * After stop
+	   * @param {number} arrayPos
+	   * @param {Typed} self
+	   */
+	  onStop: function onStop(arrayPos, self) {},
+	
+	  /**
+	   * After start
+	   * @param {number} arrayPos
+	   * @param {Typed} self
+	   */
+	  onStart: function onStart(arrayPos, self) {},
+	
+	  /**
+	   * After destroy
+	   * @param {Typed} self
+	   */
+	  onDestroy: function onDestroy(self) {}
+	};
+	
+	exports['default'] = defaults;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+	
+	/**
+	 * TODO: These methods can probably be combined somehow
+	 * Parse HTML tags & HTML Characters
+	 */
+	
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	var HTMLParser = (function () {
+	  function HTMLParser() {
+	    _classCallCheck(this, HTMLParser);
+	  }
+	
+	  _createClass(HTMLParser, [{
+	    key: 'typeHtmlChars',
+	
+	    /**
+	     * Type HTML tags & HTML Characters
+	     * @param {string} curString Current string
+	     * @param {number} curStrPos Position in current string
+	     * @param {Typed} self instance of Typed
+	     * @returns {number} a new string position
+	     * @private
+	     */
+	
+	    value: function typeHtmlChars(curString, curStrPos, self) {
+	      if (self.contentType !== 'html') return curStrPos;
+	      var curChar = curString.substr(curStrPos).charAt(0);
+	      if (curChar === '<' || curChar === '&') {
+	        var endTag = '';
+	        if (curChar === '<') {
+	          endTag = '>';
+	        } else {
+	          endTag = ';';
+	        }
+	        while (curString.substr(curStrPos + 1).charAt(0) !== endTag) {
+	          curStrPos++;
+	          if (curStrPos + 1 > curString.length) {
+	            break;
+	          }
+	        }
+	        curStrPos++;
+	      }
+	      return curStrPos;
+	    }
+	
+	    /**
+	     * Backspace HTML tags and HTML Characters
+	     * @param {string} curString Current string
+	     * @param {number} curStrPos Position in current string
+	     * @param {Typed} self instance of Typed
+	     * @returns {number} a new string position
+	     * @private
+	     */
+	  }, {
+	    key: 'backSpaceHtmlChars',
+	    value: function backSpaceHtmlChars(curString, curStrPos, self) {
+	      if (self.contentType !== 'html') return curStrPos;
+	      var curChar = curString.substr(curStrPos).charAt(0);
+	      if (curChar === '>' || curChar === ';') {
+	        var endTag = '';
+	        if (curChar === '>') {
+	          endTag = '<';
+	        } else {
+	          endTag = '&';
+	        }
+	        while (curString.substr(curStrPos - 1).charAt(0) !== endTag) {
+	          curStrPos--;
+	          if (curStrPos < 0) {
+	            break;
+	          }
+	        }
+	        curStrPos--;
+	      }
+	      return curStrPos;
+	    }
+	  }]);
+	
+	  return HTMLParser;
+	})();
+	
+	exports['default'] = HTMLParser;
+	var htmlParser = new HTMLParser();
+	exports.htmlParser = htmlParser;
+
+/***/ })
+/******/ ])
+});
+;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(12);
+
+var _swiper = __webpack_require__(1);
+
+var _swiper2 = _interopRequireDefault(_swiper);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+$(document).ready(function () {
+    if (document.documentElement.clientWidth <= 900) {
+        $('.create-company-style').html('<img src=' + __webpack_require__(14) + '/>');
+        $('.create_maket_page').html('<img src=' + __webpack_require__(15) + '/>');
+        $('.create-conception').html('<img src=' + __webpack_require__(16) + '/>');
+        $('.create-proto').html('<img src=' + __webpack_require__(17) + '/>');
+        $('.hard-structure-image').addClass('swiper-container container-slider').html('<div class="swiper-wrapper">' + '<img class="swiper-slide" src=' + __webpack_require__(3) + '>' + '<img class="swiper-slide" src=' + __webpack_require__(3) + '>' + '</div>' + '<div class="nav-slide">' + '<div class="swiper-button-prev button-hard-prev"></div>' + '<div class="swiper-button-next button-hard-next"></div>' + '</div>');
+
+        var slider = new _swiper2.default('.hard-structure-image', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            initialSlide: '0',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 0,
+                modifier: 0,
+                slideShadows: true
+            },
+            navigation: {
+                nextEl: '.button-hard-next',
+                prevEl: '.button-hard-prev'
+            }
+        });
+
+        slider.init();
+    }
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19688,7 +18346,7 @@ Swiper$1.use(components);
 /* unused harmony export touchmove */
 /* unused harmony export resize */
 /* unused harmony export scroll */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ssr_window__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ssr_window__ = __webpack_require__(2);
 /**
  * Dom7 2.0.3
  * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
@@ -21022,7 +19680,1417 @@ function scroll(...args) {
 
 
 /***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "image/img_design.png";
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "image/create_maket_page.png";
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "image/create_conception.png";
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "image/proto_image.png";
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(20);
+
+var onClass = "on";
+var showClass = "show";
+
+var mobileForm = 'mobile-form';
+
+if (document.documentElement.clientWidth <= 900) {
+    $('.container-form').toggleClass(mobileForm);
+}
+
+$('#form').submit(function () {
+    var th = $(this);
+    var data = $(this).serialize();
+    var err = false;
+    $('button').prop('disabled', true);
+    th.find('input[type=text], input[type=tel], textarea').each(function () {
+        if ($(this).val() === '') {
+            $(this).addClass('error');
+            err = true;
+        }
+    });
+
+    if (!err) {
+        $.ajax({
+            type: "POST",
+            url: "./php/send_message.php",
+            data: data
+        }).done(function () {
+            $('#form').find('label').removeClass(showClass);
+            $('.container-form').css({ display: 'flex', flexDirection: 'column', alignItems: 'center' });
+            $('.content-form').hide();
+            $('.success-container').show();
+            setTimeout(showMenuAfterSendMessage, 5000);
+
+            $('#form').trigger("reset");
+            $('body, html', parent.document).animate({ scrollTop: 0 }, 500);
+        });
+    }
+    return false;
+});
+
+function showMenuAfterSendMessage() {
+    $('button').prop('disabled', false);
+    $('.content-form').hide();
+    $('.success-container').hide();
+    $('.container-form, .opacity').hide();
+    $('body').scrollTop({ scrollTop: 0 });
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(22);
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(25);
+
+var _swiper = __webpack_require__(1);
+
+var _swiper2 = _interopRequireDefault(_swiper);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+$(document).ready(function () {
+
+    var sliderMaket = new _swiper2.default('.slider-maket', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        initialSlide: '1',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 250,
+            modifier: 1,
+            slideShadows: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
+    });
+
+    sliderMaket.init();
+
+    var sliderForm = new _swiper2.default('.slider-form', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        initialSlide: '1',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 250,
+            modifier: 1,
+            slideShadows: true
+        },
+        navigation: {
+            nextEl: '.button-next-form',
+            prevEl: '.button-prev-form'
+        }
+    });
+
+    sliderForm.init();
+
+    var bodySelector = $('body');
+
+    var onClass = "on";
+    var showClass = "show";
+
+    $("input, textarea").on("checkval", function () {
+        var label = $(this).prev("label");
+        if (this.value !== "") {
+            label.addClass(showClass);
+        } else {
+            label.removeClass(showClass);
+        }
+    }).on("keyup", function () {
+        $(this).trigger("checkval");
+    }).on("focus", function () {
+        console.log($(this));
+        $(this).prev("label").addClass(onClass);
+    }).on("blur", function () {
+        $(this).prev("label").removeClass(onClass);
+    }).trigger("checkval");
+
+    bodySelector.on('click', '.close', desktopCloseContact);
+
+    bodySelector.on('focus', 'input, textarea', focusFunc);
+    bodySelector.on('focusout', 'input[type=tel]', focusOutTelFunc);
+
+    var messageIcon = $('.message-icon');
+    var mobileMenuBNlock = $('.mobile-menu');
+
+    $(window).resize(function () {
+        if (document.documentElement.clientWidth > 1000) {
+            messageBlock.css('display', 'none');
+            mobileMenuBNlock.css({ display: 'none' });
+            $('.burger').css('background', 'url(../img/mobile/all_services.svg) no-repeat').removeClass('close-burger');
+        }
+    });
+
+    var messageBlock = $('.mes');
+
+    function desktopCloseContact() {
+        $('.container-form, .opacity').hide();
+    }
+
+    function focusFunc() {
+        $(this).removeClass('error');
+    }
+
+    $('#send-form').submit(function () {
+        var th = $(this);
+        var data = $(this).serialize();
+        var err = false;
+
+        th.find('input[name=name], input[name=phone]').each(function () {
+            if ($(this).val() === '') {
+                $(this).addClass('error');
+                err = true;
+            }
+        });
+
+        if (!err) {
+            $.ajax({
+                type: "POST",
+                url: "../php/send_message.php",
+                data: data
+            }).done(function () {
+                $('#send-form').find('label').removeClass(showClass);
+                $('#send-form, .hiden').hide();
+                $('.success-two').show();
+                setTimeout(showMenuAfterSendMessageTwo, 5000);
+                $("#send-form").trigger("reset");
+            });
+        }
+        return false;
+    });
+
+    $('#send-form-pensil-action').submit(function () {
+        var th = $(this);
+        var data = $(this).serialize();
+        var err = false;
+
+        th.find('input[type=tel], input[type=text]').each(function () {
+            if ($(this).val() === '') {
+                $(this).addClass('error');
+                err = true;
+            }
+        });
+
+        if (!err) {
+            $.ajax({
+                type: "POST",
+                url: "../php/send_message.php",
+                data: data
+            }).done(function () {
+                $('#send-form-pensil-action').find('label').removeClass(showClass);
+                $('#send-form-pensil-action, .hiden').hide();
+                $('.success-three').show();
+                setTimeout(showMenuAfterSendMessageThree, 5000);
+                $("#send-form-pensil-action").trigger("reset");
+            });
+        }
+        return false;
+    });
+
+    function showMenuAfterSendMessageTwo() {
+        $(".success-two").hide();
+        $('#send-form, .hiden').show();
+        $('#send-form').css({ display: 'table' });
+    }
+
+    function showMenuAfterSendMessageThree() {
+        $(".success-three").hide();
+        $('#send-form-pensil-action, .hiden').show();
+        $('#send-form-pensil-action').css({ display: 'table' });
+    }
+
+    bodySelector.on('focus', 'input[name=phone]', mask);
+    bodySelector.on('keydown', 'input[name=name]', blockEditSymbolLite);
+
+    function mask() {
+        $('input[name=phone]').inputmask({ mask: "+7 (999) 999-99-99" });
+    }
+
+    function blockEditSymbolLite() {
+
+        var valueRgx = $(this).val();
+
+        var rgxp = /[\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\_\\;\\:\\?\\*\\=\\+\\~\\``]/g;
+
+        if (rgxp.test(valueRgx)) {
+
+            $(this).val("");
+        }
+    }
+
+    function focusOutTelFunc() {
+        if ($(this).val()) {
+
+            var valueRgx = $(this).val();
+
+            var rgxp = /[\\_\\]/g;
+
+            if (rgxp.test(valueRgx)) {
+
+                $(this).val("");
+                $(this).addClass('error');
+                err = true;
+                return err;
+            }
+        }
+    }
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(jQuery) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/**
+* @license Input Mask plugin for jquery
+* http://github.com/RobinHerbots/jquery.inputmask
+* Copyright (c) 2010 - 2012 Robin Herbots
+* Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+* Version: 1.2.4
+*/
+
+(function ($) {
+    if ($.fn.inputmask == undefined) {
+        $.inputmask = {
+            //options default
+            defaults: {
+                placeholder: "_",
+                optionalmarker: {
+                    start: "[",
+                    end: "]"
+                },
+                escapeChar: "\\",
+                mask: null,
+                oncomplete: $.noop, //executes when the mask is complete
+                onincomplete: $.noop, //executes when the mask is incomplete and focus is lost
+                oncleared: $.noop, //executes when the mask is cleared
+                repeat: 0, //repetitions of the mask
+                greedy: true, //true: allocated buffer for the mask and repetitions - false: allocate only if needed
+                autoUnmask: false, //automatically unmask when retrieving the value with $.fn.val or value if the browser supports __lookupGetter__ or getOwnPropertyDescriptor
+                clearMaskOnLostFocus: true,
+                insertMode: true, //insert the input or overwrite the input
+                clearIncomplete: false, //clear the incomplete input on blur
+                aliases: {}, //aliases definitions => see jquery.inputmask.extensions.js
+                onKeyUp: $.noop, //override to implement autocomplete on certain keys for example
+                onKeyDown: $.noop, //override to implement autocomplete on certain keys for example
+                showMaskOnHover: true, //show the mask-placeholder when hovering the empty input
+                onKeyValidation: $.noop, //executes on every key-press with the result of isValid
+                //numeric basic properties
+                numericInput: false, //numericInput input direction style (input shifts to the left while holding the caret position)
+                radixPoint: ".", // | ","
+                //numeric basic properties
+                definitions: {
+                    '9': {
+                        validator: "[0-9]",
+                        cardinality: 1
+                    },
+                    'a': {
+                        validator: "[A-Za-z\u0410-\u044F\u0401\u0451]",
+                        cardinality: 1
+                    },
+                    '*': {
+                        validator: "[A-Za-z\u0410-\u044F\u0401\u04510-9]",
+                        cardinality: 1
+                    }
+                },
+                keyCode: { ALT: 18, BACKSPACE: 8, CAPS_LOCK: 20, COMMA: 188, COMMAND: 91, COMMAND_LEFT: 91, COMMAND_RIGHT: 93, CONTROL: 17, DELETE: 46, DOWN: 40, END: 35, ENTER: 13, ESCAPE: 27, HOME: 36, INSERT: 45, LEFT: 37, MENU: 93, NUMPAD_ADD: 107, NUMPAD_DECIMAL: 110, NUMPAD_DIVIDE: 111, NUMPAD_ENTER: 108,
+                    NUMPAD_MULTIPLY: 106, NUMPAD_SUBTRACT: 109, PAGE_DOWN: 34, PAGE_UP: 33, PERIOD: 190, RIGHT: 39, SHIFT: 16, SPACE: 32, TAB: 9, UP: 38, WINDOWS: 91
+                },
+                ignorables: [8, 9, 13, 16, 17, 18, 20, 27, 33, 34, 35, 36, 37, 38, 39, 40, 46, 91, 93, 108]
+            },
+            val: $.fn.val //store the original jquery val function
+        };
+
+        $.fn.inputmask = function (fn, options) {
+            var opts = $.extend(true, {}, $.inputmask.defaults, options);
+            var pasteEvent = isInputEventSupported('paste') ? 'paste' : 'input';
+
+            var iphone = navigator.userAgent.match(/iphone/i) != null;
+            var android = navigator.userAgent.match(/android.*mobile safari.*/i) != null;
+            if (android) {
+                var browser = navigator.userAgent.match(/mobile safari.*/i);
+                var version = parseInt(new RegExp(/[0-9]+/).exec(browser));
+                android = version <= 533;
+            }
+            var caretposCorrection = null;
+
+            if (typeof fn == "string") {
+                switch (fn) {
+                    case "mask":
+                        //init buffer
+                        var _buffer = getMaskTemplate();
+                        var tests = getTestingChain();
+
+                        return this.each(function () {
+                            mask(this);
+                        });
+                        break;
+                    case "unmaskedvalue":
+                        var tests = this.data('inputmask')['tests'];
+                        var _buffer = this.data('inputmask')['_buffer'];
+                        opts.greedy = this.data('inputmask')['greedy'];
+                        opts.repeat = this.data('inputmask')['repeat'];
+                        opts.definitions = this.data('inputmask')['definitions'];
+                        return unmaskedvalue(this);
+                        break;
+                    case "remove":
+                        var tests, _buffer;
+                        return this.each(function () {
+                            var $input = $(this),
+                                input = this;
+                            setTimeout(function () {
+                                if ($input.data('inputmask')) {
+                                    tests = $input.data('inputmask')['tests'];
+                                    _buffer = $input.data('inputmask')['_buffer'];
+                                    opts.greedy = $input.data('inputmask')['greedy'];
+                                    opts.repeat = $input.data('inputmask')['repeat'];
+                                    opts.definitions = $input.data('inputmask')['definitions'];
+                                    //writeout the unmaskedvalue
+                                    input._valueSet(unmaskedvalue($input, true));
+                                    //clear data
+                                    $input.removeData('inputmask');
+                                    //unbind all events
+                                    $input.unbind(".inputmask");
+                                    $input.removeClass('focus.inputmask');
+                                    //restore the value property
+                                    var valueProperty;
+                                    if (Object.getOwnPropertyDescriptor) valueProperty = Object.getOwnPropertyDescriptor(input, "value");
+                                    if (valueProperty && valueProperty.get) {
+                                        if (input._valueGet) {
+                                            Object.defineProperty(input, "value", {
+                                                get: input._valueGet,
+                                                set: input._valueSet
+                                            });
+                                        }
+                                    } else if (document.__lookupGetter__ && input.__lookupGetter__("value")) {
+                                        if (input._valueGet) {
+                                            input.__defineGetter__("value", input._valueGet);
+                                            input.__defineSetter__("value", input._valueSet);
+                                        }
+                                    }
+                                    delete input._valueGet;
+                                    delete input._valueSet;
+                                }
+                            }, 0);
+                        });
+                        break;
+                    case "getemptymask":
+                        //return the default (empty) mask value, usefull for setting the default value in validation
+                        if (this.data('inputmask')) return this.data('inputmask')['_buffer'].join('');else return "";
+                    case "hasMaskedValue":
+                        //check wheter the returned value is masked or not; currently only works reliable when using jquery.val fn to retrieve the value 
+                        return this.data('inputmask') ? !this.data('inputmask')['autoUnmask'] : false;
+                    default:
+                        //check if the fn is an alias
+                        if (!resolveAlias(fn)) {
+                            //maybe fn is a mask so we try
+                            //set mask
+                            opts.mask = fn;
+                        }
+                        //init buffer
+                        var _buffer = getMaskTemplate();
+                        var tests = getTestingChain();
+
+                        return this.each(function () {
+                            mask(this);
+                        });
+
+                        break;
+                }
+            }if ((typeof fn === "undefined" ? "undefined" : _typeof(fn)) == "object") {
+                opts = $.extend(true, {}, $.inputmask.defaults, fn);
+                resolveAlias(opts.alias); //resolve aliases
+                //init buffer
+                var _buffer = getMaskTemplate();
+                var tests = getTestingChain();
+
+                return this.each(function () {
+                    mask(this);
+                });
+            }
+
+            //helper     functions
+            function isInputEventSupported(eventName) {
+                var el = document.createElement('input'),
+                    eventName = 'on' + eventName,
+                    isSupported = eventName in el;
+                if (!isSupported) {
+                    el.setAttribute(eventName, 'return;');
+                    isSupported = typeof el[eventName] == 'function';
+                }
+                el = null;
+                return isSupported;
+            }
+
+            function resolveAlias(aliasStr) {
+                var aliasDefinition = opts.aliases[aliasStr];
+                if (aliasDefinition) {
+                    if (aliasDefinition.alias) resolveAlias(aliasDefinition.alias); //alias is another alias
+                    $.extend(true, opts, aliasDefinition); //merge alias definition in the options
+                    $.extend(true, opts, options); //reapply extra given options
+                    return true;
+                }
+                return false;
+            }
+
+            function getMaskTemplate() {
+                var escaped = false,
+                    outCount = 0;
+                if (opts.mask.length == 1 && opts.greedy == false) {
+                    opts.placeholder = "";
+                } //hide placeholder with single non-greedy mask
+                var singleMask = $.map(opts.mask.split(""), function (element, index) {
+                    var outElem = [];
+                    if (element == opts.escapeChar) {
+                        escaped = true;
+                    } else if (element != opts.optionalmarker.start && element != opts.optionalmarker.end || escaped) {
+                        var maskdef = opts.definitions[element];
+                        if (maskdef && !escaped) {
+                            for (var i = 0; i < maskdef.cardinality; i++) {
+                                outElem.push(getPlaceHolder(outCount + i));
+                            }
+                        } else {
+                            outElem.push(element);
+                            escaped = false;
+                        }
+                        outCount += outElem.length;
+                        return outElem;
+                    }
+                });
+
+                //allocate repetitions
+                var repeatedMask = singleMask.slice();
+                for (var i = 1; i < opts.repeat && opts.greedy; i++) {
+                    repeatedMask = repeatedMask.concat(singleMask.slice());
+                }
+
+                return repeatedMask;
+            }
+
+            //test definition => {fn: RegExp/function, cardinality: int, optionality: bool, newBlockMarker: bool, offset: int, casing: null/upper/lower, def: definitionSymbol}
+            function getTestingChain() {
+                var isOptional = false,
+                    escaped = false;
+                var newBlockMarker = false; //indicates wheter the begin/ending of a block should be indicated
+
+                return $.map(opts.mask.split(""), function (element, index) {
+                    var outElem = [];
+
+                    if (element == opts.escapeChar) {
+                        escaped = true;
+                    } else if (element == opts.optionalmarker.start && !escaped) {
+                        isOptional = true;
+                        newBlockMarker = true;
+                    } else if (element == opts.optionalmarker.end && !escaped) {
+                        isOptional = false;
+                        newBlockMarker = true;
+                    } else {
+                        var maskdef = opts.definitions[element];
+                        if (maskdef && !escaped) {
+                            var prevalidators = maskdef["prevalidator"],
+                                prevalidatorsL = prevalidators ? prevalidators.length : 0;
+                            for (var i = 1; i < maskdef.cardinality; i++) {
+                                var prevalidator = prevalidatorsL >= i ? prevalidators[i - 1] : [],
+                                    validator = prevalidator["validator"],
+                                    cardinality = prevalidator["cardinality"];
+                                outElem.push({ fn: validator ? typeof validator == 'string' ? new RegExp(validator) : new function () {
+                                        this.test = validator;
+                                    }() : new RegExp("."), cardinality: cardinality ? cardinality : 1, optionality: isOptional, newBlockMarker: isOptional == true ? newBlockMarker : false, offset: 0, casing: maskdef["casing"], def: element });
+                                if (isOptional == true) //reset newBlockMarker
+                                    newBlockMarker = false;
+                            }
+                            outElem.push({ fn: maskdef.validator ? typeof maskdef.validator == 'string' ? new RegExp(maskdef.validator) : new function () {
+                                    this.test = maskdef.validator;
+                                }() : new RegExp("."), cardinality: maskdef.cardinality, optionality: isOptional, newBlockMarker: newBlockMarker, offset: 0, casing: maskdef["casing"], def: element });
+                        } else {
+                            outElem.push({ fn: null, cardinality: 0, optionality: isOptional, newBlockMarker: newBlockMarker, offset: 0, casing: null, def: element });
+                            escaped = false;
+                        }
+                        //reset newBlockMarker
+                        newBlockMarker = false;
+                        return outElem;
+                    }
+                });
+            }
+
+            function isValid(pos, c, buffer, strict) {
+                //strict true ~ no correction or autofill
+                var result = false;
+                if (pos >= 0 && pos < getMaskLength()) {
+                    var testPos = determineTestPosition(pos),
+                        loopend = c ? 1 : 0,
+                        chrs = '';
+                    for (var i = tests[testPos].cardinality; i > loopend; i--) {
+                        chrs += getBufferElement(buffer, testPos - (i - 1));
+                    }
+
+                    if (c) {
+                        chrs += c;
+                    }
+                    //return is false or a json object => { pos: ??, c: ??}
+                    result = tests[testPos].fn != null ? tests[testPos].fn.test(chrs, buffer, pos, strict, opts) : false;
+                }
+                setTimeout(opts.onKeyValidation.call(this, result, opts), 0); //extra stuff to execute on keydown
+                return result;
+            }
+
+            function isMask(pos) {
+                var testPos = determineTestPosition(pos);
+                var test = tests[testPos];
+
+                return test != undefined ? test.fn : false;
+            }
+
+            function determineTestPosition(pos) {
+                return pos % tests.length;
+            }
+
+            function getPlaceHolder(pos) {
+                return opts.placeholder.charAt(pos % opts.placeholder.length);
+            }
+
+            function getMaskLength() {
+                var calculatedLength = _buffer.length;
+                if (!opts.greedy && opts.repeat > 1) {
+                    calculatedLength += _buffer.length * (opts.repeat - 1);
+                }
+                return calculatedLength;
+            }
+
+            //pos: from position
+            function seekNext(buffer, pos) {
+                var maskL = getMaskLength();
+                if (pos >= maskL) return maskL;
+                var position = pos;
+                while (++position < maskL && !isMask(position)) {};
+                return position;
+            }
+            //pos: from position
+            function seekPrevious(buffer, pos) {
+                var position = pos;
+                if (position <= 0) return 0;
+
+                while (--position > 0 && !isMask(position)) {};
+                return position;
+            }
+
+            function setBufferElement(buffer, position, element) {
+                //position = prepareBuffer(buffer, position);
+
+                var test = tests[determineTestPosition(position)];
+                var elem = element;
+                if (elem != undefined) {
+                    switch (test.casing) {
+                        case "upper":
+                            elem = element.toUpperCase();
+                            break;
+                        case "lower":
+                            elem = element.toLowerCase();
+                            break;
+                    }
+                }
+
+                buffer[position] = elem;
+            }
+            function getBufferElement(buffer, position, autoPrepare) {
+                if (autoPrepare) position = prepareBuffer(buffer, position);
+                return buffer[position];
+            }
+
+            //needed to handle the non-greedy mask repetitions
+            function prepareBuffer(buffer, position, isRTL) {
+                var j;
+                if (isRTL) {
+                    while (position < 0 && buffer.length < getMaskLength()) {
+                        j = _buffer.length - 1;
+                        position = _buffer.length;
+                        while (_buffer[j] !== undefined) {
+                            buffer.unshift(_buffer[j--]);
+                        }
+                    }
+                } else {
+                    while (buffer[position] == undefined && buffer.length < getMaskLength()) {
+                        j = 0;
+                        while (_buffer[j] !== undefined) {
+                            //add a new buffer
+                            buffer.push(_buffer[j++]);
+                        }
+                    }
+                }
+
+                return position;
+            }
+
+            function writeBuffer(input, buffer, caretPos) {
+                input._valueSet(buffer.join(''));
+                if (caretPos != undefined) {
+                    if (android) {
+                        setTimeout(function () {
+                            caret(input, caretPos);
+                        }, 100);
+                    } else caret(input, caretPos);
+                }
+            };
+            function clearBuffer(buffer, start, end) {
+                for (var i = start, maskL = getMaskLength(); i < end && i < maskL; i++) {
+                    setBufferElement(buffer, i, getBufferElement(_buffer.slice(), i));
+                }
+            };
+
+            function setReTargetPlaceHolder(buffer, pos) {
+                var testPos = determineTestPosition(pos);
+                setBufferElement(buffer, pos, getBufferElement(_buffer, testPos));
+            }
+
+            function checkVal(input, buffer, clearInvalid, skipRadixHandling) {
+                var isRTL = $(input).data('inputmask')['isRTL'],
+                    inputValue = truncateInput(input._valueGet(), isRTL).split('');
+
+                if (isRTL) {
+                    //align inputValue for RTL/numeric input
+                    var maskL = getMaskLength();
+                    var inputValueRev = inputValue.reverse();inputValueRev.length = maskL;
+
+                    for (var i = 0; i < maskL; i++) {
+                        var targetPosition = determineTestPosition(maskL - (i + 1));
+                        if (tests[targetPosition].fn == null && inputValueRev[i] != getBufferElement(_buffer, targetPosition)) {
+                            inputValueRev.splice(i, 0, getBufferElement(_buffer, targetPosition));
+                            inputValueRev.length = maskL;
+                        } else {
+                            inputValueRev[i] = inputValueRev[i] || getBufferElement(_buffer, targetPosition);
+                        }
+                    }
+                    inputValue = inputValueRev.reverse();
+                }
+                clearBuffer(buffer, 0, buffer.length);
+                buffer.length = _buffer.length;
+                var lastMatch = -1,
+                    checkPosition = -1,
+                    np,
+                    maskL = getMaskLength(),
+                    ivl = inputValue.length,
+                    rtlMatch = ivl == 0 ? maskL : -1;
+                for (var i = 0; i < ivl; i++) {
+                    for (var pos = checkPosition + 1; pos < maskL; pos++) {
+                        if (isMask(pos)) {
+                            var c = inputValue[i];
+                            if ((np = isValid(pos, c, buffer, !clearInvalid)) !== false) {
+                                if (np !== true) {
+                                    pos = np.pos || pos; //set new position from isValid
+                                    c = np.c || c; //set new char from isValid
+                                }
+                                setBufferElement(buffer, pos, c);
+                                lastMatch = checkPosition = pos;
+                            } else {
+                                setReTargetPlaceHolder(buffer, pos);
+                                if (c == getPlaceHolder(pos)) {
+                                    checkPosition = pos;
+                                    rtlMatch = pos;
+                                }
+                            }
+                            break;
+                        } else {
+                            //nonmask
+                            setReTargetPlaceHolder(buffer, pos);
+                            if (lastMatch == checkPosition) //once outsync the nonmask cannot be the lastmatch
+                                lastMatch = pos;
+                            checkPosition = pos;
+                            if (inputValue[i] == getBufferElement(buffer, pos)) break;
+                        }
+                    }
+                }
+                //Truncate buffer when using non-greedy masks
+                if (opts.greedy == false) {
+                    var newBuffer = truncateInput(buffer.join(''), isRTL).split('');
+                    while (buffer.length != newBuffer.length) {
+                        //map changes into the original buffer
+                        isRTL ? buffer.shift() : buffer.pop();
+                    }
+                }
+
+                if (clearInvalid) {
+                    writeBuffer(input, buffer);
+                }
+                return isRTL ? opts.numericInput ? $.inArray(opts.radixPoint, buffer) != -1 && skipRadixHandling !== true ? $.inArray(opts.radixPoint, buffer) : seekNext(buffer, maskL) : seekNext(buffer, rtlMatch) : seekNext(buffer, lastMatch);
+            }
+
+            function escapeRegex(str) {
+                var specials = ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'];
+                return str.replace(new RegExp('(\\' + specials.join('|\\') + ')', 'gim'), '\\$1');
+            }
+            function truncateInput(inputValue, rtl) {
+                return rtl ? inputValue.replace(new RegExp("^(" + escapeRegex(_buffer.join('')) + ")*"), "") : inputValue.replace(new RegExp("(" + escapeRegex(_buffer.join('')) + ")*$"), "");
+            }
+
+            function clearOptionalTail(input, buffer) {
+                checkVal(input, buffer, false);
+                var tmpBuffer = buffer.slice();
+                if ($(input).data('inputmask')['isRTL']) {
+                    for (var pos = 0; pos <= tmpBuffer.length - 1; pos++) {
+                        var testPos = determineTestPosition(pos);
+                        if (tests[testPos].optionality) {
+                            if (getPlaceHolder(pos) == buffer[pos] || !isMask(pos)) tmpBuffer.splice(0, 1);else break;
+                        } else break;
+                    }
+                } else {
+                    for (var pos = tmpBuffer.length - 1; pos >= 0; pos--) {
+                        var testPos = determineTestPosition(pos);
+                        if (tests[testPos].optionality) {
+                            if (getPlaceHolder(pos) == buffer[pos] || !isMask(pos)) tmpBuffer.pop();else break;
+                        } else break;
+                    }
+                }
+                writeBuffer(input, tmpBuffer);
+            }
+
+            //functionality fn
+            function unmaskedvalue($input, skipDatepickerCheck) {
+                var input = $input[0];
+                if (tests && (skipDatepickerCheck === true || !$input.hasClass('hasDatepicker'))) {
+                    var buffer = _buffer.slice();
+                    checkVal(input, buffer);
+                    return $.map(buffer, function (element, index) {
+                        return isMask(index) && element != getBufferElement(_buffer.slice(), index) ? element : null;
+                    }).join('');
+                } else {
+                    return input._valueGet();
+                }
+            }
+
+            function caret(input, begin, end) {
+                var npt = input.jquery && input.length > 0 ? input[0] : input;
+                if (typeof begin == 'number') {
+                    end = typeof end == 'number' ? end : begin;
+                    if (opts.insertMode == false && begin == end) end++; //set visualization for insert/overwrite mode
+                    if (npt.setSelectionRange) {
+                        npt.setSelectionRange(begin, end);
+                    } else if (npt.createTextRange) {
+                        var range = npt.createTextRange();
+                        range.collapse(true);
+                        range.moveEnd('character', end);
+                        range.moveStart('character', begin);
+                        range.select();
+                    }
+                    npt.focus();
+                    if (android && end != npt.selectionEnd) caretposCorrection = { begin: begin, end: end };
+                } else {
+                    var caretpos = android ? caretposCorrection : null,
+                        caretposCorrection = null;
+                    if (caretpos == null) {
+                        if (npt.setSelectionRange) {
+                            begin = npt.selectionStart;
+                            end = npt.selectionEnd;
+                        } else if (document.selection && document.selection.createRange) {
+                            var range = document.selection.createRange();
+                            begin = 0 - range.duplicate().moveStart('character', -100000);
+                            end = begin + range.text.length;
+                        }
+                        caretpos = { begin: begin, end: end };
+                    }
+                    return caretpos;
+                }
+            };
+
+            function mask(el) {
+                var $input = $(el);
+                if (!$input.is(":input")) return;
+
+                //correct greedy setting if needed
+                opts.greedy = opts.greedy ? opts.greedy : opts.repeat == 0;
+
+                //handle maxlength attribute
+                var maxLength = $input.prop('maxLength');
+                if (getMaskLength() > maxLength && maxLength > -1) {
+                    //FF sets no defined max length to -1 
+                    if (maxLength < _buffer.length) _buffer.length = maxLength;
+                    if (opts.greedy == false) {
+                        opts.repeat = Math.round(maxLength / _buffer.length);
+                    }
+                    $input.prop('maxLength', getMaskLength() * 2);
+                }
+
+                //store tests & original buffer in the input element - used to get the unmasked value
+                $input.data('inputmask', {
+                    'tests': tests,
+                    '_buffer': _buffer,
+                    'greedy': opts.greedy,
+                    'repeat': opts.repeat,
+                    'autoUnmask': opts.autoUnmask,
+                    'definitions': opts.definitions,
+                    'isRTL': false
+                });
+
+                patchValueProperty(el);
+
+                //init vars
+                var buffer = _buffer.slice(),
+                    undoBuffer = el._valueGet(),
+                    skipKeyPressEvent = false,
+                    //Safari 5.1.x - modal dialog fires keypress twice workaround
+                ignorable = false,
+                    lastPosition = -1,
+                    firstMaskPos = seekNext(buffer, -1),
+                    lastMaskPos = seekPrevious(buffer, getMaskLength()),
+                    isRTL = false;
+                if (el.dir == "rtl" || opts.numericInput) {
+                    el.dir = "ltr";
+                    $input.css("text-align", "right");
+                    $input.removeAttr("dir");
+                    var inputData = $input.data('inputmask');
+                    inputData['isRTL'] = true;
+                    $input.data('inputmask', inputData);
+                    isRTL = true;
+                }
+
+                //unbind all events - to make sure that no other mask will interfere when re-masking
+                $input.unbind(".inputmask");
+                $input.removeClass('focus.inputmask');
+                //bind events
+                $input.bind("mouseenter.inputmask", function () {
+                    var $input = $(this),
+                        input = this;
+                    if (!$input.hasClass('focus.inputmask') && opts.showMaskOnHover) {
+                        var nptL = input._valueGet().length;
+                        if (nptL < buffer.length) {
+                            if (nptL == 0) buffer = _buffer.slice();
+                            writeBuffer(input, buffer);
+                        }
+                    }
+                }).bind("blur.inputmask", function () {
+                    var $input = $(this),
+                        input = this,
+                        nptValue = input._valueGet();
+                    $input.removeClass('focus.inputmask');
+                    if (nptValue != undoBuffer) {
+                        $input.change();
+                    }
+                    if (opts.clearMaskOnLostFocus) {
+                        if (nptValue == _buffer.join('')) input._valueSet('');else {
+                            //clearout optional tail of the mask
+                            clearOptionalTail(input, buffer);
+                        }
+                    }
+                    if (!isComplete(input)) {
+                        $input.trigger("incomplete");
+                        if (opts.clearIncomplete) {
+                            if (opts.clearMaskOnLostFocus) input._valueSet('');else {
+                                buffer = _buffer.slice();
+                                writeBuffer(input, buffer);
+                            }
+                        }
+                    }
+                }).bind("focus.inputmask", function () {
+                    var $input = $(this),
+                        input = this;
+                    if (!$input.hasClass('focus.inputmask') && !opts.showMaskOnHover) {
+                        var nptL = input._valueGet().length;
+                        if (nptL < buffer.length) {
+                            if (nptL == 0) buffer = _buffer.slice();
+                            caret(input, checkVal(input, buffer, true));
+                        }
+                    }
+                    $input.addClass('focus.inputmask');
+                    undoBuffer = input._valueGet();
+                }).bind("mouseleave.inputmask", function () {
+                    var $input = $(this),
+                        input = this;
+                    if (opts.clearMaskOnLostFocus) {
+                        if (!$input.hasClass('focus.inputmask')) {
+                            if (input._valueGet() == _buffer.join('') || input._valueGet() == '') input._valueSet('');else {
+                                //clearout optional tail of the mask
+                                clearOptionalTail(input, buffer);
+                            }
+                        }
+                    }
+                }).bind("click.inputmask", function () {
+                    var input = this;
+                    setTimeout(function () {
+                        var selectedCaret = caret(input);
+                        if (selectedCaret.begin == selectedCaret.end) {
+                            var clickPosition = selectedCaret.begin;
+                            lastPosition = checkVal(input, buffer, false);
+                            if (isRTL) caret(input, clickPosition > lastPosition && (isValid(clickPosition, buffer[clickPosition], buffer, true) !== false || !isMask(clickPosition)) ? clickPosition : lastPosition);else caret(input, clickPosition < lastPosition && (isValid(clickPosition, buffer[clickPosition], buffer, true) !== false || !isMask(clickPosition)) ? clickPosition : lastPosition);
+                        }
+                    }, 0);
+                }).bind('dblclick.inputmask', function () {
+                    var input = this;
+                    setTimeout(function () {
+                        caret(input, 0, lastPosition);
+                    }, 0);
+                }).bind("keydown.inputmask", keydownEvent).bind("keypress.inputmask", keypressEvent).bind("keyup.inputmask", keyupEvent).bind(pasteEvent + ".inputmask, dragdrop.inputmask, drop.inputmask", function () {
+                    var input = this;
+                    setTimeout(function () {
+                        caret(input, checkVal(input, buffer, true));
+                    }, 0);
+                }).bind('setvalue.inputmask', function () {
+                    var input = this;
+                    undoBuffer = input._valueGet();
+                    checkVal(input, buffer, true);
+                    if (input._valueGet() == _buffer.join('')) input._valueSet('');
+                }).bind('complete.inputmask', opts.oncomplete).bind('incomplete.inputmask', opts.onincomplete).bind('cleared.inputmask', opts.oncleared);
+
+                //apply mask
+                lastPosition = checkVal(el, buffer, true);
+
+                // Wrap document.activeElement in a try/catch block since IE9 throw "Unspecified error" if document.activeElement is undefined when we are in an IFrame.
+                var activeElement;
+                try {
+                    activeElement = document.activeElement;
+                } catch (e) {}
+                if (activeElement === el) {
+                    //position the caret when in focus
+                    $input.addClass('focus.inputmask');
+                    caret(el, lastPosition);
+                } else if (opts.clearMaskOnLostFocus) {
+                    if (el._valueGet() == _buffer.join('')) {
+                        el._valueSet('');
+                    } else {
+                        clearOptionalTail(el, buffer);
+                    }
+                }
+
+                installEventRuler(el);
+
+                //private functions
+                function isComplete(npt) {
+                    var complete = true,
+                        nptValue = npt._valueGet(),
+                        ml = nptValue.length;
+                    for (var i = 0; i < ml; i++) {
+                        if (isMask(i) && nptValue.charAt(i) == getPlaceHolder(i)) {
+                            complete = false;
+                            break;
+                        }
+                    }
+                    return complete;
+                }
+
+                function installEventRuler(npt) {
+                    var events = $._data(npt).events;
+
+                    $.each(events, function (eventType, eventHandlers) {
+                        $(npt).bind(eventType + ".inputmask", function (event) {
+                            if (this.readOnly || this.disabled) {
+                                event.stopPropagation();
+                                event.stopImmediatePropagation();
+                                event.preventDefault();
+                                return false;
+                            }
+                        });
+                        //!! the bound handlers are executed in the order they where bound
+                        //reorder the events
+                        var ourHandler = eventHandlers[eventHandlers.length - 1];
+                        for (var i = eventHandlers.length - 1; i > 0; i--) {
+                            eventHandlers[i] = eventHandlers[i - 1];
+                        }
+                        eventHandlers[0] = ourHandler;
+                    });
+                }
+
+                function patchValueProperty(npt) {
+                    var valueProperty;
+                    if (Object.getOwnPropertyDescriptor) valueProperty = Object.getOwnPropertyDescriptor(npt, "value");
+                    if (valueProperty && valueProperty.get) {
+                        if (!npt._valueGet) {
+
+                            npt._valueGet = valueProperty.get;
+                            npt._valueSet = valueProperty.set;
+
+                            Object.defineProperty(npt, "value", {
+                                get: function get() {
+                                    var $self = $(this),
+                                        inputData = $(this).data('inputmask');
+                                    return inputData && inputData['autoUnmask'] ? $self.inputmask('unmaskedvalue') : this._valueGet() != inputData['_buffer'].join('') ? this._valueGet() : '';
+                                },
+                                set: function set(value) {
+                                    this._valueSet(value);$(this).triggerHandler('setvalue.inputmask');
+                                }
+                            });
+                        }
+                    } else if (document.__lookupGetter__ && npt.__lookupGetter__("value")) {
+                        if (!npt._valueGet) {
+                            npt._valueGet = npt.__lookupGetter__("value");
+                            npt._valueSet = npt.__lookupSetter__("value");
+
+                            npt.__defineGetter__("value", function () {
+                                var $self = $(this),
+                                    inputData = $(this).data('inputmask');
+                                return inputData && inputData['autoUnmask'] ? $self.inputmask('unmaskedvalue') : this._valueGet() != inputData['_buffer'].join('') ? this._valueGet() : '';
+                            });
+                            npt.__defineSetter__("value", function (value) {
+                                this._valueSet(value);$(this).triggerHandler('setvalue.inputmask');
+                            });
+                        }
+                    } else {
+                        if (!npt._valueGet) {
+                            npt._valueGet = function () {
+                                return this.value;
+                            };
+                            npt._valueSet = function (value) {
+                                this.value = value;
+                            };
+                        }
+                        if ($.fn.val.inputmaskpatch != true) {
+                            $.fn.val = function () {
+                                if (arguments.length == 0) {
+                                    var $self = $(this);
+                                    if ($self.data('inputmask')) {
+                                        if ($self.data('inputmask')['autoUnmask']) return $self.inputmask('unmaskedvalue');else {
+                                            var result = $.inputmask.val.apply($self);
+                                            return result != $self.data('inputmask')['_buffer'].join('') ? result : '';
+                                        }
+                                    } else return $.inputmask.val.apply($self);
+                                } else {
+                                    var args = arguments;
+                                    return this.each(function () {
+                                        var $self = $(this);
+                                        var result = $.inputmask.val.apply($self, args);
+                                        if ($self.data('inputmask')) $self.triggerHandler('setvalue.inputmask');
+                                        return result;
+                                    });
+                                }
+                            };
+                            $.extend($.fn.val, {
+                                inputmaskpatch: true
+                            });
+                        }
+                    }
+                }
+                //shift chars to left from start to end and put c at end position if defined
+                function shiftL(start, end, c) {
+                    while (!isMask(start) && start - 1 >= 0) {
+                        start--;
+                    }for (var i = start; i < end && i < getMaskLength(); i++) {
+                        if (isMask(i)) {
+                            setReTargetPlaceHolder(buffer, i);
+                            var j = seekNext(buffer, i);
+                            var p = getBufferElement(buffer, j);
+                            if (p != getPlaceHolder(j)) {
+                                if (j < getMaskLength() && isValid(i, p, buffer, true) !== false && tests[determineTestPosition(i)].def == tests[determineTestPosition(j)].def) {
+                                    setBufferElement(buffer, i, getBufferElement(buffer, j));
+                                    setReTargetPlaceHolder(buffer, j); //cleanup next position
+                                } else {
+                                    if (isMask(i)) break;
+                                }
+                            } else if (c == undefined) break;
+                        } else {
+                            setReTargetPlaceHolder(buffer, i);
+                        }
+                    }
+                    if (c != undefined) setBufferElement(buffer, isRTL ? end : seekPrevious(buffer, end), c);
+
+                    buffer = truncateInput(buffer.join(''), isRTL).split('');
+                    if (buffer.length == 0) buffer = _buffer.slice();
+
+                    return start; //return the used start position
+                }
+                function shiftR(start, end, c, full) {
+                    //full => behave like a push right ~ do not stop on placeholders
+                    for (var i = start; i <= end && i < getMaskLength(); i++) {
+                        if (isMask(i)) {
+                            var t = getBufferElement(buffer, i);
+                            setBufferElement(buffer, i, c);
+                            if (t != getPlaceHolder(i)) {
+                                var j = seekNext(buffer, i);
+                                if (j < getMaskLength()) {
+                                    if (isValid(j, t, buffer, true) !== false && tests[determineTestPosition(i)].def == tests[determineTestPosition(j)].def) c = t;else {
+                                        if (isMask(j)) break;else c = t;
+                                    }
+                                } else break;
+                            } else if (full !== true) break;
+                        } else setReTargetPlaceHolder(buffer, i);
+                    }
+                    var lengthBefore = buffer.length;
+                    buffer = truncateInput(buffer.join(''), isRTL).split('');
+                    if (buffer.length == 0) buffer = _buffer.slice();
+
+                    return end - (lengthBefore - buffer.length); //return new start position
+                };
+
+                function keydownEvent(e) {
+                    //Safari 5.1.x - modal dialog fires keypress twice workaround
+                    skipKeyPressEvent = false;
+
+                    var input = this,
+                        k = e.keyCode,
+                        pos = caret(input);
+
+                    //set input direction according the position to the radixPoint
+                    if (opts.numericInput) {
+                        var nptStr = input._valueGet();
+                        var radixPosition = nptStr.indexOf(opts.radixPoint);
+                        if (radixPosition != -1) {
+                            isRTL = pos.begin <= radixPosition || pos.end <= radixPosition;
+                        }
+                    }
+
+                    //backspace, delete, and escape get special treatment
+                    if (k == opts.keyCode.BACKSPACE || k == opts.keyCode.DELETE || iphone && k == 127) {
+                        //backspace/delete
+                        var maskL = getMaskLength();
+                        if (pos.begin == 0 && pos.end == maskL) {
+                            buffer = _buffer.slice();
+                            writeBuffer(input, buffer);
+                            caret(input, checkVal(input, buffer, false));
+                        } else if (pos.end - pos.begin > 1 || pos.end - pos.begin == 1 && opts.insertMode) {
+                            clearBuffer(buffer, pos.begin, pos.end);
+                            writeBuffer(input, buffer, isRTL ? checkVal(input, buffer, false) : pos.begin);
+                        } else {
+                            var beginPos = pos.begin - (k == opts.keyCode.DELETE ? 0 : 1);
+                            if (beginPos < firstMaskPos && k == opts.keyCode.DELETE) {
+                                beginPos = firstMaskPos;
+                            }
+                            if (beginPos >= firstMaskPos) {
+                                if (opts.numericInput && opts.greedy && k == opts.keyCode.DELETE && buffer[beginPos] == opts.radixPoint) {
+                                    beginPos = seekNext(buffer, beginPos);
+                                    isRTL = false;
+                                }
+                                if (isRTL) {
+                                    beginPos = shiftR(firstMaskPos, beginPos, getPlaceHolder(beginPos), true);
+                                    beginPos = opts.numericInput && opts.greedy && k == opts.keyCode.BACKSPACE && buffer[beginPos + 1] == opts.radixPoint ? beginPos + 1 : seekNext(buffer, beginPos);
+                                } else beginPos = shiftL(beginPos, maskL);
+                                writeBuffer(input, buffer, beginPos);
+                            }
+                        }
+                        if (input._valueGet() == _buffer.join('')) $(input).trigger('cleared');
+
+                        return false;
+                    } else if (k == opts.keyCode.END || k == opts.keyCode.PAGE_DOWN) {
+                        //when END or PAGE_DOWN pressed set position at lastmatch
+                        setTimeout(function () {
+                            var caretPos = checkVal(input, buffer, false, true);
+                            if (!opts.insertMode && caretPos == getMaskLength() && !e.shiftKey) caretPos--;
+                            caret(input, e.shiftKey ? pos.begin : caretPos, caretPos);
+                        }, 0);
+                        return false;
+                    } else if (k == opts.keyCode.HOME || k == opts.keyCode.PAGE_UP) {
+                        //Home or page_up
+                        caret(input, 0, e.shiftKey ? pos.begin : 0);
+                        return false;
+                    } else if (k == opts.keyCode.ESCAPE) {
+                        //escape
+                        input._valueSet(undoBuffer);
+                        caret(input, 0, checkVal(input, buffer));
+                        return false;
+                    } else if (k == opts.keyCode.INSERT) {
+                        //insert
+                        opts.insertMode = !opts.insertMode;
+                        caret(input, !opts.insertMode && pos.begin == getMaskLength() ? pos.begin - 1 : pos.begin);
+                        return false;
+                    } else if (e.ctrlKey && k == 88) {
+                        setTimeout(function () {
+                            caret(input, checkVal(input, buffer, true));
+                        }, 0);
+                    } else if (!opts.insertMode) {
+                        //overwritemode
+                        if (k == opts.keyCode.RIGHT) {
+                            //right
+                            var caretPos = pos.begin == pos.end ? pos.end + 1 : pos.end;
+                            caretPos = caretPos < getMaskLength() ? caretPos : pos.end;
+                            caret(input, e.shiftKey ? pos.begin : caretPos, e.shiftKey ? caretPos + 1 : caretPos);
+                            return false;
+                        } else if (k == opts.keyCode.LEFT) {
+                            //left
+                            var caretPos = pos.begin - 1;
+                            caretPos = caretPos > 0 ? caretPos : 0;
+                            caret(input, caretPos, e.shiftKey ? pos.end : caretPos);
+                            return false;
+                        }
+                    }
+
+                    opts.onKeyDown.call(this, e, opts); //extra stuff to execute on keydown
+                    ignorable = $.inArray(k, opts.ignorables) != -1;
+                }
+
+                function keypressEvent(e) {
+                    //Safari 5.1.x - modal dialog fires keypress twice workaround
+                    if (skipKeyPressEvent) return false;
+                    skipKeyPressEvent = true;
+
+                    var input = this,
+                        $input = $(input);
+
+                    e = e || window.event;
+                    var k = e.which || e.charCode || e.keyCode;
+
+                    if (opts.numericInput && k == opts.radixPoint.charCodeAt(opts.radixPoint.length - 1)) {
+                        var nptStr = input._valueGet();
+                        var radixPosition = nptStr.indexOf(opts.radixPoint);
+                        caret(input, seekNext(buffer, radixPosition != -1 ? radixPosition : getMaskLength()));
+                    }
+
+                    if (e.ctrlKey || e.altKey || e.metaKey || ignorable) {
+                        //Ignore
+                        return true;
+                    } else {
+                        if (k) {
+                            $input.trigger('input');
+
+                            var pos = caret(input),
+                                c = String.fromCharCode(k),
+                                maskL = getMaskLength();
+                            clearBuffer(buffer, pos.begin, pos.end);
+
+                            if (isRTL) {
+                                var p = opts.numericInput ? pos.end : seekPrevious(buffer, pos.end),
+                                    np;
+                                if ((np = isValid(p == maskL || getBufferElement(buffer, p) == opts.radixPoint ? seekPrevious(buffer, p) : p, c, buffer, false)) !== false) {
+                                    if (np !== true) {
+                                        p = np.pos || pos; //set new position from isValid
+                                        c = np.c || c; //set new char from isValid
+                                    }
+
+                                    var firstUnmaskedPosition = firstMaskPos;
+                                    if (opts.insertMode == true) {
+                                        if (opts.greedy == true) {
+                                            var bfrClone = buffer.slice();
+                                            while (getBufferElement(bfrClone, firstUnmaskedPosition, true) != getPlaceHolder(firstUnmaskedPosition) && firstUnmaskedPosition <= p) {
+                                                firstUnmaskedPosition = firstUnmaskedPosition == maskL ? maskL + 1 : seekNext(buffer, firstUnmaskedPosition);
+                                            }
+                                        }
+
+                                        if (firstUnmaskedPosition <= p && (opts.greedy || buffer.length < maskL)) {
+                                            if (buffer[firstMaskPos] != getPlaceHolder(firstMaskPos) && buffer.length < maskL) {
+                                                var offset = prepareBuffer(buffer, -1, isRTL);
+                                                if (pos.end != 0) p = p + offset;
+                                                maskL = buffer.length;
+                                            }
+                                            shiftL(firstUnmaskedPosition, opts.numericInput ? seekPrevious(buffer, p) : p, c);
+                                        } else return false;
+                                    } else setBufferElement(buffer, opts.numericInput ? seekPrevious(buffer, p) : p, c);
+                                    writeBuffer(input, buffer, opts.numericInput && p == 0 ? seekNext(buffer, p) : p);
+                                    setTimeout(function () {
+                                        //timeout needed for IE
+                                        if (isComplete(input)) $input.trigger("complete");
+                                    }, 0);
+                                } else if (android) writeBuffer(input, buffer, pos.begin);
+                            } else {
+                                var p = seekNext(buffer, pos.begin - 1),
+                                    np;
+                                prepareBuffer(buffer, p, isRTL);
+                                if ((np = isValid(p, c, buffer, false)) !== false) {
+                                    if (np !== true) {
+                                        p = np.pos || p; //set new position from isValid
+                                        c = np.c || c; //set new char from isValid
+                                    }
+                                    if (opts.insertMode == true) {
+                                        var lastUnmaskedPosition = getMaskLength();
+                                        var bfrClone = buffer.slice();
+                                        while (getBufferElement(bfrClone, lastUnmaskedPosition, true) != getPlaceHolder(lastUnmaskedPosition) && lastUnmaskedPosition >= p) {
+                                            lastUnmaskedPosition = lastUnmaskedPosition == 0 ? -1 : seekPrevious(buffer, lastUnmaskedPosition);
+                                        }
+                                        if (lastUnmaskedPosition >= p) shiftR(p, buffer.length, c);else return false;
+                                    } else setBufferElement(buffer, p, c);
+                                    var next = seekNext(buffer, p);
+                                    writeBuffer(input, buffer, next);
+
+                                    setTimeout(function () {
+                                        //timeout needed for IE
+                                        if (isComplete(input)) $input.trigger("complete");
+                                    }, 0);
+                                } else if (android) writeBuffer(input, buffer, pos.begin);
+                            }
+                            return false;
+                        }
+                    }
+                }
+
+                function keyupEvent(e) {
+                    var $input = $(this),
+                        input = this;
+                    var k = e.keyCode;
+                    opts.onKeyUp.call(this, e, opts); //extra stuff to execute on keyup
+                    if (k == opts.keyCode.TAB && $input.hasClass('focus.inputmask') && input._valueGet().length == 0) {
+                        buffer = _buffer.slice();
+                        writeBuffer(input, buffer);
+                        if (!isRTL) caret(input, 0);
+                        undoBuffer = input._valueGet();
+                    }
+                }
+            }
+
+            return this; //return this to expose publics
+        };
+    }
+})(jQuery);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 26 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
