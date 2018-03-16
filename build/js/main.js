@@ -19817,6 +19817,10 @@ $(document).ready(function () {
         centeredSlides: true,
         slidesPerView: 'auto',
         initialSlide: '1',
+        loop: 'true',
+        autoplay: {
+            delay: 3000
+        },
         coverflowEffect: {
             rotate: 0,
             stretch: 0,
@@ -19829,6 +19833,18 @@ $(document).ready(function () {
             prevEl: '.swiper-button-prev'
         }
     });
+
+    $('.slider-maket').on('mouseover', '.container-slider', function () {
+        var slider = $(this);
+        console.log(this);
+        slider.autoplay.stop();
+    });
+
+    // $('').mouseover(function () {
+    //     slider.autoplay.stop();
+    // }).mouseout(function () {
+    //     slider.autoplay.start();
+    // })});)
 
     sliderMaket.init();
 
